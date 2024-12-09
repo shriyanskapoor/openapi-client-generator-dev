@@ -1,0 +1,3331 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: Juniper Square Internal API
+  description: An internal API for inter-service communication at JSQ.
+paths:
+  /feature-flags/developer-feature-flags/:
+    get:
+      summary: Developer Feature Flags
+      tags:
+        - Feature Flags
+      responses:
+        '200':
+          $ref: '#/components/responses/FeatureFlagArray'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      operationId: getDeveloperFeatureFlags
+      description: Retrieves all developer feature flags.
+    post:
+      summary: Bulk Update Developer Feature Flags
+      tags:
+        - Feature Flags
+      operationId: bulkUpdateDeveloperFeatureFlags
+      responses:
+        '204':
+          description: Bulk updates were succesfully completed.
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      description: Bulk update the state of developer feature flags.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkUpdateFeatureFlags'
+        description: Fields used to update developer feature flags in bulk.
+      security:
+        - csrf-token: [ ]
+  /feature-flags/developer-feature-flags/{feature_flag_name}/:
+    parameters:
+      - $ref: '#/components/parameters/FeatureFlagNamePathParam'
+    get:
+      summary: Developer Feature Flag
+      tags:
+        - Feature Flags
+      responses:
+        '200':
+          $ref: '#/components/responses/FeatureFlag'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      operationId: getDeveloperFeatureFlag
+      description: Retrieves a developer feature flag by name.
+    patch:
+      summary: Update Developer Feature Flag
+      tags:
+        - Feature Flags
+      operationId: updateDeveloperFeatureFlag
+      responses:
+        '200':
+          $ref: '#/components/responses/FeatureFlag'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      description: Update a developer feature flag
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateFeatureFlag'
+        description: Fields used to update (patch) a developer feature flag
+  '/feature-flags/arena-feature-flags/{arena_id}/':
+    parameters:
+      - $ref: '#/components/parameters/ArenaIdPathParam'
+    get:
+      summary: Feature Flags for Arena
+      tags:
+        - Feature Flags
+      responses:
+        '200':
+          $ref: '#/components/responses/FeatureFlagArray'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      operationId: getArenaFeatureFlags
+      description: Retrieves all arena-level feature flags for an arena.
+    post:
+      summary: Bulk Update Arena Feature Flags
+      tags:
+        - Feature Flags
+      operationId: bulkUpdateArenaFeatureFlags
+      responses:
+        '204':
+          description: Bulk updates were succesfully completed.
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      description: Bulk update the state of arena feature flags.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkUpdateFeatureFlags'
+        description: Fields used to update arena feature flags in bulk.
+      security:
+        - csrf-token: [ ]
+  '/feature-flags/arena-feature-flags/{arena_id}/{feature_flag_name}/':
+    parameters:
+      - $ref: '#/components/parameters/ArenaIdPathParam'
+      - $ref: '#/components/parameters/FeatureFlagNamePathParam'
+    get:
+      summary: Arena Feature Flag
+      tags:
+        - Feature Flags
+      responses:
+        '200':
+          $ref: '#/components/responses/FeatureFlag'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      operationId: getArenaFeatureFlag
+      description: Retrieves an arena feature flag by feature flag name and arena domain
+    patch:
+      summary: Update Arena Feature Flag
+      tags:
+        - Feature Flags
+      operationId: updateArenaFeatureFlag
+      responses:
+        '200':
+          $ref: '#/components/responses/FeatureFlag'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      description: Update a developer feature flag
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateFeatureFlag'
+        description: Fields used to update (patch) an arena feature flag
+  /arenas/:
+    get:
+      summary: "Get a list of Arenas"
+      description: "Get an un-paginated list of all arenas, optionally filtered by a list of arena IDs."
+      operationId: getArenas
+      tags:
+        - Arenas
+      parameters:
+        - $ref: '#/components/parameters/OptionalIdsQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/ArenaArray'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /arenas/{id}/:
+    get:
+      summary: "Get arena"
+      description: "Get an arena by ID."
+      operationId: getArena
+      tags:
+        - Arenas
+      parameters:
+        - $ref: '#/components/parameters/PrimaryKeyIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/Arena'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /arenas/{arena_id}/payment_settings:
+    get:
+      summary: "Get payment settings for a given arena"
+      description: "Get payment settings for a given arena by ID"
+      operationId: getArenaPaymentSettings
+      tags:
+        - Arenas
+      parameters:
+        - $ref: '#/components/parameters/ArenaIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/ArenaPaymentSettings'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /arenas/{arena_id}/net_income_allocation_types:
+    get:
+      summary: "Get allocation types for a given arena by ID"
+      description: "Get allocationTypes for a given arena by ID"
+      operationId: getArenaNetIncomeTypes
+      tags:
+        - Arenas
+      parameters:
+        - $ref: '#/components/parameters/ArenaIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/ArenaNetIncomeTypesArray'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /object_level_permission:
+    get:
+      summary: "Determines if a user has object level authorization provided as input an objectType, [IDs], and
+      [Permissions]. For staff users, permissions checks are only valid in an arena with
+      ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed."
+      description: "Determines if a user has object level authorization provided as input an objectType, [IDs], and
+      [Permissions]. For staff users, permissions checks are only valid in an arena with
+      ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed."
+      operationId: getObjectLevelPermissions
+      tags:
+        - Permissions
+      parameters:
+        - $ref: '#/components/parameters/RequiredUserIdQueryParam'
+        - $ref: '#/components/parameters/RequiredObjectTypeQueryParam'
+        - $ref: '#/components/parameters/RequiredObjectIdsQueryParam'
+        - $ref: '#/components/parameters/RequiredPermissionsQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/ObjectLevelPermission'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /users:
+    get:
+      summary: "Get users"
+      description: "Get an un-paginated list of users filtered by a required list of either DB or global user IDs."
+      operationId: getUsers
+      tags:
+        - Users
+      parameters:
+        - $ref: '#/components/parameters/OptionalGlobalIdsQueryParam'
+        - $ref: '#/components/parameters/OptionalIdsQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/UserArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /users/{user_id}/arena_roles:
+    get:
+      summary: "Get roles for each arena"
+      description: "Get roles for each areana"
+      operationId: getUserArenaRoles
+      tags:
+        - Users
+      parameters:
+        - $ref: '#/components/parameters/UserIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/ArenaRolesArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /arenas/{arena_id}/users/{user_id}/granular_permissions:
+    get:
+      summary: Returns a list of granular permissions given user has.
+      description: Returns a list of granular permissions given user has.
+      operationId: getGranularPermissions
+      tags:
+        - Permissions
+      parameters:
+        - $ref: '#/components/parameters/ArenaIdPathParam'
+        - $ref: '#/components/parameters/UserIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/GranularPermissionArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /users/{user_id}/distribution_batch/{distribution_batch_id}:
+    get:
+      summary: "Get distribution batch with authorization checks"
+      description: "Get a distribution batch by ID. This does handle auth checks (object and role based permissions)"
+      operationId: getUserDistributionBatch
+      tags:
+        - Users
+      parameters:
+        - $ref: '#/components/parameters/UserIdPathParam'
+        - $ref: '#/components/parameters/DistributionBatchIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/DistributionBatch'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /users/{user_id}/distribution_batch/{distribution_batch_id}/distributions:
+    get:
+      summary: "Get distribution batch distributions for a user_id with authorization checks"
+      description: "Get an un-paginated list of distributions that a user_id is authorized to view taking into account
+                    both role-based and object-level permissioning."
+      operationId: getUserDistributionBatchDistributions
+      tags:
+        - Users
+      parameters:
+        - $ref: '#/components/parameters/UserIdPathParam'
+        - $ref: '#/components/parameters/DistributionBatchIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/DistributionArray'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /users/{user_id}/account-contact/edit-access:
+    get:
+      tags:
+        - Users
+      summary: Get accounts with edit access
+      description: Returns account IDs that the user has edit access to.
+      operationId: getAccountsEditAccess
+      parameters:
+        - $ref: '#/components/parameters/UserIdPathParam'
+        - $ref: '#/components/parameters/AccountsQueryParam'
+      responses:
+        '200':
+          description: A list of account IDs with edit access
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: integer
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+
+  /distribution_batches/{id}/:
+    get:
+      summary: "Get distribution batch no authorization checks"
+      description: "Get a distribution batch by ID. This does not handle auth checks."
+      operationId: getDistributionBatch
+      tags:
+        - Distribution Batches
+      parameters:
+        - $ref: '#/components/parameters/PrimaryKeyIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/DistributionBatch'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /distribution_batches/{id}/distributions:
+    get:
+      summary: "Get distributions for a distribution batch not authorization checks"
+      description: "Get distributions for a distribution batch by distribution batch ID. This does not handle auth."
+      operationId: getDistributionsForDistributionBatch
+      tags:
+        - Distribution Batches
+      parameters:
+        - $ref: '#/components/parameters/PrimaryKeyIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/DistributionArray'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /distributions/{id}:
+    get:
+      summary: "Get distribution"
+      description: "Get a distribution by the given distribution id. This does not handle auth."
+      operationId: getDistribution
+      tags:
+        - Distribution
+      parameters:
+        - $ref: '#/components/parameters/PrimaryKeyIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/Distribution'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /payment_prefs:
+    get:
+      summary: "Get a list of payment prefs"
+      description: "Get an un-paginated list of payment prefs filtered by a required list of payment pref IDs."
+      operationId: getPaymentPrefs
+      tags:
+        - Payment Prefs
+      parameters:
+        - $ref: '#/components/parameters/RequiredIdsQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/PaymentPrefArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+
+  /payment_prefs/{id}:
+    patch:
+      summary: "Update payment pref"
+      description: "Update (patch) the fields for a specific payment pref. This only supports verification status at the moment."
+      operationId: updatePaymentPref
+      tags:
+        - Payment Prefs
+      parameters:
+        - $ref: '#/components/parameters/PrimaryKeyIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/PaymentPref'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePaymentPrefOptions'
+        description: Fields used to update a payment pref
+      security: [ ]
+
+  /entity-ids:
+    get:
+      summary: "Get entity ids"
+      description: "Get an un-paginated list of entity ids filtered by query params"
+      operationId: getEntityIds
+      tags:
+        - Entities
+      parameters:
+        - $ref: '#/components/parameters/IsFundAdminQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/IntegerArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+
+  /entities/{id}:
+    get:
+      summary: "Get an entity (AccountModel)"
+      description: "Get the name of the provided entity_id"
+      operationId: getEntity
+      tags:
+        - Entities
+      parameters:
+        - $ref: '#/components/parameters/PrimaryKeyIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/Entity'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+
+  /entities/{id}/positions:
+    get:
+      summary: "Get a list of positions in an investment entity."
+      description: "Get an un-paginated list of positions in an investment entity."
+      operationId: getEntityPositions
+      tags:
+        - Entities
+      parameters:
+        - $ref: '#/components/parameters/PrimaryKeyIdPathParam'
+        - $ref: '#/components/parameters/CabPeriodEndsQueryParam'
+        - $ref: '#/components/parameters/TransactionDatesQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/PositionArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+
+  /arenas/{arena_id}/entities:
+    get:
+      summary: "Get a list of investment entities with their positions in an arena"
+      description: "Get an un-paginated list of investment entities with their positions."
+      operationId: getEntitiesWithPositions
+      tags:
+        - Entities
+      parameters:
+        - $ref: '#/components/parameters/ArenaIdPathParam'
+        - $ref: '#/components/parameters/EntitiesQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/DetailedEntitiesArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+
+  /arenas/{arena_id}/entities/{entity_id}/opco_positions:
+    get:
+      summary: "Get a list of the entity's positions in its directly-owned operating companies."
+      description: "Get an un-paginated list of the entity's positions in its directly-owned operating companies."
+      operationId: getOpcoPositions
+      tags:
+        - Positions
+      parameters:
+        - $ref: '#/components/parameters/ArenaIdPathParam'
+        - $ref: '#/components/parameters/EntityIdPathParam'
+        - $ref: '#/components/parameters/ExcludeInactiveQueryParam'
+        - $ref: '#/components/parameters/AsOfDateQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/OpcoArray'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+
+  /arenas/{arena_id}/external_positions/{external_position_id}:
+    get:
+      summary: "Gets position of a specific arena and source"
+      description: "Gets position of a specific arena and source"
+      operationId: getExternalPosition
+      tags:
+        - Positions
+      parameters:
+        - $ref: '#/components/parameters/ArenaIdPathParam'
+        - $ref: '#/components/parameters/ExternalPositionIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/ExternalPosition'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+
+  /arenas/{arena_id}/positions_attributes:
+    get:
+      summary: "Gets positions by ids with account, investor group, and investment entity ids."
+      description: "Gets positions by ids with account, investor group, and investment entity ids."
+      operationId: getPositionsAttributes
+      tags:
+        - Positions
+      parameters:
+        - $ref: '#/components/parameters/ArenaIdPathParam'
+        - $ref: '#/components/parameters/PositionsQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/PositionEntitiesArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+
+  /bank_account/{id}:
+    get:
+      summary: "Get a bank account (BankAccountModel)"
+      description: "Get the name of the provided bank_account_id"
+      operationId: getBankAccount
+      tags:
+        - Bank Account
+      parameters:
+        - $ref: '#/components/parameters/PrimaryKeyIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/BankAccount'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '404':
+          $ref: '#/components/responses/ResourceNotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+
+  /arenas/{arena_id}/allocation_types:
+    get:
+      summary: "Get a list of allocation types for the given arena"
+      description: "Get an un-paginated list of allocation types."
+      operationId: getAllocationTypes
+      tags:
+        - Arenas
+      responses:
+        '200':
+          $ref: '#/components/responses/AllocationTypesArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+      parameters:
+        - $ref: '#/components/parameters/ArenaIdPathParam'
+
+  /account-contact/bulk-remove:
+    delete:
+      tags:
+        - Accounts
+      summary: API for account contact bulk removal
+      description: API for account contact bulk removal
+      operationId: accountContactBulkRemove
+      responses:
+        '200':
+          $ref: '#/components/responses/AccountContactBulkSuccessResponseArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkAccountContactRemoveRequestBody'
+
+  /account-contact/bulk-update:
+    patch:
+      tags:
+        - Accounts
+      summary: API for account contact bulk update
+      description: API for account contact bulk update
+      operationId: accountContactBulkUpdate
+      responses:
+        '200':
+          $ref: '#/components/responses/AccountContactBulkSuccessResponseArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkAccountContactUpdateRequestBody'
+
+  /users/{user_id}/account-contact/bulk-notify:
+    post:
+      tags:
+        - Accounts
+      summary: API for account contact change notification
+      description: API for account contact change notification
+      operationId: accountContactChangeNotify
+      parameters:
+        - $ref: '#/components/parameters/UserIdPathParam'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkAccountContactChangeNotify'
+      responses:
+        '204':
+          description: Bulk updates were successfully completed.
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+
+  /diligences:
+    get:
+      summary: "Get a list of diligences"
+      description: "Get an un-paginated list of diligences"
+      operationId: getDiligences
+      tags:
+        - Diligences
+      responses:
+        '200':
+          $ref: '#/components/responses/DiligencesArray'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      security: [ ]
+      parameters:
+        - $ref: '#/components/parameters/RequiredDiligenceCategory'
+        - $ref: '#/components/parameters/OptionalObjectTypeQueryParam'
+        - $ref: '#/components/parameters/OptionalObjectIdQueryParam'
+        - $ref: '#/components/parameters/OptionalObjectIdsQueryParam'
+        - $ref: '#/components/parameters/OptionalDiligenceType'
+        - $ref: '#/components/parameters/OptionalDiligenceStatus'
+    post:
+      summary: "Create a diligence object and underlying KYC/watchlists"
+      description: "Create a diligence and underlying KYC/watchlists. This method is considered deprecated and used to bridge the gap until the compliance service API is fully available."
+      operationId: createDiligences
+      tags:
+        - Diligences
+      responses:
+        '200':
+          $ref: '#/components/responses/Diligence'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDiligence'
+
+  /transaction-rollups:
+    get:
+      summary: Retrieves the status of transaction rollups by batch IDs
+      description: Returns a list of transaction rollup statuses based on the provided batch IDs.
+      operationId: getTransactionRollupStatuses
+      tags:
+        - Transactions
+      parameters:
+        - in: query
+          name: sync_ids
+          required: true
+          description: A list of synchronization IDs (UUIDs) to fetch the transaction rollups statuses.
+          schema:
+            type: array
+            items:
+              type: string
+              format: uuid
+          style: form
+          explode: true
+      responses:
+        '200':
+          description: A list of transaction rollup statuses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TransactionRollupStatus'
+        '400':
+          description: Invalid input
+        '404':
+          description: No matching records found
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /transaction-rollups/{sync_id}:
+    get:
+      summary: Retrieve a single transaction rollup status by batch ID
+      description: Returns the transaction rollup status for a specified batch ID.
+      operationId: getTransactionRollupStatus
+      tags:
+        - Transactions
+      parameters:
+        - in: path
+          name: sync_id
+          required: true
+          description: The synchronization ID to fetch the transaction rollup status for.
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Transaction rollup status found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionRollupStatus'
+        '400':
+          description: Invalid UUID format
+        '404':
+          description: Transaction rollup status not found for the specified ID
+        '500':
+            $ref: '#/components/responses/ServerError'
+components:
+  schemas:
+    AccountContactBulkSuccessResponse:
+      type: object
+      title: AccountContactBulkSuccessResponse
+      description: "Account contact bulk success response"
+      additionalProperties: false
+      properties:
+        arena_id:
+          type: integer
+          nullable: false
+          description: Arena ID
+          example: 6
+        account_id:
+          type: integer
+          nullable: false
+          description: User ID
+          example: 7
+        account_contact_id:
+          type: integer
+          description: Account contact ID
+          nullable: false
+          example: 7
+        status:
+          $ref: '#/components/schemas/ResponseStatus'
+          description: Response status
+          nullable: false
+          example: Success
+    Diligence:
+      type: object
+      title: Diligence
+      description: "Diligence used as a model for keeping track of investor diligence actions on a variety of items"
+      additionalProperties: false
+      properties:
+        id:
+          type: integer
+          description: ID of the diligence object in the DB.
+          nullable: false
+          example: 1
+        external_object_type:
+          nullable: true
+          description: External object type.
+          example: account
+          oneOf:
+            - type: object
+              nullable: true
+            - $ref: '#/components/schemas/ObjectType'
+        external_object_id:
+          type: integer
+          description: Number representing the id of the external object type in the external object type table.
+          nullable: true
+          example: 3
+        diligence_type:
+          $ref: '#/components/schemas/DiligenceType'
+          description: Type of diligence
+          nullable: false
+          example: kyc
+        status:
+          $ref: '#/components/schemas/DiligenceStatus'
+          description: Status of diligence
+          nullable: false
+        reviewer_user_id:
+          type: integer
+          description: ID of user who reviewed the diligence
+          nullable: true
+          example: 4
+        review_start_date:
+          type: string
+          format: "date-time"
+          description: Date-time the diligence was moved into review status
+          nullable: true
+          example: "2024-03-01T17:32:28Z"
+        review_end_date:
+          type: string
+          format: "date-time"
+          description: Date-time the diligence was moved out of review status
+          nullable: true
+          example: "2024-03-01T17:32:28Z"
+        peer_reviewer_user_id:
+          type: integer
+          description: ID of user who peer-reviewed the diligence
+          nullable: true
+          example: 5
+        peer_review_start_date:
+          type: string
+          format: "date-time"
+          description: Date-time the diligence was moved into peer-review status
+          nullable: true
+          example: "2024-03-01T17:32:28Z"
+        peer_review_end_date:
+          type: string
+          format: "date-time"
+          description: Date-time the diligence was moved out of peer-review status
+          nullable: true
+          example: "2024-03-01T17:32:28Z"
+        arena_id:
+          type: integer
+          description: Arena ID the diligence is located in
+          nullable: false
+          example: 6
+        modified_at:
+          type: string
+          format: "date-time"
+          description: Date-time the diligence was last modified
+          nullable: true
+          example: "2024-03-01T17:32:28Z"
+        created_at:
+          type: string
+          format: "date-time"
+          description: Date-time the diligence was created
+          nullable: true
+          example: "2024-03-01T17:32:28Z"
+        created_by:
+          type: integer
+          description: FK to the user id who created the diligence
+          nullable: false
+          example: 7
+        current_investor_diligence_risk_log_id:
+          type: integer
+          description: FK to the Investor Diligence Risk Log
+          nullable: true
+          example: 8
+        category:
+          $ref: '#/components/schemas/DiligenceCategory'
+          description: Category of the Diligence
+          nullable: false
+          example: payments_onboarding_flow
+        external_reference_key:
+          type: string
+          description: String of external reference
+          maxLength: 36
+          nullable: true
+          example: "external_reference_key"
+        name:
+          type: string
+          description: Name of the diligence
+          nullable: true
+          example: "Diligence Name"
+        perform_recurring_check:
+          type: boolean
+          description: Only used for watchlist diligences. Used to determine if recurring checks is enabled
+          nullable: true
+          example: false
+        other_info:
+          type: object
+          description: Other key values info for the diligence
+          nullable: true
+          additionalProperties: true
+          example: { "key": "value" }
+      required:
+        - id
+        - external_object_type
+        - external_object_id
+        - diligence_type
+        - status
+        - reviewer_user_id
+        - review_start_date
+        - review_end_date
+        - peer_reviewer_user_id
+        - peer_review_start_date
+        - peer_review_end_date
+        - arena_id
+        - modified_at
+        - created_at
+        - created_by
+        - current_investor_diligence_risk_log_id
+        - category
+        - external_reference_key
+        - name
+        - perform_recurring_check
+    FeatureFlag:
+      type: object
+      title: Feature Flag
+      description: 'Feature flags used to control application or arena wide availability of features. Note: presently only supports boolean (enabled/disabled) feature flags.'
+      x-examples:
+        Feature Flag:
+          id: 1001
+          name: has_feature_enabled
+          label: Has Feature Enabled
+          description: Description about feature flag.
+          is_enabled: true
+          has_side_effects: false
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+          description: The name of the feature flag.
+        label:
+          type: string
+          readOnly: true
+          description: A meaningful label for the feature flag.
+        description:
+          type: string
+          readOnly: true
+          nullable: true
+          description: A description of the purpose of the feature flag.
+        is_enabled:
+          type: boolean
+          description: Whether the feature flag is enabled or disabled.
+        has_side_effects:
+          type: boolean
+          readOnly: true
+          description: Whether the feature flag has side-effect operations that must be performed when the feature flag is enabled or disabled.
+      required:
+        - id
+        - name
+        - label
+        - is_enabled
+    UpdateFeatureFlag:
+      type: object
+      title: Update Feature Flag
+      description: 'Feature flags used to control application or arena wide availability of features. Note: presently only supports boolean (enabled/disabled) feature flags.'
+      x-examples:
+        Enable Feature Flag:
+          is_enabled: true
+        Disable Feature Flag:
+          is_enabled: false
+      properties:
+        is_enabled:
+          type: boolean
+          description: Whether the feature flag is enabled or disabled.
+      required:
+        - is_enabled
+    BulkUpdateFeatureFlags:
+      type: object
+      title: Bulk Update Feature Flags
+      description: Bulk operation to update feature flag states in bulk.
+      additionalProperties:
+        type: boolean
+      example:
+        feature_flag_1: true
+        feature_flag_2: false
+    BulkAccountContactRemoveRequestBody:
+      type: object
+      description: Bulk account contact removal array input
+      title: Bulk account contact removal array input
+      properties:
+        metadata:
+          type: object
+          description: Metadata for the bulk remove
+          nullable: false
+          additionalProperties: true
+          $ref: '#/components/schemas/MetaData'
+        request_payloads:
+          type: array
+          items:
+            $ref: '#/components/schemas/BulkAccountContactRemove'
+    BulkAccountContactUpdateRequestBody:
+      type: object
+      description: Bulk account contact update array input
+      title: Bulk account contact update array input
+      properties:
+        metadata:
+          type: object
+          description: Metadata for the bulk update
+          nullable: false
+          additionalProperties: true
+          $ref: '#/components/schemas/MetaData'
+        request_payloads:
+          type: array
+          items:
+            $ref: '#/components/schemas/BulkAccountContactUpdate'
+    BulkAccountContactRemove:
+      type: object
+      title: Bulk account contact removal
+      description: "Bulk account contact removal object"
+      properties:
+        arena_id:
+          type: integer
+          description: Arena ID
+          example: 6
+          nullable: false
+        account_id:
+          type: integer
+          description: User ID
+          example: 7
+          nullable: false
+        account_contact_id:
+          type: integer
+          description: Account contact ID
+          example: 7
+          nullable: false
+      required: [
+        "arena_id",
+        "account_id",
+        "account_contact_id"
+      ]
+    MetaData:
+      type: object
+      title: Bulk account contact update and remove metadata
+      description: Bulk account contact update and remove metadata
+      properties:
+        requester_user_id:
+          type: integer
+          description: Requester user ID
+          example: 6
+        comment:
+          type: string
+          description: Comment for the bulk update from account admin
+          example: "note from account admin"
+      required: [
+        "requester_user_id",
+        "comment"
+      ]
+    BulkAccountContactUpdate:
+      type: object
+      title: Bulk account contact update
+      description: Bulk account contact update
+      properties:
+        arena_id:
+          type: integer
+          description: Arena ID
+          example: 6
+        account_id:
+          type: integer
+          description: User ID
+          example: 7
+        account_contact_id:
+          type: integer
+          description: Account contact ID
+          example: 7
+        label:
+          type: string
+          description: Relationship label for account contact
+          example: "label"
+          nullable: true
+        is_main_contact:
+          type: boolean
+          description: True if the account contact is To contact, False for CC contact
+          example: true
+          nullable: true
+        is_admin_contact:
+          type: boolean
+          description: True if the account contact is an admin contact
+          example: true
+          nullable: true
+        distribution_list:
+          type: array
+          description: List of distribution IDs
+          items:
+            type: integer
+          example: [ 1, 2, 3 ]
+          nullable: true
+      required: [
+        "arena_id",
+        "account_id",
+        "account_contact_id"
+      ]
+    BulkAccountContactChangeNotify:
+      type: object
+      properties:
+        request_type:
+          type: string
+          enum:
+            - ADD_CONTACT
+            - UPDATE_CONTACT
+            - REMOVE_CONTACT
+          example: UPDATE_CONTACT
+          nullable: false
+        request_payloads:
+          type: array
+          items:
+            type: object
+            properties:
+              arena_id:
+                type: integer
+                example: 1
+              account_id:
+                type: integer
+                example: 2
+              contact_id:
+                type: integer
+                example: 3
+              comment:
+                type: string
+                example: comment
+            required: [
+              "arena_id",
+              "account_id",
+              "contact_id",
+              "comment"
+            ]
+    CreateDiligence:
+      type: object
+      title: Create Diligence
+      description: "Deprecated create diligence object and underlying KYC/watchlists"
+      properties:
+        arena_id:
+          type: integer
+          description: Arena ID the diligence is located in
+          example: 6
+        user_id:
+          type: integer
+          description: User ID of the user creating the diligence
+          example: 7
+        external_object_type:
+          oneOf:
+            - $ref: '#/components/schemas/ObjectType'
+          description: External object type.
+          nullable: false
+          example: arena
+        external_object_id:
+          type: integer
+          description: Number representing the id of the external object type in the external object type table.
+          example: 3
+        diligence_type:
+          oneOf:
+            - $ref: '#/components/schemas/DiligenceType'
+          description: Type of diligence
+          example: kyc
+        diligence_category:
+          oneOf:
+            - $ref: '#/components/schemas/DiligenceCategory'
+          description: Category of the Diligence
+          example: payments_onboarding_flow
+        business_info:
+          type: object
+          description: Business information for diligence
+          oneOf:
+            - $ref: '#/components/schemas/BusinessInfo'
+        reference_external_object_type:
+          nullable: true
+          anyOf:
+            - $ref: '#/components/schemas/ObjectType'
+            - type: string
+              nullable: true
+          description: Reference external object type. Useful when the diligence is related to another object.
+          example: account
+        reference_external_object_id:
+          type: integer
+          nullable: true
+          description: Reference external object ID. Useful when needing to check the relationship between two objects.
+          example: 3
+        other_info:
+          type: object
+          description: Other key values info for the diligence
+          nullable: true
+          additionalProperties: true
+          example: { "key": "value" }
+    BusinessInfo:
+      type: object
+      description: "Business information for diligence"
+      properties:
+        external_profile_id:
+          type: integer
+          description: Profile ID for diligence
+          example: 1
+          nullable: false
+        legal_entity_name:
+          type: string
+          description: Legal entity name
+          example: "Juniper Square"
+          nullable: false
+        date_of_organization:
+          type: string
+          description: Date of formation for business
+          example: "2024-04-26"
+          nullable: false
+        tax_id:
+          type: string
+          description: Tax ID for business
+          example: "123456789"
+          nullable: true
+        documents:
+          type: array
+          description: Documents for business
+          items:
+            type: object
+            oneOf:
+              - $ref: '#/components/schemas/Document'
+        address:
+          type: object
+          description: Address for business
+          nullable: true
+          oneOf:
+            - $ref: '#/components/schemas/Address'
+        individual_profiles:
+          type: array
+          description: Individual profiles used for legacy diligences. This is deprecated. For KYC, a KycDetail will be created. For watchlist, a watchlist screening will be triggered.
+          items:
+            type: object
+            oneOf:
+              - $ref: '#/components/schemas/IndividualProfile'
+        institution_profiles:
+          type: array
+          description: Institution profiles used for legacy diligences. This is deprecated. For KYC, a KycDetail will be created. For watchlist, a watchlist screening will be triggered.
+          items:
+            type: object
+            oneOf:
+              - $ref: '#/components/schemas/InstitutionProfile'
+    Document:
+      type: object
+      description: Documents for business
+      properties:
+        document_type:
+          type: string
+          description: Document type
+          enum:
+            - identity_document
+            - formation_document
+            - tax_document
+            - file
+            - corporate_resolution
+            - audited_financial
+          example: "identity_document"
+        s3_key:
+          type: string
+          description: S3 Keys for documents
+          example: "key1"
+        name:
+          type: string
+          description: Name of document
+          example: "Document Name"
+        content_type:
+          type: string
+          description: Content type of document
+          enum:
+            - "image/webp"
+            - "application/pdf"
+            - "image/png"
+            - "image/jpeg"
+    Address:
+      type: object
+      description: Address for business
+      properties:
+          line1:
+            type: string
+            description: Street address
+            example: "123 Main St"
+            nullable: false
+          line2:
+            type: string
+            description: Street address line 2
+            example: "Apt 1"
+            nullable: true
+          city:
+            type: string
+            description: City
+            example: "San Francisco"
+            nullable: false
+          state:
+            type: string
+            description: State
+            example: "CA"
+            nullable: false
+          postal_code:
+            type: string
+            description: Postal code
+            example: "94105"
+            nullable: false
+          country:
+            type: string
+            description: Country (ISO 3166-1 alpha-2)
+            example: "US"
+            nullable: false
+    IndividualProfile:
+      type: object
+      description: Individual profile for diligence
+      properties:
+        external_profile_id:
+          type: integer
+          description: Profile ID for diligence
+          example: 1
+          nullable: false
+        first_name:
+          type: string
+          description: First name
+          example: "John"
+          nullable: false
+        last_name:
+          type: string
+          description: Last name
+          example: "Doe"
+          nullable: false
+        date_of_birth:
+          type: string
+          description: Date of birth
+          example: "2024-04-26"
+          nullable: false
+        tax_id:
+          type: string
+          description: SSN
+          example: "123456789"
+          nullable: false
+        address:
+          type: object
+          description: Address for individual
+          oneOf:
+            - $ref: '#/components/schemas/Address'
+        documents:
+          type: array
+          description: Documents for individual
+          items:
+            type: object
+            oneOf:
+              - $ref: '#/components/schemas/Document'
+        is_beneficial_owner:
+          type: boolean
+          description: Whether the individual is a beneficial owner
+          example: true
+          nullable: false
+        is_controller:
+          type: boolean
+          description: Whether the individual is a controller
+          example: true
+          nullable: false
+        is_signatory:
+          type: boolean
+          description: Whether the individual is a signatory
+          example: true
+          nullable: false
+        business_ownership_percent:
+          type: integer
+          description: Potential percentage of the business the individual owns
+          example: 30
+          nullable: true
+      required: [
+        "external_profile_id",
+        "first_name",
+        "last_name",
+        "date_of_birth",
+        "tax_id",
+        "address",
+        "documents",
+      ]
+    InstitutionProfile:
+      type: object
+      description: Institution profile for diligence
+      properties:
+        external_profile_id:
+          type: integer
+          description: Profile ID for institution
+          example: 1
+          nullable: false
+        legal_entity_name:
+          type: string
+          description: Name of institution
+          example: "Juniper Square"
+          nullable: false
+        tax_id:
+          type: string
+          description: Tax ID for institution
+          example: "123456789"
+          nullable: false
+        date_of_organization:
+          type: string
+          description: Date of formation for business
+          example: "2024-04-26"
+          nullable: false
+        is_beneficial_owner:
+          type: boolean
+          description: Whether the individual is a beneficial owner
+          example: true
+          nullable: false
+        address:
+          type: object
+          description: Address for institution
+          nullable: false
+          oneOf:
+            - $ref: '#/components/schemas/Address'
+        documents:
+          type: array
+          description: Documents for individual
+          items:
+            type: object
+            oneOf:
+              - $ref: '#/components/schemas/Document'
+        business_ownership_percent:
+          type: integer
+          description: Potential percentage of the business the individual owns
+          example: 30
+          nullable: true
+      required: [
+        "external_profile_id",
+        "legal_entity_name",
+        "tax_id",
+        "date_of_organization",
+        "address",
+        "documents"
+      ]
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        field:
+          type: string
+        message:
+          type: string
+        exception:
+          type: string
+    ServerError:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+        exception:
+          type: string
+    Arena:
+      type: object
+      description: Arena resources representing a GP workspace.
+      properties:
+        id:
+          type: "integer"
+          readOnly: true
+        name:
+          type: "string"
+          description: The name of the arena.
+          example: "Rockstone Capital"
+        unified_portal_url:
+          type: "string"
+          description: The environment specific arena's hostname and path prefix for the Unified Portal (Portal 2.0)
+          example: "app.dev.junipersquare.com/i/rockstone"
+        is_active:
+          type: "boolean"
+          description: Whether the arena is active.
+          example: true
+        domain:
+          type: "string"
+          description: The domain of the arena.
+          example: "investors.rockstonecap.com"
+      required:
+        - id
+        - name
+        - unified_portal_url
+        - is_active
+        - domain
+    ArenaPaymentSettings:
+      type: object
+      description: Payment Settings for an arena.
+      properties:
+        arena_id:
+          type: "integer"
+          readOnly: true
+          description: FK to the the arena these payment settings belong to.
+        required_approval_count:
+          type: "integer"
+          description: The number of approvers required on a payment batch.
+          example: "1"
+        require_different_approver:
+          type: "boolean"
+          description: Whether or not the payment batch creator can also approve the payment batch.
+          example: true
+      required:
+        - arena_id
+        - required_approval_count
+        - require_different_approver
+    ArenaRoles:
+      type: object
+      description: Roles for an arena.
+      properties:
+        arena_id:
+          type: "integer"
+          readOnly: true
+          description: FK to the arena.
+        role_ids:
+          type: "array"
+          items:
+            type: integer
+          readOnly: true
+          description: FK to the role.
+        role_enums:
+          type: "array"
+          items:
+            type: string
+          readOnly: true
+          description: Enum key for the role. Orders sorted by role name alphabetical order.
+      required:
+        - arena_id
+        - role_ids
+        - role_enums
+
+    ArenaNetIncomeType:
+      type: object
+      description: Allocation Type for an arena.
+      properties:
+        arena_id:
+          type: "integer"
+          readOnly: true
+          description: FK to the the arena these payment settings belong to.
+        id:
+          type: "integer"
+          description: ID of the allocation type.
+          example: "1"
+        sort_order:
+          type: "integer"
+          description: The sort order of the object.
+          example: 1
+        name:
+          type: "string"
+          description: Name of the allocation type.
+          example: "amount"
+      additionalProperties: false
+      required:
+        - arena_id
+        - id
+        - name
+    User:
+      type: object
+      description: A User object.
+      properties:
+        id:
+          type: "integer"
+          readOnly: true
+        global_id:
+          type: "string"
+          description: Global ID for user.
+          readOnly: true
+        first_name:
+          type: "string"
+          description: User first name.
+          example: "John"
+        last_name:
+          type: "string"
+          description: User last name.
+          example: "Doe"
+        email_address:
+          type: "string"
+          description: User email.
+          example: "john@junipersquare.com"
+      required:
+        - id
+        - global_id
+        - first_name
+        - last_name
+        - email_address
+    DistributionBatch:
+      type: object
+      description: A Distribution Batch.
+      properties:
+        id:
+          type: "integer"
+          readOnly: true
+        total_amount:
+          type: "number"
+          description: Total amount distributed
+          example: "42.00"
+        arena_id:
+          type: "integer"
+          readOnly: true
+          description: Arena ID this distribution batch belongs to.
+        entity_id:
+          type: "integer"
+          readOnly: true
+          description: Entity ID this distribution batch belongs to.
+      required:
+        - id
+        - total_amount
+        - arena_id
+        - entity_id
+    Distribution:
+      type: object
+      description: A Distribution that is part of a distribution batch.
+      properties:
+        id:
+          type: "integer"
+          readOnly: true
+        arena_id:
+          type: "integer"
+          readOnly: true
+          description: Arena ID this distribution batch belongs to.
+        position_id:
+          type: "integer"
+          description: FK to position ID this distribution belongs to
+          example: "1"
+        payment_pref_id:
+          type: "integer"
+          description: "FK to payment pref for this distribution's position's payment pref"
+          nullable: true
+        amount:
+          type: "number"
+          description: "Amount to be distributed"
+        amount_payable:
+          type: "number"
+          description: "Amount to be distributed netting any amount adjusted or reinvested"
+        manual_settlement_date:
+          type: "string"
+          format: "date"
+          description: "The date the distribution was manually settled (if applicable)"
+          nullable: true
+          example: "2024-07-21"
+        has_legacy_payment:
+          type: "boolean"
+          description: "Whether or not the distribution has a legacy payment associated with it (that has not been marked as canceled or failed or voided)"
+          example: true
+      required:
+        - id
+        - arena_id
+        - position_id
+        - payment_pref_id
+        - amount
+        - amount_payable
+        - manual_settlement_date
+        - has_legacy_payment
+    PaymentPref:
+      type: object
+      description: A payment preference.
+      properties:
+        id:
+          type: "integer"
+          readOnly: true
+        payment_method:
+          type: "string"
+          enum:
+            - ACH
+            - Check
+            - Wire
+          description: "Payment method for the payment preference: ACH, Wire or Check."
+          example: "ACH"
+        verification_status:
+          type: "string"
+          enum:
+            - verified
+            - unverified
+            - error
+            - null
+          description: "Verification status for the payment preference: verified, unverified or error."
+          example: "verified"
+          nullable: true
+        wire_has_intermediary:
+          type: "boolean"
+          description: >
+            For wire payment method only, whether the wire payment pref has an intermediary bank that wires transfer
+            through.
+          nullable: true
+        wire_has_international_beneficiary_address:
+          type: "boolean"
+          description: "For wire payment method only, whether the wire payment pref has an international beneficiary address"
+          nullable: true
+        payment_pref_wire:
+          type: object
+          nullable: true
+          description: >
+            A payment preference containing wire specific info. This will only have valid fields if payment pref method
+            is wire.
+          properties:
+            wire_beneficiary_name:
+              type: "string"
+              description: "Optional wire beneficiary name"
+              nullable: true
+            wire_beneficiary_account_number:
+              type: "string"
+              description: "Wire beneficiary account number"
+              nullable: false
+            wire_bank_name:
+              type: "string"
+              description: "Wire bank name"
+              nullable: false
+            wire_aba_number:
+              type: "string"
+              description: "Wire aba number (usually routing number)"
+              nullable: false
+            wire_has_intermediary:
+              type: "boolean"
+              description: >
+                For wire payment method only, whether the wire payment pref has an intermediary bank that wires transfer
+                through.
+              nullable: false
+            wire_has_international_beneficiary_address:
+              type: "boolean"
+              description: >
+                Boolean to determine whether a wire has an international beneficiary address. Can be None if not applicable.
+              nullable: true
+            wire_reference_to_beneficiary:
+              type: "string"
+              description: "Wire reference to beneficiary"
+              nullable: true
+            wire_obi:
+              type: "object"
+              nullable: true
+              additionalProperties: true  # dictionary values can be of any type
+            wire_bbi:
+              type: "object"
+              nullable: true
+              additionalProperties: true  # dictionary values can be of any type
+            wire_beneficiary_address:
+              type: "object"
+              nullable: false
+              properties:
+                street1:
+                  type: "string"
+                  nullable: true
+                street2:
+                  type: "string"
+                  nullable: true
+                street3:
+                  type: "string"
+                  nullable: true
+                city:
+                  type: "string"
+                  nullable: true
+                state:
+                  type: "string"
+                  nullable: true
+                region:
+                  type: "string"
+                  nullable: true
+                postal_code:
+                  type: "string"
+                  nullable: true
+                country:
+                  type: "string"
+                  nullable: true
+          required:
+            - wire_beneficiary_account_number
+            - wire_bank_name
+            - wire_beneficiary_address
+            - wire_aba_number
+            - wire_has_intermediary
+        payment_pref_ach:
+          type: object
+          nullable: true
+          description: >
+            A payment preference containing ach specific info. This will only have valid fields if payment pref method
+            is ach. Otherwise, it will contain an empty object
+          properties:
+            ach_account_name:
+              type: "string"
+              description: "Optional ach account name"
+              nullable: true
+            ach_bank_name:
+              type: "string"
+              description: "Ach bank name"
+              nullable: false
+            ach_account_number:
+              type: "string"
+              description: "ach account number"
+              nullable: false
+            ach_routing_number:
+              type: "string"
+              description: "ach routing number"
+              nullable: false
+            ach_account_type:
+              type: "string"
+              description: "ach account type"
+              nullable: false
+            ach_account_ownership:
+              type: "string"
+              description: "ach account ownership"
+              nullable: true
+            ach_additional_instructions:
+              type: "string"
+              description: "ach account ownership"
+              nullable: true
+            ach_domicile_address:
+              type: "object"
+              nullable: true
+              properties:
+                street1:
+                  type: "string"
+                  nullable: true
+                street2:
+                  type: "string"
+                  nullable: true
+                street3:
+                  type: "string"
+                  nullable: true
+                city:
+                  type: "string"
+                  nullable: true
+                state:
+                  type: "string"
+                  nullable: true
+                region:
+                  type: "string"
+                  nullable: true
+                postal_code:
+                  type: "string"
+                  nullable: true
+                country:
+                  type: "string"
+                  nullable: true
+          required:
+            - ach_bank_name
+            - ach_account_number
+            - ach_routing_number
+            - ach_account_type
+      required:
+        - id
+        - payment_method
+        - verification_status
+    UpdatePaymentPrefOptions:
+      type: object
+      title: Update Payment Pref Options
+      description: 'An object provided when updating (patch) payment prefs. Note: presently only supports verification_status.'
+      x-examples:
+        Mark payment pref as verified:
+          verification_status: 'verified'
+        Mark payment_pref as having failed verification:
+          verification_status: 'error'
+      properties:
+        verification_status:
+          type: "string"
+          nullable: true
+          enum:
+            - verified
+            - unverified
+            - error
+            - null
+          description: "Verification status for the payment preference: verified, unverified or error."
+          example: "verified"
+    Entity:
+      description: An entity
+      type: object
+      properties:
+        id:
+          type: "integer"
+          example: 1
+        arena_id:
+          type: "integer"
+          readOnly: true
+          example: 2
+        name:
+          type: "string"
+          readOnly: true
+          example: "Wayne Manor"
+        bank_account_id:
+          type: "integer"
+          nullable: true
+          readOnly: true
+          example: 3
+        automated_payments_enabled:
+          type: "boolean"
+          readOnly: true
+          example: true
+      required:
+        - id
+        - arena_id
+        - name
+        - automated_payments_enabled
+    BankAccount:
+      description: A bank account
+      type: object
+      properties:
+        id:
+          type: "integer"
+          readOnly: true
+          description: "ID of the bank account."
+          example: 1
+        owner_name:
+          type: "string"
+          readOnly: true
+          description: "Name of the bank account owner."
+          example: "John Doe"
+        account_number:
+          type: "string"
+          readOnly: true
+          description: "Bank account number."
+          example: "1234567890"
+        routing_number:
+          type: "string"
+          readOnly: true
+          description: "Bank account routing number."
+          example: "123456789"
+        arena_id:
+          type: "integer"
+          readOnly: true
+          description: "Arena ID this bank account belongs to."
+          example: 2
+        ach_info:
+          type: object
+          nullable: true
+          description: >
+            A bank account containing ach specific info. This will only have
+            valid fields if the bank account is set to ach.
+          properties:
+            ach_instructions_account_owner_name:
+              type: "string"
+              description: "Optional ach account owner name"
+              nullable: true
+              example: "John Doe"
+      required:
+        - id
+        - owner_name
+        - account_number
+        - routing_number
+        - arena_id
+    Permission:
+      description: 'String representation of Permission enum'
+      type: string
+      enum:
+        - create
+        - read
+        - update
+        - delete
+        - administer
+        - download
+        - manage_portal
+        - limited_read
+        - publish_transactions
+        - limited_edit
+    ObjectType:
+      description: 'String representation of ObjectType enum'
+      type: string
+      enum:
+        - arena
+        - user
+        - contact
+        - offering
+        - prospect
+        - account
+        - property
+        - comm_pref
+        - position
+        - document
+        - email_batch
+        - capital_call_batch
+        - distribution_batch
+        - transaction
+        - asset
+        - prospect_contact_map
+        - data_room
+        - net_income_batch
+        - publication
+        - subscription_batch
+        - subscription
+        - event_log
+        - payment_batch
+        - management_fee_batch
+        - task
+        - lead
+        - crm_notification_list
+        - nav_batch
+        - loan
+        - asset_date_sampled_data
+        - transaction_batch
+        - unit_value
+        - unit_value_batch
+        - capital_call
+        - distribution
+        - net_income
+        - nav
+        - note
+        - stored_email
+        - email
+        - investor_diligence
+        - watchlist_screening_detail
+        - kyc_detail
+        - kyc_document
+        - kyc_document_version
+        - import_template
+        - kyc_document_version_activity
+        - acquisition
+        - disposition
+        - feature_flag
+        - payment_pref
+        - document_category
+        - consolidated_payment_batch
+        - e_signature_document
+        - e_signature_request_template
+        - e_signature_gp_signer
+        - e_signature_request_batch
+        - e_signature_request
+        - e_signature_request_recipient
+        - e_signature_lp_signer
+        - e_signature_lp_configurator
+        - payment
+        - bank_account
+        - twr_period_metric
+        - field_access_role
+        - field_access_role_object_map
+        - location
+        - product_type
+        - document_folder
+        - lp_consolidation_request
+        - fund_admin_service
+        - entity_collection
+        - compliance_profile
+    ObjectLevelPermission:
+      type: object
+      description: Returns the permissioning object for the queried user and object type combination.
+      properties:
+        has_permission:
+          type: "boolean"
+          readOnly: true
+          description: Boolean if the user has permission based on the specified filters
+      required:
+        - has_permission
+    GranularPermission:
+      type: string
+      description: Granular permission enum
+      enum:
+        - CAN_MANAGE_PORTAL_SETTINGS
+        - CAN_MANAGE_GENERAL_SUBSCRIPTION_SETTINGS
+        - CAN_MANAGE_STAFF_ACCESS
+        - CAN_MANAGE_SELF
+        - CAN_MANAGE_USER_ROLES
+        - CAN_ASSIGN_ADMINISTRATOR_PERMISSIONS_TO_STAFF_USERS
+        - CAN_MANAGE_AUTHENTICATION
+        - CAN_MANAGE_AGREEMENTS
+        - CAN_MANAGE_DATA_FIELDS
+        - CAN_ACCESS_AUDIT_LOG
+        - CAN_CONFIG_DOCUMENT_CATEGORIES
+        - CAN_CONFIG_EMAIL_DISTRIBUTION_LISTS
+        - CAN_CONFIG_CRM_NOTIFICATION_LISTS
+        - CAN_CONFIG_OWNERSHIP_UNITS_AND_PERCENTAGES
+        - CAN_CONFIG_DISTRIBUTIONS_AND_CAPITAL_TRANSACTIONS
+        - CAN_CONFIG_NET_INCOME_AND_NAV_COMPONENTS
+        - CAN_CONFIG_ENTITY_SUBTYPES
+        - CAN_CONFIG_METRICS_SETTINGS
+        - CAN_CONFIG_WATERMARK_TEMPLATES
+        - CAN_CONFIG_MANAGEMENT_FEES
+        - CAN_CONFIG_ORGANIZATION_SETTINGS
+        - CAN_CONFIG_E_SIGNATURES
+        - CAN_CONFIG_STATEMENT_NOTICES
+        - CAN_CONFIG_STATIONERY_LIBRARY
+        - CAN_CONFIG_REPORTING_TEMPLATE
+        - CAN_CONFIG_INTEGRATIONS
+        - CAN_CONFIG_MAPPINGS
+        - CAN_ACCESS_PROSPECT_SUBSCRIPTION
+    ExternalPosition:
+      type: object
+      description: A position for a specific arena, source name, and source object id.
+      additionalProperties: false
+      properties:
+        id:
+          type: "integer"
+          readOnly: true
+      required:
+        - id
+    PositionAttribute:
+      type: object
+      description: A position with account, investor group, and investment entity ids.
+      additionalProperties: false
+      properties:
+        id:
+          type: "integer"
+          readOnly: true
+        account_id:
+          type: "integer"
+        investment_entity_id:
+          type: "integer"
+        investor_group_id:
+          type: "integer"
+      required:
+        - id
+        - account_id
+        - investment_entity_id
+        - investor_group_id
+    Position:
+      type: object
+      description: A position in an investment entity.
+      additionalProperties: false
+      properties:
+        id:
+          type: "integer"
+          readOnly: true
+        name:
+          type: "string"
+          description: "Name of the position."
+        amount_committed:
+          type: "number"
+          description: "Amount that this position has committed to invest."
+          nullable: true
+        percent_ownership:
+          type: "number"
+          description: "Percentage of ownership in the investment."
+          nullable: true
+        investor_group_name:
+          type: "string"
+          description: "Name of the position's investor group."
+        cabs:
+          type: "array"
+          items:
+            type: "object"
+            required:
+              - end
+              - balance
+            additionalProperties: false
+            properties:
+              end:
+                type: "string"
+                format: "date-time"
+              balance:
+                type: "number"
+          description: "Capital account balances of position"
+          nullable: true
+        contributions:
+          type: "array"
+          items:
+            type: "object"
+            required:
+              - start_date
+              - end_date
+              - amount
+            additionalProperties: false
+            properties:
+              start_date:
+                type: "string"
+                format: "date-time"
+                nullable: true
+              end_date:
+                type: "string"
+                format: "date-time"
+              amount:
+                type: "number"
+          nullable: true
+        distributions:
+          type: "array"
+          items:
+            type: "object"
+            required:
+              - start_date
+              - end_date
+              - amount
+            additionalProperties: false
+            properties:
+              start_date:
+                type: "string"
+                format: "date-time"
+                nullable: true
+              end_date:
+                type: "string"
+                format: "date-time"
+              amount:
+                type: "number"
+          nullable: true
+        net_income_sum_by_type:
+          type: "array"
+          nullable: true
+          items:
+            type: "object"
+            required:
+              - type_id
+              - start_date
+              - end_date
+              - amount
+            additionalProperties: false
+            properties:
+              start_date:
+                type: "string"
+                format: "date-time"
+                nullable: true
+              end_date:
+                type: "string"
+                format: "date-time"
+              amount:
+                type: "number"
+              type_id:
+                type: "number"
+      required:
+        - id
+        - name
+        - amount_committed
+        - percent_ownership
+        - investor_group_name
+        - cabs
+
+    AllocationType:
+      type: object
+      description: Allocation Types for an arena
+      additionalProperties: false
+      properties:
+        name:
+          type: "string"
+          description: "Name of the allocation type."
+        category:
+          type: "string"
+          enum:
+            - "Capital Call"
+            - "Capital Activity"
+            - "Distribution Allocations"
+            - "Net Income Allocations"
+          description: "Category of the allocation type."
+        is_recallable:
+          type: "boolean"
+          description: "Flag to indicate whether the allocation type is recallable."
+      required:
+        - name
+        - category
+        - is_recallable
+
+    DiligenceCategory:
+      type: string
+      description: Category of Diligence
+      enum:
+        - payments_onboarding_flow
+
+    DiligenceType:
+      type: string
+      description: "Type of Diligence. Differs from category because category represents what type of service/entity is
+                    requesting the diligence. DiligenceType represents the type of diligence created"
+      enum:
+        - kyc
+        - watchlist_screening
+        - manual
+
+    DiligenceStatus:
+      type: string
+      description: "Status of the diligence in the submission workflow"
+      enum:
+        - started
+        - pending_review
+        - requested_lp_for_info
+        - in_review
+        - pending_peer_review
+        - in_peer_review
+        - confirmed
+    DetailedEntity:
+      type: object
+      description: An entity with it's positions.
+      additionalProperties: false
+      properties:
+        id:
+          type: "integer"
+          readOnly: true
+        name:
+          type: "string"
+          description: "Name of the entity."
+        arena_id:
+          type: "integer"
+          readOnly: true
+        bank_account_id:
+          type: "integer"
+          nullable: true
+        automated_payments_enabled:
+          type: "boolean"
+        positions:
+          type: "array"
+          items:
+            $ref: '#/components/schemas/Position'
+    TransactionRollupStatus:
+      type: object
+      properties:
+        sync_id:
+          type: string
+          format: uuid
+          description: The batch ID associated with the transaction rollup
+        updated_at:
+          type: string
+          format: date-time
+          description: The date and time the status was last updated
+        status:
+          type: string
+          description: The current status of the transaction rollup
+          enum:
+            - received
+            - completed
+            - failed
+    ResponseStatus:
+      type: string
+      description: "Response status"
+      enum:
+        - Success
+        - Failure
+    OpcoPosition:
+      type: object
+      description: An entity's position on its operating company
+      properties:
+        id:
+          type: integer
+        investor_group_name:
+          type: string
+        status:
+          type: string
+        ownership_percent:
+          type: string
+          nullable: true
+      required:
+        - id
+        - investor_group_name
+        - status
+        - ownership_percent
+    Opco:
+      type: object
+      description: An entity's operating company information
+      properties:
+        opco_id:
+          type: integer
+          description: The Account ID of the operating company
+        opco_name:
+          type: string
+          description: The name of the operating company
+        opco_currency:
+          type: string
+          description: The currency of the operating company
+        positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpcoPosition'
+          description: The positions associated with the operating company
+      required:
+        - opco_id
+        - opco_name
+        - opco_currency
+        - positions
+
+  responses:
+    AccountContactBulkSuccessResponseArray:
+      description: Account Contact Bulk Success Response Array
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/AccountContactBulkSuccessResponse'
+          examples:
+            AccountContactBulkSuccessResponse:
+              value:
+                - arena_id: 6
+                  account_id: 7
+                  account_contact_id: 7
+                  status: "Success"
+    Diligence:
+      description: "A diligence object"
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Diligence'
+    DiligencesArray:
+      description: A list of Diligences
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Diligence'
+          examples:
+            Diligences:
+              value:
+                - id: 1
+                  externalObjectType: 2
+                  externalObjectId: 3
+                  investorDiligenceType: "kyc"
+                  status: "started"
+                  reviewerUserId: 4
+                  reviewStartDate: "2024-03-01T17:32:28Z"
+                  reviewEndDate: "2024-03-01T17:32:28Z"
+                  peerReviewUserId: 5
+                  peerReviewStartDate: "2024-03-01T17:32:28Z"
+                  peerReviewEndDate: "2024-03-01T17:32:28Z"
+                  arenaId: 6
+                  modifiedAt: "2024-03-01T17:32:28Z"
+                  createdAt: "2024-03-01T17:32:28Z"
+                  createdBy: 7
+                  currentInvestorDiligenceRiskLogId: 8
+                  category: payments_onboarding_flow
+                  externalReferenceKey: "external_reference_key"
+                  name: "Test Diligence"
+                  performRecurringCheck: false
+                - id: 9
+                  externalObjectType: 10
+                  externalObjectId: 11
+                  investorDiligenceType: "kyc"
+                  status: "started"
+                  reviewerUserId: 12
+                  reviewStartDate: "2024-03-01T17:32:28Z"
+                  reviewEndDate: "2024-03-01T17:32:28Z"
+                  peerReviewUserId: 13
+                  peerReviewStartDate: "2024-03-01T17:32:28Z"
+                  peerReviewEndDate: "2024-03-01T17:32:28Z"
+                  arenaId: 14
+                  modifiedAt: "2024-03-01T17:32:28Z"
+                  createdAt: "2024-03-01T17:32:28Z"
+                  createdBy: 15
+                  currentInvestorDiligenceRiskLogId: 16
+                  category: payments_onboarding_flow
+                  externalReferenceKey: "external_reference_key"
+                  name: "Test Diligence"
+                  performRecurringCheck: false
+    ValidationError:
+      description: Request/response validation failed
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+              - $ref: '#/components/schemas/Error'
+          examples:
+            Validation Issue:
+              value:
+                - field: is_enabled
+                  message: Field is_enabled cannot be empty
+                  exception: ValidationError
+    ResourceNotFoundError:
+      description: An expected resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ServerError'
+          examples:
+            Resource Not Found:
+              value:
+                - message: An expected resource was not found
+                  exception: NotFoundError
+    ForbiddenError:
+      description: The operation was forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ServerError'
+          examples:
+            Forbidden:
+              value:
+                - message: Request forbidden -- authorization will not help
+                  exception: ForbiddenError
+    UnauthorizedError:
+      description: The request was unauthorized
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - type: array
+                items:
+                  $ref: '#/components/schemas/ServerError'
+              - $ref: '#/components/schemas/ServerError'
+          examples:
+            Forbidden:
+              value:
+                - message: No permission -- see authorization schemes
+                  exception: UnauthorizedError
+    ServerError:
+      description: An unexpected server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ServerError'
+          examples:
+            Unexpected Server Error:
+              value:
+                message: An unexpected server error was encountered
+                exception: ServerError
+    FeatureFlagArray:
+      description: A list of feature flags
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/FeatureFlag'
+          examples:
+            Feature Flag Array:
+              value:
+                - id: 1001
+                  name: has_feature_enabled
+                  label: Has Feature Enabled
+                  description: Description about feature flag.
+                  is_enabled: true
+                  has_side_effects: false
+                - id: 1002
+                  name: has_other_feature_enabled
+                  label: Has Other Feature Enabled
+                  description: Description about feature flag.
+                  is_enabled: false
+                  has_side_effects: false
+    FeatureFlag:
+      description: A feature flag
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FeatureFlag'
+          examples:
+            Feature Flag:
+              value:
+                id: 1001
+                name: has_feature_enabled
+                label: Has Feature Enabled
+                description: Description about feature flag.
+                is_enabled: true
+                has_side_effects: false
+    Arena:
+      description: An arena
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Arena'
+    ArenaRolesArray:
+      description: A list of ArenaRoles
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ArenaRoles'
+          examples:
+            ArenaRolesArray:
+              value:
+                - arena_id: 1
+                  role_ids: [ 4, 5, 6 ]
+                  role_enums: ["jsq_fa", "jsq_fam", "jsq_fao"]
+                - arena_id: 2
+                  role_ids: [ 4, 5 ]
+                  role_enums: ["jsq_fa", "jsq_fam"]
+
+    ArenaArray:
+      description: A list of arenas
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Arena'
+          examples:
+            Arena Array:
+              value:
+                - id: 1001
+                  name: Rockstone Capital
+                  unified_portal_url: app.dev.junipersquare.com/i/rockstone
+                  is_active: true
+                - id: 1002
+                  name: Yosemite
+                  unified_portal_url: app.dev.junipersquare.com/i/yosemite
+                  is_active: false
+    ArenaPaymentSettings:
+      description: Payment settings for a specific arena
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ArenaPaymentSettings'
+          examples:
+            Payment Settings:
+              value:
+                arena_id: 4
+                required_approval_count: 2
+                require_different_approver: false
+    ArenaNetIncomeTypesArray:
+      description: Allocation Types for a specific arena
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ArenaNetIncomeType'
+          examples:
+            ArenaNetIncomeTypes Array:
+              value:
+                - arena_id: 4
+                  id: 2
+                  name: "amount"
+                  sort_order: 1
+                - arena_id: 4
+                  id: 3
+                  name: "other thing"
+                  sort_order: 2
+    UserArray:
+      description: A list of users
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
+          examples:
+            User Array:
+              value:
+                - id: 1001
+                  global_id: "VXNlck9iamVjdFR5cGU6MTAwMQ=="
+                  first_name: "John"
+                  last_name: "Doe"
+                  email_address: "john.doe@junipersquare.com"
+                - id: 1002
+                  global_id: "VXNlck9iamVjdFR5cGU6MTAwMg=="
+                  first_name: "Abe"
+                  last_name: "Lincoln"
+                  email_address: "honest.abe@presidents.com"
+    DistributionBatch:
+      description: A distribution batch
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DistributionBatch'
+          examples:
+            Distribution Batch:
+              value:
+                id: 101
+                amount: 42.00
+                arena_id: 2
+                entity_id: 3
+    Distribution:
+      description: A distribution
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Distribution'
+          examples:
+            Distribution:
+              value:
+                id: 1001
+                arena_id: 2
+                position_id: 2
+                payment_pref_id: 101
+                amount: 75.01
+                manual_settlement_date: "2024-07-21"
+                has_legacy_payment: false
+    DistributionArray:
+      description: A list of distributions
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Distribution'
+          examples:
+            Distribution Array:
+              value:
+                - id: 1001
+                  arena_id: 2
+                  position_id: 2
+                  payment_pref_id: 101
+                  amount: 75.01
+                  manual_settlement_date: "2024-07-21"
+                  has_legacy_payment: false
+                - id: 1002
+                  arena_id: 2
+                  position_id: 3
+                  payment_pref_id: 102
+                  manual_settlement_date: null
+                  has_legacy_payment: false
+    PaymentPref:
+      description: A payment pref
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PaymentPref'
+          examples:
+            PaymentPref:
+              value:
+                id: 1002
+                payment_method: wire
+                verification_status: verified
+                wire_has_intermediary: true
+                wire_has_international_beneficiary_address: false
+                payment_pref_wire:
+                  wire_beneficiary_name: "sample beneficiary name"
+                  wire_beneficiary_account_number: "12312312"
+                  wire_bank_name: "sample bank name"
+                  wire_aba_number: "123123123"
+                  wire_has_intermediary: true
+                  wire_reference_to_beneficiary: "sample reference to beneficiary"
+                  wire_has_international_beneficiary_address: false,
+                  wire_beneficiary_address:
+                    street1: "sample street 1"
+                    street2: "sample street 2"
+                    street3: "sample street 3"
+                    city: "Santa Ana"
+                    state: "CA"
+                    region: "CA"
+                    postal_code: "92626"
+                    country: "United States"
+                  wire_obi: { "k1": "v1", "k2": 2 }
+                  wire_bbi: { "k1": "v1", "k2": 2 }
+    PaymentPrefArray:
+      description: A list of payment prefs
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/PaymentPref'
+          examples:
+            PaymentPrefArray:
+              value:
+                - id: 1001
+                  payment_method: ACH
+                  verification_status: verified
+                  wire_has_intermediary: null
+                  wire_has_international_beneficiary_address: null
+                  payment_pref_ach:
+                    ach_account_name: "test account name"
+                    ach_bank_name: "test bank name"
+                    ach_account_number: "12312312"
+                    ach_routing_number: "123123123"
+                    ach_account_type: "checking"
+                    ach_account_ownership: "individual"
+                    ach_additional_instructions: "sample additional instruction"
+                - id: 1002
+                  payment_method: wire
+                  verification_status: verified
+                  wire_has_intermediary: true
+                  wire_has_international_beneficiary_address: false
+                  payment_pref_wire:
+                    wire_beneficiary_name: "sample beneficiary name"
+                    wire_beneficiary_account_number: "12312312"
+                    wire_bank_name: "sample bank name"
+                    wire_aba_number: "123123123"
+                    wire_has_intermediary: true
+                    wire_reference_to_beneficiary: "sample reference to beneficiary"
+                    wire_has_international_beneficiary_address: false,
+                    wire_beneficiary_address:
+                      street1: "sample street 1"
+                      street2: "sample street 2"
+                      street3: "sample street 3"
+                      city: "Santa Ana"
+                      state: "CA"
+                      region: "CA"
+                      postal_code: "92626"
+                      country: "United States"
+                    wire_obi: { "k1": "v1", "k2": 2 }
+                    wire_bbi: { "k1": "v1", "k2": 2 }
+
+    DetailedEntitiesArray:
+      description: A list of entities with detailed information
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/DetailedEntity'
+
+    PositionArray:
+      description: A list of positions
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Position'
+          examples:
+            Position Array:
+              value:
+                - id: 1
+                  name: "Position One"
+                  amount_committed: 123.45
+                  percent_ownership: 10.50
+                  investor_group_name: "Investor Group 1"
+                  cabs: [
+                    {
+                      "end": "2023-01-01T00:00:00+00:00",
+                      "balance": 1234.42
+                    },
+                    {
+                      "end": "2023-03-31T23:59:59+00:00",
+                      "balance": 1234.41
+                    }
+                  ]
+                  contributions: [
+                    {
+                      "start_date": "2022-01-01",
+                      "end_date": "2022-03-30",
+                      "amount": 6897.51
+                    },
+                    {
+                      "start_date": "2022-04-01",
+                      "end_date": "2022-06-30",
+                      "amount": 1500.00
+                    }
+                  ]
+                  distributions: [
+                    {
+                      "start_date": "2022-01-01",
+                      "end_date": "2022-03-30",
+                      "amount": 1234.45
+                    },
+                    {
+                      "start_date": "2022-04-01",
+                      "end_date": "2022-06-30",
+                      "amount": 2345.23
+                    }
+                  ]
+                  net_income_sum_by_type: [
+                    {
+                      "start_date": "2022-01-01",
+                      "end_date": "2022-03-30",
+                      "type_id": "1",
+                      "amount": 50
+                    },
+                    {
+                      "start_date": "2022-04-01",
+                      "end_date": "2022-06-30",
+                      "type_id": "3",
+                      "amount": 150
+                    }
+                  ]
+                - id: 2
+                  name: "Position Two"
+                  amount_committed: 456.78
+                  percent_ownership: 15.73
+                  investor_group_name: "Investor Group 2"
+                  cabs: [
+                    {
+                      "end": "2022-12-31T00:00:00+00:00",
+                      "balance": 1234.45
+                    },
+                    {
+                      "end": "2023-3-31T00:00:00+00:00",
+                      "balance": 1234.40
+                    }
+                  ]
+    ExternalPosition:
+      description: A position for a specific arena, source name, and source object id.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExternalPosition'
+
+    PositionAttribute:
+      description: A position with account, investor group, and investment entity ids.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PositionAttribute'
+
+    Entity:
+      description: An entity object (AccountModel)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Entity'
+
+    IntegerArray:
+      description: An array of integers
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: integer
+
+    BankAccount:
+      description: A bank account object (BankAccountModel)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/BankAccount'
+
+    ObjectLevelPermission:
+      description: Returns the permissioning object for the queried user and object type combination.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ObjectLevelPermission'
+    GranularPermissionArray:
+      description: A list of granular permissions
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/GranularPermission'
+
+    AllocationTypesArray:
+      description: A list of allocation types
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/AllocationType'
+          examples:
+            Allocation Types Array:
+              value:
+                - category: "Capital Activity"
+                  name: "Amount"
+                - category: "Capital Activity"
+                  name: "Subtraction"
+                - category: "Distribution"
+                  name: "Return of capital"
+                - category: "Distribution"
+                  name: "Return on capital"
+                - category: "Net Income"
+                  name: "Tax"
+    TransactionRollupStatus:
+      description: Transaction Rollup Status
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/TransactionRollupStatus'
+    OpcoArray:
+      description: A list of given entity's directly owned operating companies and its positions
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Opco'
+    PositionEntitiesArray:
+      description: A list of positions with account, investor group, and investment entity ids.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/PositionAttribute'
+
+  securitySchemes:
+    auth-cookie:
+      name: a
+      type: apiKey
+      in: cookie
+      description: JSQ Standard User Auth Cookie (cookie name "a"). The API token generated during normal user initiated
+        login flows of all JSQ applications. Represents a single user object's auth state.
+    csrf-token:
+      name: X-CSRF-Token
+      type: apiKey
+      in: header
+      description: The CSRF token generated during normal user initiated login flows of all JSQ applications. You can
+        manually call the `/csrf_token` endpoint to get a new CSRF token when logged in.
+  parameters:
+    RequiredDiligenceCategory:
+      name: diligence_category
+      in: query
+      description: Category of diligences to filter on
+      required: true
+      schema:
+        $ref: '#/components/schemas/DiligenceCategory'
+    OptionalDiligenceType:
+      name: diligence_type
+      in: query
+      description: Type of Diligence to filter on
+      required: false
+      schema:
+        $ref: '#/components/schemas/DiligenceType'
+    OptionalDiligenceStatus:
+      name: diligence_status
+      in: query
+      description: Status of diligence in submission workflow.
+      required: false
+      schema:
+        $ref: '#/components/schemas/DiligenceStatus'
+    ArenaIdPathParam:
+      name: arena_id
+      in: path
+      description: Id of the arena to operate within
+      required: true
+      schema:
+        type: integer
+    EntityIdPathParam:
+      name: entity_id
+      in: path
+      description: Id of the entity
+      required: true
+      schema:
+        type: integer
+    ExternalPositionIdPathParam:
+      name: external_position_id
+      in: path
+      description: Url safe base64 encoded version of
+        url encoded version of source_name:url encoded version of source_object_id.
+      required: true
+      schema:
+        type: string
+    DistributionBatchIdPathParam:
+      name: distribution_batch_id
+      in: path
+      description: Id of the distribution_batch
+      required: true
+      schema:
+        type: integer
+    PrimaryKeyIdPathParam:
+      name: id
+      in: path
+      description: Id of the resource
+      required: true
+      schema:
+        type: integer
+    UserIdPathParam:
+      name: user_id
+      in: path
+      description: User ID of the resource
+      required: true
+      schema:
+        type: integer
+    OptionalIdsQueryParam:
+      name: ids
+      in: query
+      style: form
+      explode: false
+      description: Optional comma separated list of ids to filter resources by.
+      schema:
+        type: array
+        items:
+          type: integer
+    OptionalGlobalIdsQueryParam:
+      name: global_ids
+      in: query
+      style: form
+      explode: false
+      description: Optional comma separated list of global ids to filter resources by.
+      schema:
+        type: array
+        items:
+          type: string
+    RequiredArenaIdQueryParam:
+      name: arena_id
+      in: query
+      style: form
+      explode: false
+      description: Required arena_id to filter by.
+      required: true
+      schema:
+        type: integer
+    RequiredUserIdQueryParam:
+      name: user_id
+      in: query
+      style: form
+      explode: false
+      description: Required user_id to filter by.
+      required: true
+      schema:
+        type: integer
+    RequiredObjectTypeQueryParam:
+      name: object_type
+      in: query
+      style: form
+      explode: false
+      description: Required object_type to filter by. Should match an ObjectType enum.
+      required: true
+      schema:
+        $ref: '#/components/schemas/ObjectType'
+    OptionalObjectTypeQueryParam:
+      name: object_type
+      in: query
+      style: form
+      explode: false
+      description: Optional object_type to filter by. Should match an ObjectType enum.
+      required: false
+      schema:
+        $ref: '#/components/schemas/ObjectType'
+    RequiredObjectIdsQueryParam:
+      name: object_ids
+      in: query
+      style: form
+      explode: false
+      description: List of objects_ids of the corresponding ObjectType
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+    OptionalObjectIdQueryParam:
+      name: object_id
+      in: query
+      style: form
+      explode: false
+      description: Object ID to filter on
+      required: false
+      schema:
+        type: integer
+    OptionalObjectIdsQueryParam:
+      name: object_ids
+      in: query
+      style: form
+      explode: false
+      description: Object IDs to filter on
+      required: false
+      schema:
+        type: array
+        items:
+          type: integer
+    RequiredPermissionsQueryParam:
+      name: permissions
+      in: query
+      style: form
+      explode: true  # need explode true for array of enum handling
+      description: List of object level permissions to filter by
+      required: true
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/Permission'
+    RequiredIdsQueryParam:
+      name: ids
+      in: query
+      style: form
+      explode: false
+      description: Required comma separated list of ids to filter resources by.
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+    CabPeriodEndsQueryParam:
+      name: cab_period_ends
+      in: query
+      style: form
+      explode: false
+      description: Comma separated list of dates for calculating cab. Date format should be YYYY-MM-DDThh:mm:ssZ.
+      schema:
+        type: array
+        items:
+          type: string
+    ExcludeInactiveQueryParam:
+      name: exclude_inactive
+      in: query
+      style: form
+      explode: false
+      description: Whether to exclude inactive objects from the response.
+      schema:
+        type: boolean
+    AsOfDateQueryParam:
+      name: as_of_date
+      in: query
+      style: form
+      explode: false
+      description: An end date of a period. Format should be YYYY-MM-DD.
+      schema:
+        type: string
+    EntitiesQueryParam:
+      name: entity_ids
+      in: query
+      style: form
+      explode: false
+      description: Comma separated list of entity ids.
+      schema:
+        type: array
+        items:
+          type: string
+    PositionsQueryParam:
+      name: position_ids
+      in: query
+      style: form
+      explode: false
+      description: Comma separated list of position ids.
+      schema:
+        type: array
+        items:
+          type: string
+    IsFundAdminQueryParam:
+      name: is_fund_admin
+      in: query
+      style: form
+      explode: false
+      description: Flag to fetch FA only resource.
+      schema:
+        type: boolean
+    AccountsQueryParam:
+      name: account_ids
+      in: query
+      style: form
+      explode: false
+      description: Comma separated list of account ids.
+      schema:
+        type: array
+        items:
+          type: integer
+    TransactionDatesQueryParam:
+      name: transaction_dates
+      in: query
+      style: form
+      explode: false
+      description: Comma separated list of dates. Format should be YYYY-MM-DDThh:mm:ssZ.
+      schema:
+        type: array
+        items:
+          type: string
+    FeatureFlagNamePathParam:
+      name: feature_flag_name
+      in: path
+      description: Name of the feature flag to retrieve
+      required: true
+      schema:
+        type: string
+tags:
+  - name: Feature Flags
+    description: Operations to interact with arena-level and global developer feature flags.
+    externalDocs:
+      url: https://junipersquare.atlassian.net/l/c/BCshGxqp
+  - name: Arenas
+    description: Operations to interact with arenas.
+  - name: Users
+    description: Operations to interact with users.
+  - name: Distribution Batches
+    description: Operations to interact with distribution batches.
+  - name: Payment Prefs
+    description: Operations to interact with payment prefs.
+  - name: Entities
+    description: Operations to interact with entities.
+  - name: Diligences
+    description: Operations to interact with diligences.
+servers:
+  - url: '/internal/api/v1'
+    description: Current Server
