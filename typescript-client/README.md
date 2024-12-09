@@ -3,7 +3,7 @@
 This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
 Environment
-* Node.js
+- **Node.js** (Version 22 or later recommended)
 * Webpack
 * Browserify
 

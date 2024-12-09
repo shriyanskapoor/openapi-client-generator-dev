@@ -12,104 +12,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (g && (g = 0, op[0] && (_ = 0)), _) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FeatureFlagsApiFactory = exports.FeatureFlagsApiFp = exports.FeatureFlagsApiAxiosParamCreator = exports.EntitiesApi = exports.EntitiesApiFactory = exports.EntitiesApiFp = exports.EntitiesApiAxiosParamCreator = exports.DistributionBatchesApi = exports.DistributionBatchesApiFactory = exports.DistributionBatchesApiFp = exports.DistributionBatchesApiAxiosParamCreator = exports.DistributionApi = exports.DistributionApiFactory = exports.DistributionApiFp = exports.DistributionApiAxiosParamCreator = exports.DiligencesApi = exports.DiligencesApiFactory = exports.DiligencesApiFp = exports.DiligencesApiAxiosParamCreator = exports.BankAccountApi = exports.BankAccountApiFactory = exports.BankAccountApiFp = exports.BankAccountApiAxiosParamCreator = exports.ArenasApi = exports.ArenasApiFactory = exports.ArenasApiFp = exports.ArenasApiAxiosParamCreator = exports.AccountsApi = exports.AccountsApiFactory = exports.AccountsApiFp = exports.AccountsApiAxiosParamCreator = exports.UpdatePaymentPrefOptionsVerificationStatusEnum = exports.TransactionRollupStatusStatusEnum = exports.ResponseStatus = exports.Permission = exports.PaymentPrefVerificationStatusEnum = exports.PaymentPrefPaymentMethodEnum = exports.ObjectType = exports.ObjectAuthorizedClass = exports.GranularPermission = exports.DocumentContentTypeEnum = exports.DocumentDocumentTypeEnum = exports.DiligenceType = exports.DiligenceStatus = exports.DiligenceCategory = exports.BulkAccountContactChangeNotifyByStatusStatusEnum = exports.BulkAccountContactChangeNotifyByStatusRequestTypeEnum = exports.BulkAccountContactChangeNotifyRequestTypeEnum = exports.ArenaManageAccountContactSettingsContactUpdateRequireMgrApprovalEnum = exports.AllocationTypeCategoryEnum = void 0;
-exports.UsersApi = exports.UsersApiFactory = exports.UsersApiFp = exports.UsersApiAxiosParamCreator = exports.TransactionsApi = exports.TransactionsApiFactory = exports.TransactionsApiFp = exports.TransactionsApiAxiosParamCreator = exports.PositionsApi = exports.PositionsApiFactory = exports.PositionsApiFp = exports.PositionsApiAxiosParamCreator = exports.PermissionsApi = exports.PermissionsApiFactory = exports.PermissionsApiFp = exports.PermissionsApiAxiosParamCreator = exports.PaymentPrefsApi = exports.PaymentPrefsApiFactory = exports.PaymentPrefsApiFp = exports.PaymentPrefsApiAxiosParamCreator = exports.FeatureFlagsApi = void 0;
-var axios_1 = require("axios");
+exports.PaymentPrefsApiFactory = exports.PaymentPrefsApiFp = exports.PaymentPrefsApiAxiosParamCreator = exports.FeatureFlagsApi = exports.FeatureFlagsApiFactory = exports.FeatureFlagsApiFp = exports.FeatureFlagsApiAxiosParamCreator = exports.EntitiesApi = exports.EntitiesApiFactory = exports.EntitiesApiFp = exports.EntitiesApiAxiosParamCreator = exports.DistributionBatchesApi = exports.DistributionBatchesApiFactory = exports.DistributionBatchesApiFp = exports.DistributionBatchesApiAxiosParamCreator = exports.DistributionApi = exports.DistributionApiFactory = exports.DistributionApiFp = exports.DistributionApiAxiosParamCreator = exports.DiligencesApi = exports.DiligencesApiFactory = exports.DiligencesApiFp = exports.DiligencesApiAxiosParamCreator = exports.BankAccountApi = exports.BankAccountApiFactory = exports.BankAccountApiFp = exports.BankAccountApiAxiosParamCreator = exports.ArenasApi = exports.ArenasApiFactory = exports.ArenasApiFp = exports.ArenasApiAxiosParamCreator = exports.AccountsApi = exports.AccountsApiFactory = exports.AccountsApiFp = exports.AccountsApiAxiosParamCreator = exports.UpdatePaymentPrefOptionsVerificationStatusEnum = exports.TransactionRollupStatusStatusEnum = exports.ResponseStatus = exports.Permission = exports.PaymentPrefVerificationStatusEnum = exports.PaymentPrefPaymentMethodEnum = exports.ObjectType = exports.GranularPermission = exports.DocumentContentTypeEnum = exports.DocumentDocumentTypeEnum = exports.DiligenceType = exports.DiligenceStatus = exports.DiligenceCategory = exports.BulkAccountContactChangeNotifyRequestTypeEnum = exports.AllocationTypeCategoryEnum = void 0;
+exports.UsersApi = exports.UsersApiFactory = exports.UsersApiFp = exports.UsersApiAxiosParamCreator = exports.TransactionsApi = exports.TransactionsApiFactory = exports.TransactionsApiFp = exports.TransactionsApiAxiosParamCreator = exports.PositionsApi = exports.PositionsApiFactory = exports.PositionsApiFp = exports.PositionsApiAxiosParamCreator = exports.PermissionsApi = exports.PermissionsApiFactory = exports.PermissionsApiFp = exports.PermissionsApiAxiosParamCreator = exports.PaymentPrefsApi = void 0;
+const axios_1 = require("axios");
 // Some imports not used depending on template conditions
 // @ts-ignore
-var common_1 = require("./common");
+const common_1 = require("./common");
 // @ts-ignore
-var base_1 = require("./base");
+const base_1 = require("./base");
 exports.AllocationTypeCategoryEnum = {
     CapitalCall: 'Capital Call',
     CapitalActivity: 'Capital Activity',
     DistributionAllocations: 'Distribution Allocations',
-    NetIncomeAllocations: 'Net Income Allocations',
-    NetAssetValue: 'Net Asset Value'
-};
-exports.ArenaManageAccountContactSettingsContactUpdateRequireMgrApprovalEnum = {
-    AddOnly: 'add_only',
-    All: 'all',
-    None: 'none'
+    NetIncomeAllocations: 'Net Income Allocations'
 };
 exports.BulkAccountContactChangeNotifyRequestTypeEnum = {
     AddContact: 'ADD_CONTACT',
     UpdateContact: 'UPDATE_CONTACT',
     RemoveContact: 'REMOVE_CONTACT'
-};
-exports.BulkAccountContactChangeNotifyByStatusRequestTypeEnum = {
-    AddContact: 'ADD_CONTACT',
-    UpdateContact: 'UPDATE_CONTACT',
-    RemoveContact: 'REMOVE_CONTACT'
-};
-exports.BulkAccountContactChangeNotifyByStatusStatusEnum = {
-    PendingApproval: 'PENDING_APPROVAL',
-    AutoApproved: 'AUTO_APPROVED',
-    Approved: 'APPROVED',
-    Rejected: 'REJECTED'
 };
 /**
  * Category of Diligence
@@ -191,19 +112,6 @@ exports.GranularPermission = {
     ConfigIntegrations: 'CAN_CONFIG_INTEGRATIONS',
     ConfigMappings: 'CAN_CONFIG_MAPPINGS',
     AccessProspectSubscription: 'CAN_ACCESS_PROSPECT_SUBSCRIPTION'
-};
-/**
- * String representation of AuthorizedClass enum
- * @export
- * @enum {string}
- */
-exports.ObjectAuthorizedClass = {
-    Account: 'account',
-    Contact: 'contact',
-    CustomDataFields: 'custom_data_fields',
-    DocumentCategory: 'document_category',
-    Entity: 'entity',
-    Offering: 'offering'
 };
 /**
  * String representation of ObjectType enum
@@ -293,8 +201,7 @@ exports.PaymentPrefPaymentMethodEnum = {
 exports.PaymentPrefVerificationStatusEnum = {
     Verified: 'verified',
     Unverified: 'unverified',
-    Error: 'error',
-    Null: 'null'
+    Error: 'error'
 };
 /**
  * String representation of Permission enum
@@ -330,48 +237,14 @@ exports.TransactionRollupStatusStatusEnum = {
 exports.UpdatePaymentPrefOptionsVerificationStatusEnum = {
     Verified: 'verified',
     Unverified: 'unverified',
-    Error: 'error',
-    Null: 'null'
+    Error: 'error'
 };
 /**
  * AccountsApi - axios parameter creator
  * @export
  */
-var AccountsApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const AccountsApiAxiosParamCreator = function (configuration) {
     return {
-        /**
-         * API for account contact to add new or existing contact to account
-         * @summary API for account contact to add new or existing contact to account
-         * @param {AccountContactAddRequestBody} [accountContactAddRequestBody]
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        accountContactAdd: function (accountContactAddRequestBody, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    localVarPath = "/account-contact/add";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'PATCH' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(accountContactAddRequestBody, localVarRequestOptions, configuration);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
-        },
         /**
          * API for account contact bulk removal
          * @summary API for account contact bulk removal
@@ -379,30 +252,26 @@ var AccountsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountContactBulkRemove: function (bulkAccountContactRemoveRequestBody, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    localVarPath = "/account-contact/bulk-remove";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'DELETE' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkAccountContactRemoveRequestBody, localVarRequestOptions, configuration);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        accountContactBulkRemove: async (bulkAccountContactRemoveRequestBody, options = {}) => {
+            const localVarPath = `/account-contact/bulk-remove`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkAccountContactRemoveRequestBody, localVarRequestOptions, configuration);
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * API for account contact bulk update
@@ -411,30 +280,26 @@ var AccountsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountContactBulkUpdate: function (bulkAccountContactUpdateRequestBody, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    localVarPath = "/account-contact/bulk-update";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'PATCH' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkAccountContactUpdateRequestBody, localVarRequestOptions, configuration);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        accountContactBulkUpdate: async (bulkAccountContactUpdateRequestBody, options = {}) => {
+            const localVarPath = `/account-contact/bulk-update`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkAccountContactUpdateRequestBody, localVarRequestOptions, configuration);
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * API for account contact change notification
@@ -444,69 +309,29 @@ var AccountsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountContactChangeNotify: function (userId, bulkAccountContactChangeNotify, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'userId' is not null or undefined
-                    (0, common_1.assertParamExists)('accountContactChangeNotify', 'userId', userId);
-                    localVarPath = "/users/{user_id}/account-contact/bulk-notify"
-                        .replace("{".concat("user_id", "}"), encodeURIComponent(String(userId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'POST' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkAccountContactChangeNotify, localVarRequestOptions, configuration);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
-        },
-        /**
-         * API for account contact change notification by status
-         * @summary API for account contact change notification by status
-         * @param {number} userId User ID of the resource
-         * @param {BulkAccountContactChangeNotifyByStatus} [bulkAccountContactChangeNotifyByStatus]
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        accountContactChangeNotifyByStatus: function (userId, bulkAccountContactChangeNotifyByStatus, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'userId' is not null or undefined
-                    (0, common_1.assertParamExists)('accountContactChangeNotifyByStatus', 'userId', userId);
-                    localVarPath = "/users/{user_id}/account-contact/bulk-notify-by-status"
-                        .replace("{".concat("user_id", "}"), encodeURIComponent(String(userId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'POST' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkAccountContactChangeNotifyByStatus, localVarRequestOptions, configuration);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        accountContactChangeNotify: async (userId, bulkAccountContactChangeNotify, options = {}) => {
+            // verify required parameter 'userId' is not null or undefined
+            (0, common_1.assertParamExists)('accountContactChangeNotify', 'userId', userId);
+            const localVarPath = `/users/{user_id}/account-contact/bulk-notify`
+                .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkAccountContactChangeNotify, localVarRequestOptions, configuration);
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -515,32 +340,9 @@ exports.AccountsApiAxiosParamCreator = AccountsApiAxiosParamCreator;
  * AccountsApi - functional programming interface
  * @export
  */
-var AccountsApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.AccountsApiAxiosParamCreator)(configuration);
+const AccountsApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.AccountsApiAxiosParamCreator)(configuration);
     return {
-        /**
-         * API for account contact to add new or existing contact to account
-         * @summary API for account contact to add new or existing contact to account
-         * @param {AccountContactAddRequestBody} [accountContactAddRequestBody]
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        accountContactAdd: function (accountContactAddRequestBody, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.accountContactAdd(accountContactAddRequestBody, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['AccountsApi.accountContactAdd']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
-        },
         /**
          * API for account contact bulk removal
          * @summary API for account contact bulk removal
@@ -548,21 +350,11 @@ var AccountsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountContactBulkRemove: function (bulkAccountContactRemoveRequestBody, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.accountContactBulkRemove(bulkAccountContactRemoveRequestBody, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['AccountsApi.accountContactBulkRemove']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async accountContactBulkRemove(bulkAccountContactRemoveRequestBody, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.accountContactBulkRemove(bulkAccountContactRemoveRequestBody, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['AccountsApi.accountContactBulkRemove']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * API for account contact bulk update
@@ -571,21 +363,11 @@ var AccountsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountContactBulkUpdate: function (bulkAccountContactUpdateRequestBody, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.accountContactBulkUpdate(bulkAccountContactUpdateRequestBody, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['AccountsApi.accountContactBulkUpdate']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async accountContactBulkUpdate(bulkAccountContactUpdateRequestBody, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.accountContactBulkUpdate(bulkAccountContactUpdateRequestBody, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['AccountsApi.accountContactBulkUpdate']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * API for account contact change notification
@@ -595,45 +377,11 @@ var AccountsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountContactChangeNotify: function (userId, bulkAccountContactChangeNotify, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.accountContactChangeNotify(userId, bulkAccountContactChangeNotify, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['AccountsApi.accountContactChangeNotify']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
-        },
-        /**
-         * API for account contact change notification by status
-         * @summary API for account contact change notification by status
-         * @param {number} userId User ID of the resource
-         * @param {BulkAccountContactChangeNotifyByStatus} [bulkAccountContactChangeNotifyByStatus]
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        accountContactChangeNotifyByStatus: function (userId, bulkAccountContactChangeNotifyByStatus, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.accountContactChangeNotifyByStatus(userId, bulkAccountContactChangeNotifyByStatus, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['AccountsApi.accountContactChangeNotifyByStatus']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async accountContactChangeNotify(userId, bulkAccountContactChangeNotify, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.accountContactChangeNotify(userId, bulkAccountContactChangeNotify, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['AccountsApi.accountContactChangeNotify']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -642,19 +390,9 @@ exports.AccountsApiFp = AccountsApiFp;
  * AccountsApi - factory interface
  * @export
  */
-var AccountsApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.AccountsApiFp)(configuration);
+const AccountsApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.AccountsApiFp)(configuration);
     return {
-        /**
-         * API for account contact to add new or existing contact to account
-         * @summary API for account contact to add new or existing contact to account
-         * @param {AccountContactAddRequestBody} [accountContactAddRequestBody]
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        accountContactAdd: function (accountContactAddRequestBody, options) {
-            return localVarFp.accountContactAdd(accountContactAddRequestBody, options).then(function (request) { return request(axios, basePath); });
-        },
         /**
          * API for account contact bulk removal
          * @summary API for account contact bulk removal
@@ -662,8 +400,8 @@ var AccountsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountContactBulkRemove: function (bulkAccountContactRemoveRequestBody, options) {
-            return localVarFp.accountContactBulkRemove(bulkAccountContactRemoveRequestBody, options).then(function (request) { return request(axios, basePath); });
+        accountContactBulkRemove(bulkAccountContactRemoveRequestBody, options) {
+            return localVarFp.accountContactBulkRemove(bulkAccountContactRemoveRequestBody, options).then((request) => request(axios, basePath));
         },
         /**
          * API for account contact bulk update
@@ -672,8 +410,8 @@ var AccountsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountContactBulkUpdate: function (bulkAccountContactUpdateRequestBody, options) {
-            return localVarFp.accountContactBulkUpdate(bulkAccountContactUpdateRequestBody, options).then(function (request) { return request(axios, basePath); });
+        accountContactBulkUpdate(bulkAccountContactUpdateRequestBody, options) {
+            return localVarFp.accountContactBulkUpdate(bulkAccountContactUpdateRequestBody, options).then((request) => request(axios, basePath));
         },
         /**
          * API for account contact change notification
@@ -683,19 +421,8 @@ var AccountsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountContactChangeNotify: function (userId, bulkAccountContactChangeNotify, options) {
-            return localVarFp.accountContactChangeNotify(userId, bulkAccountContactChangeNotify, options).then(function (request) { return request(axios, basePath); });
-        },
-        /**
-         * API for account contact change notification by status
-         * @summary API for account contact change notification by status
-         * @param {number} userId User ID of the resource
-         * @param {BulkAccountContactChangeNotifyByStatus} [bulkAccountContactChangeNotifyByStatus]
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        accountContactChangeNotifyByStatus: function (userId, bulkAccountContactChangeNotifyByStatus, options) {
-            return localVarFp.accountContactChangeNotifyByStatus(userId, bulkAccountContactChangeNotifyByStatus, options).then(function (request) { return request(axios, basePath); });
+        accountContactChangeNotify(userId, bulkAccountContactChangeNotify, options) {
+            return localVarFp.accountContactChangeNotify(userId, bulkAccountContactChangeNotify, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -706,23 +433,7 @@ exports.AccountsApiFactory = AccountsApiFactory;
  * @class AccountsApi
  * @extends {BaseAPI}
  */
-var AccountsApi = /** @class */ (function (_super) {
-    __extends(AccountsApi, _super);
-    function AccountsApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    /**
-     * API for account contact to add new or existing contact to account
-     * @summary API for account contact to add new or existing contact to account
-     * @param {AccountContactAddRequestBody} [accountContactAddRequestBody]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AccountsApi
-     */
-    AccountsApi.prototype.accountContactAdd = function (accountContactAddRequestBody, options) {
-        var _this = this;
-        return (0, exports.AccountsApiFp)(this.configuration).accountContactAdd(accountContactAddRequestBody, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+class AccountsApi extends base_1.BaseAPI {
     /**
      * API for account contact bulk removal
      * @summary API for account contact bulk removal
@@ -731,10 +442,9 @@ var AccountsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    AccountsApi.prototype.accountContactBulkRemove = function (bulkAccountContactRemoveRequestBody, options) {
-        var _this = this;
-        return (0, exports.AccountsApiFp)(this.configuration).accountContactBulkRemove(bulkAccountContactRemoveRequestBody, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    accountContactBulkRemove(bulkAccountContactRemoveRequestBody, options) {
+        return (0, exports.AccountsApiFp)(this.configuration).accountContactBulkRemove(bulkAccountContactRemoveRequestBody, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * API for account contact bulk update
      * @summary API for account contact bulk update
@@ -743,10 +453,9 @@ var AccountsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    AccountsApi.prototype.accountContactBulkUpdate = function (bulkAccountContactUpdateRequestBody, options) {
-        var _this = this;
-        return (0, exports.AccountsApiFp)(this.configuration).accountContactBulkUpdate(bulkAccountContactUpdateRequestBody, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    accountContactBulkUpdate(bulkAccountContactUpdateRequestBody, options) {
+        return (0, exports.AccountsApiFp)(this.configuration).accountContactBulkUpdate(bulkAccountContactUpdateRequestBody, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * API for account contact change notification
      * @summary API for account contact change notification
@@ -756,32 +465,16 @@ var AccountsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    AccountsApi.prototype.accountContactChangeNotify = function (userId, bulkAccountContactChangeNotify, options) {
-        var _this = this;
-        return (0, exports.AccountsApiFp)(this.configuration).accountContactChangeNotify(userId, bulkAccountContactChangeNotify, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    /**
-     * API for account contact change notification by status
-     * @summary API for account contact change notification by status
-     * @param {number} userId User ID of the resource
-     * @param {BulkAccountContactChangeNotifyByStatus} [bulkAccountContactChangeNotifyByStatus]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AccountsApi
-     */
-    AccountsApi.prototype.accountContactChangeNotifyByStatus = function (userId, bulkAccountContactChangeNotifyByStatus, options) {
-        var _this = this;
-        return (0, exports.AccountsApiFp)(this.configuration).accountContactChangeNotifyByStatus(userId, bulkAccountContactChangeNotifyByStatus, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return AccountsApi;
-}(base_1.BaseAPI));
+    accountContactChangeNotify(userId, bulkAccountContactChangeNotify, options) {
+        return (0, exports.AccountsApiFp)(this.configuration).accountContactChangeNotify(userId, bulkAccountContactChangeNotify, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.AccountsApi = AccountsApi;
 /**
  * ArenasApi - axios parameter creator
  * @export
  */
-var ArenasApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const ArenasApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Get an un-paginated list of allocation types.
@@ -790,31 +483,27 @@ var ArenasApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllocationTypes: function (arenaId, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('getAllocationTypes', 'arenaId', arenaId);
-                    localVarPath = "/arenas/{arena_id}/allocation_types"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getAllocationTypes: async (arenaId, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('getAllocationTypes', 'arenaId', arenaId);
+            const localVarPath = `/arenas/{arena_id}/allocation_types`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get an arena by ID.
@@ -823,31 +512,27 @@ var ArenasApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArena: function (id, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'id' is not null or undefined
-                    (0, common_1.assertParamExists)('getArena', 'id', id);
-                    localVarPath = "/arenas/{id}/"
-                        .replace("{".concat("id", "}"), encodeURIComponent(String(id)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getArena: async (id, options = {}) => {
+            // verify required parameter 'id' is not null or undefined
+            (0, common_1.assertParamExists)('getArena', 'id', id);
+            const localVarPath = `/arenas/{id}/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get allocationTypes for a given arena by ID
@@ -856,31 +541,27 @@ var ArenasApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaNetIncomeTypes: function (arenaId, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('getArenaNetIncomeTypes', 'arenaId', arenaId);
-                    localVarPath = "/arenas/{arena_id}/net_income_allocation_types"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getArenaNetIncomeTypes: async (arenaId, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('getArenaNetIncomeTypes', 'arenaId', arenaId);
+            const localVarPath = `/arenas/{arena_id}/net_income_allocation_types`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get payment settings for a given arena by ID
@@ -889,31 +570,27 @@ var ArenasApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaPaymentSettings: function (arenaId, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('getArenaPaymentSettings', 'arenaId', arenaId);
-                    localVarPath = "/arenas/{arena_id}/payment_settings"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getArenaPaymentSettings: async (arenaId, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('getArenaPaymentSettings', 'arenaId', arenaId);
+            const localVarPath = `/arenas/{arena_id}/payment_settings`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get an un-paginated list of all arenas, optionally filtered by a list of arena IDs.
@@ -922,66 +599,27 @@ var ArenasApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenas: function (ids, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    localVarPath = "/arenas/";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (ids) {
-                        localVarQueryParameter['ids'] = ids.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
-        },
-        /**
-         * Get manage account contact settings for a given arenas
-         * @summary Get manage account contact settings for a given arenas
-         * @param {Array<number>} arenaIds List of arena_ids
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getArenasManageAccountContactSettings: function (arenaIds, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaIds' is not null or undefined
-                    (0, common_1.assertParamExists)('getArenasManageAccountContactSettings', 'arenaIds', arenaIds);
-                    localVarPath = "/arenas/manage_account_contact_settings";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (arenaIds) {
-                        localVarQueryParameter['arena_ids'] = arenaIds.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getArenas: async (ids, options = {}) => {
+            const localVarPath = `/arenas/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (ids) {
+                localVarQueryParameter['ids'] = ids.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -990,8 +628,8 @@ exports.ArenasApiAxiosParamCreator = ArenasApiAxiosParamCreator;
  * ArenasApi - functional programming interface
  * @export
  */
-var ArenasApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.ArenasApiAxiosParamCreator)(configuration);
+const ArenasApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.ArenasApiAxiosParamCreator)(configuration);
     return {
         /**
          * Get an un-paginated list of allocation types.
@@ -1000,21 +638,11 @@ var ArenasApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllocationTypes: function (arenaId, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getAllocationTypes(arenaId, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['ArenasApi.getAllocationTypes']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getAllocationTypes(arenaId, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllocationTypes(arenaId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['ArenasApi.getAllocationTypes']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get an arena by ID.
@@ -1023,21 +651,11 @@ var ArenasApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArena: function (id, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getArena(id, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['ArenasApi.getArena']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getArena(id, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getArena(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['ArenasApi.getArena']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get allocationTypes for a given arena by ID
@@ -1046,21 +664,11 @@ var ArenasApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaNetIncomeTypes: function (arenaId, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getArenaNetIncomeTypes(arenaId, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['ArenasApi.getArenaNetIncomeTypes']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getArenaNetIncomeTypes(arenaId, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getArenaNetIncomeTypes(arenaId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['ArenasApi.getArenaNetIncomeTypes']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get payment settings for a given arena by ID
@@ -1069,21 +677,11 @@ var ArenasApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaPaymentSettings: function (arenaId, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getArenaPaymentSettings(arenaId, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['ArenasApi.getArenaPaymentSettings']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getArenaPaymentSettings(arenaId, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getArenaPaymentSettings(arenaId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['ArenasApi.getArenaPaymentSettings']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get an un-paginated list of all arenas, optionally filtered by a list of arena IDs.
@@ -1092,44 +690,11 @@ var ArenasApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenas: function (ids, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getArenas(ids, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['ArenasApi.getArenas']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
-        },
-        /**
-         * Get manage account contact settings for a given arenas
-         * @summary Get manage account contact settings for a given arenas
-         * @param {Array<number>} arenaIds List of arena_ids
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getArenasManageAccountContactSettings: function (arenaIds, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getArenasManageAccountContactSettings(arenaIds, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['ArenasApi.getArenasManageAccountContactSettings']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getArenas(ids, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getArenas(ids, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['ArenasApi.getArenas']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -1138,8 +703,8 @@ exports.ArenasApiFp = ArenasApiFp;
  * ArenasApi - factory interface
  * @export
  */
-var ArenasApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.ArenasApiFp)(configuration);
+const ArenasApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.ArenasApiFp)(configuration);
     return {
         /**
          * Get an un-paginated list of allocation types.
@@ -1148,8 +713,8 @@ var ArenasApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllocationTypes: function (arenaId, options) {
-            return localVarFp.getAllocationTypes(arenaId, options).then(function (request) { return request(axios, basePath); });
+        getAllocationTypes(arenaId, options) {
+            return localVarFp.getAllocationTypes(arenaId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get an arena by ID.
@@ -1158,8 +723,8 @@ var ArenasApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArena: function (id, options) {
-            return localVarFp.getArena(id, options).then(function (request) { return request(axios, basePath); });
+        getArena(id, options) {
+            return localVarFp.getArena(id, options).then((request) => request(axios, basePath));
         },
         /**
          * Get allocationTypes for a given arena by ID
@@ -1168,8 +733,8 @@ var ArenasApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaNetIncomeTypes: function (arenaId, options) {
-            return localVarFp.getArenaNetIncomeTypes(arenaId, options).then(function (request) { return request(axios, basePath); });
+        getArenaNetIncomeTypes(arenaId, options) {
+            return localVarFp.getArenaNetIncomeTypes(arenaId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get payment settings for a given arena by ID
@@ -1178,8 +743,8 @@ var ArenasApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaPaymentSettings: function (arenaId, options) {
-            return localVarFp.getArenaPaymentSettings(arenaId, options).then(function (request) { return request(axios, basePath); });
+        getArenaPaymentSettings(arenaId, options) {
+            return localVarFp.getArenaPaymentSettings(arenaId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get an un-paginated list of all arenas, optionally filtered by a list of arena IDs.
@@ -1188,18 +753,8 @@ var ArenasApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenas: function (ids, options) {
-            return localVarFp.getArenas(ids, options).then(function (request) { return request(axios, basePath); });
-        },
-        /**
-         * Get manage account contact settings for a given arenas
-         * @summary Get manage account contact settings for a given arenas
-         * @param {Array<number>} arenaIds List of arena_ids
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getArenasManageAccountContactSettings: function (arenaIds, options) {
-            return localVarFp.getArenasManageAccountContactSettings(arenaIds, options).then(function (request) { return request(axios, basePath); });
+        getArenas(ids, options) {
+            return localVarFp.getArenas(ids, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1210,11 +765,7 @@ exports.ArenasApiFactory = ArenasApiFactory;
  * @class ArenasApi
  * @extends {BaseAPI}
  */
-var ArenasApi = /** @class */ (function (_super) {
-    __extends(ArenasApi, _super);
-    function ArenasApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class ArenasApi extends base_1.BaseAPI {
     /**
      * Get an un-paginated list of allocation types.
      * @summary Get a list of allocation types for the given arena
@@ -1223,10 +774,9 @@ var ArenasApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof ArenasApi
      */
-    ArenasApi.prototype.getAllocationTypes = function (arenaId, options) {
-        var _this = this;
-        return (0, exports.ArenasApiFp)(this.configuration).getAllocationTypes(arenaId, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getAllocationTypes(arenaId, options) {
+        return (0, exports.ArenasApiFp)(this.configuration).getAllocationTypes(arenaId, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get an arena by ID.
      * @summary Get arena
@@ -1235,10 +785,9 @@ var ArenasApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof ArenasApi
      */
-    ArenasApi.prototype.getArena = function (id, options) {
-        var _this = this;
-        return (0, exports.ArenasApiFp)(this.configuration).getArena(id, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getArena(id, options) {
+        return (0, exports.ArenasApiFp)(this.configuration).getArena(id, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get allocationTypes for a given arena by ID
      * @summary Get allocation types for a given arena by ID
@@ -1247,10 +796,9 @@ var ArenasApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof ArenasApi
      */
-    ArenasApi.prototype.getArenaNetIncomeTypes = function (arenaId, options) {
-        var _this = this;
-        return (0, exports.ArenasApiFp)(this.configuration).getArenaNetIncomeTypes(arenaId, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getArenaNetIncomeTypes(arenaId, options) {
+        return (0, exports.ArenasApiFp)(this.configuration).getArenaNetIncomeTypes(arenaId, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get payment settings for a given arena by ID
      * @summary Get payment settings for a given arena
@@ -1259,10 +807,9 @@ var ArenasApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof ArenasApi
      */
-    ArenasApi.prototype.getArenaPaymentSettings = function (arenaId, options) {
-        var _this = this;
-        return (0, exports.ArenasApiFp)(this.configuration).getArenaPaymentSettings(arenaId, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getArenaPaymentSettings(arenaId, options) {
+        return (0, exports.ArenasApiFp)(this.configuration).getArenaPaymentSettings(arenaId, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get an un-paginated list of all arenas, optionally filtered by a list of arena IDs.
      * @summary Get a list of Arenas
@@ -1271,31 +818,16 @@ var ArenasApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof ArenasApi
      */
-    ArenasApi.prototype.getArenas = function (ids, options) {
-        var _this = this;
-        return (0, exports.ArenasApiFp)(this.configuration).getArenas(ids, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    /**
-     * Get manage account contact settings for a given arenas
-     * @summary Get manage account contact settings for a given arenas
-     * @param {Array<number>} arenaIds List of arena_ids
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ArenasApi
-     */
-    ArenasApi.prototype.getArenasManageAccountContactSettings = function (arenaIds, options) {
-        var _this = this;
-        return (0, exports.ArenasApiFp)(this.configuration).getArenasManageAccountContactSettings(arenaIds, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return ArenasApi;
-}(base_1.BaseAPI));
+    getArenas(ids, options) {
+        return (0, exports.ArenasApiFp)(this.configuration).getArenas(ids, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.ArenasApi = ArenasApi;
 /**
  * BankAccountApi - axios parameter creator
  * @export
  */
-var BankAccountApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const BankAccountApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Get the name of the provided bank_account_id
@@ -1304,31 +836,27 @@ var BankAccountApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBankAccount: function (id, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'id' is not null or undefined
-                    (0, common_1.assertParamExists)('getBankAccount', 'id', id);
-                    localVarPath = "/bank_account/{id}"
-                        .replace("{".concat("id", "}"), encodeURIComponent(String(id)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getBankAccount: async (id, options = {}) => {
+            // verify required parameter 'id' is not null or undefined
+            (0, common_1.assertParamExists)('getBankAccount', 'id', id);
+            const localVarPath = `/bank_account/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -1337,8 +865,8 @@ exports.BankAccountApiAxiosParamCreator = BankAccountApiAxiosParamCreator;
  * BankAccountApi - functional programming interface
  * @export
  */
-var BankAccountApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.BankAccountApiAxiosParamCreator)(configuration);
+const BankAccountApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.BankAccountApiAxiosParamCreator)(configuration);
     return {
         /**
          * Get the name of the provided bank_account_id
@@ -1347,21 +875,11 @@ var BankAccountApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBankAccount: function (id, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getBankAccount(id, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['BankAccountApi.getBankAccount']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getBankAccount(id, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getBankAccount(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['BankAccountApi.getBankAccount']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -1370,8 +888,8 @@ exports.BankAccountApiFp = BankAccountApiFp;
  * BankAccountApi - factory interface
  * @export
  */
-var BankAccountApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.BankAccountApiFp)(configuration);
+const BankAccountApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.BankAccountApiFp)(configuration);
     return {
         /**
          * Get the name of the provided bank_account_id
@@ -1380,8 +898,8 @@ var BankAccountApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBankAccount: function (id, options) {
-            return localVarFp.getBankAccount(id, options).then(function (request) { return request(axios, basePath); });
+        getBankAccount(id, options) {
+            return localVarFp.getBankAccount(id, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1392,11 +910,7 @@ exports.BankAccountApiFactory = BankAccountApiFactory;
  * @class BankAccountApi
  * @extends {BaseAPI}
  */
-var BankAccountApi = /** @class */ (function (_super) {
-    __extends(BankAccountApi, _super);
-    function BankAccountApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class BankAccountApi extends base_1.BaseAPI {
     /**
      * Get the name of the provided bank_account_id
      * @summary Get a bank account (BankAccountModel)
@@ -1405,19 +919,16 @@ var BankAccountApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof BankAccountApi
      */
-    BankAccountApi.prototype.getBankAccount = function (id, options) {
-        var _this = this;
-        return (0, exports.BankAccountApiFp)(this.configuration).getBankAccount(id, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return BankAccountApi;
-}(base_1.BaseAPI));
+    getBankAccount(id, options) {
+        return (0, exports.BankAccountApiFp)(this.configuration).getBankAccount(id, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.BankAccountApi = BankAccountApi;
 /**
  * DiligencesApi - axios parameter creator
  * @export
  */
-var DiligencesApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const DiligencesApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Create a diligence and underlying KYC/watchlists. This method is considered deprecated and used to bridge the gap until the compliance service API is fully available.
@@ -1426,30 +937,26 @@ var DiligencesApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDiligences: function (createDiligence, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    localVarPath = "/diligences";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'POST' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(createDiligence, localVarRequestOptions, configuration);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        createDiligences: async (createDiligence, options = {}) => {
+            const localVarPath = `/diligences`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(createDiligence, localVarRequestOptions, configuration);
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get an un-paginated list of diligences
@@ -1463,48 +970,44 @@ var DiligencesApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDiligences: function (diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'diligenceCategory' is not null or undefined
-                    (0, common_1.assertParamExists)('getDiligences', 'diligenceCategory', diligenceCategory);
-                    localVarPath = "/diligences";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (diligenceCategory !== undefined) {
-                        localVarQueryParameter['diligence_category'] = diligenceCategory;
-                    }
-                    if (objectType !== undefined) {
-                        localVarQueryParameter['object_type'] = objectType;
-                    }
-                    if (objectId !== undefined) {
-                        localVarQueryParameter['object_id'] = objectId;
-                    }
-                    if (objectIds) {
-                        localVarQueryParameter['object_ids'] = objectIds.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    if (diligenceType !== undefined) {
-                        localVarQueryParameter['diligence_type'] = diligenceType;
-                    }
-                    if (diligenceStatus !== undefined) {
-                        localVarQueryParameter['diligence_status'] = diligenceStatus;
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getDiligences: async (diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options = {}) => {
+            // verify required parameter 'diligenceCategory' is not null or undefined
+            (0, common_1.assertParamExists)('getDiligences', 'diligenceCategory', diligenceCategory);
+            const localVarPath = `/diligences`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (diligenceCategory !== undefined) {
+                localVarQueryParameter['diligence_category'] = diligenceCategory;
+            }
+            if (objectType !== undefined) {
+                localVarQueryParameter['object_type'] = objectType;
+            }
+            if (objectId !== undefined) {
+                localVarQueryParameter['object_id'] = objectId;
+            }
+            if (objectIds) {
+                localVarQueryParameter['object_ids'] = objectIds.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            if (diligenceType !== undefined) {
+                localVarQueryParameter['diligence_type'] = diligenceType;
+            }
+            if (diligenceStatus !== undefined) {
+                localVarQueryParameter['diligence_status'] = diligenceStatus;
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -1513,8 +1016,8 @@ exports.DiligencesApiAxiosParamCreator = DiligencesApiAxiosParamCreator;
  * DiligencesApi - functional programming interface
  * @export
  */
-var DiligencesApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.DiligencesApiAxiosParamCreator)(configuration);
+const DiligencesApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.DiligencesApiAxiosParamCreator)(configuration);
     return {
         /**
          * Create a diligence and underlying KYC/watchlists. This method is considered deprecated and used to bridge the gap until the compliance service API is fully available.
@@ -1523,21 +1026,11 @@ var DiligencesApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDiligences: function (createDiligence, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.createDiligences(createDiligence, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['DiligencesApi.createDiligences']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async createDiligences(createDiligence, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createDiligences(createDiligence, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['DiligencesApi.createDiligences']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get an un-paginated list of diligences
@@ -1551,21 +1044,11 @@ var DiligencesApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDiligences: function (diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getDiligences(diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['DiligencesApi.getDiligences']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getDiligences(diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDiligences(diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['DiligencesApi.getDiligences']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -1574,8 +1057,8 @@ exports.DiligencesApiFp = DiligencesApiFp;
  * DiligencesApi - factory interface
  * @export
  */
-var DiligencesApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.DiligencesApiFp)(configuration);
+const DiligencesApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.DiligencesApiFp)(configuration);
     return {
         /**
          * Create a diligence and underlying KYC/watchlists. This method is considered deprecated and used to bridge the gap until the compliance service API is fully available.
@@ -1584,8 +1067,8 @@ var DiligencesApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDiligences: function (createDiligence, options) {
-            return localVarFp.createDiligences(createDiligence, options).then(function (request) { return request(axios, basePath); });
+        createDiligences(createDiligence, options) {
+            return localVarFp.createDiligences(createDiligence, options).then((request) => request(axios, basePath));
         },
         /**
          * Get an un-paginated list of diligences
@@ -1599,8 +1082,8 @@ var DiligencesApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDiligences: function (diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options) {
-            return localVarFp.getDiligences(diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options).then(function (request) { return request(axios, basePath); });
+        getDiligences(diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options) {
+            return localVarFp.getDiligences(diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1611,11 +1094,7 @@ exports.DiligencesApiFactory = DiligencesApiFactory;
  * @class DiligencesApi
  * @extends {BaseAPI}
  */
-var DiligencesApi = /** @class */ (function (_super) {
-    __extends(DiligencesApi, _super);
-    function DiligencesApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class DiligencesApi extends base_1.BaseAPI {
     /**
      * Create a diligence and underlying KYC/watchlists. This method is considered deprecated and used to bridge the gap until the compliance service API is fully available.
      * @summary Create a diligence object and underlying KYC/watchlists
@@ -1624,10 +1103,9 @@ var DiligencesApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof DiligencesApi
      */
-    DiligencesApi.prototype.createDiligences = function (createDiligence, options) {
-        var _this = this;
-        return (0, exports.DiligencesApiFp)(this.configuration).createDiligences(createDiligence, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    createDiligences(createDiligence, options) {
+        return (0, exports.DiligencesApiFp)(this.configuration).createDiligences(createDiligence, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get an un-paginated list of diligences
      * @summary Get a list of diligences
@@ -1641,19 +1119,16 @@ var DiligencesApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof DiligencesApi
      */
-    DiligencesApi.prototype.getDiligences = function (diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options) {
-        var _this = this;
-        return (0, exports.DiligencesApiFp)(this.configuration).getDiligences(diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return DiligencesApi;
-}(base_1.BaseAPI));
+    getDiligences(diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options) {
+        return (0, exports.DiligencesApiFp)(this.configuration).getDiligences(diligenceCategory, objectType, objectId, objectIds, diligenceType, diligenceStatus, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.DiligencesApi = DiligencesApi;
 /**
  * DistributionApi - axios parameter creator
  * @export
  */
-var DistributionApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const DistributionApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Get a distribution by the given distribution id. This does not handle auth.
@@ -1662,31 +1137,27 @@ var DistributionApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDistribution: function (id, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'id' is not null or undefined
-                    (0, common_1.assertParamExists)('getDistribution', 'id', id);
-                    localVarPath = "/distributions/{id}"
-                        .replace("{".concat("id", "}"), encodeURIComponent(String(id)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getDistribution: async (id, options = {}) => {
+            // verify required parameter 'id' is not null or undefined
+            (0, common_1.assertParamExists)('getDistribution', 'id', id);
+            const localVarPath = `/distributions/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -1695,8 +1166,8 @@ exports.DistributionApiAxiosParamCreator = DistributionApiAxiosParamCreator;
  * DistributionApi - functional programming interface
  * @export
  */
-var DistributionApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.DistributionApiAxiosParamCreator)(configuration);
+const DistributionApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.DistributionApiAxiosParamCreator)(configuration);
     return {
         /**
          * Get a distribution by the given distribution id. This does not handle auth.
@@ -1705,21 +1176,11 @@ var DistributionApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDistribution: function (id, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getDistribution(id, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['DistributionApi.getDistribution']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getDistribution(id, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDistribution(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['DistributionApi.getDistribution']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -1728,8 +1189,8 @@ exports.DistributionApiFp = DistributionApiFp;
  * DistributionApi - factory interface
  * @export
  */
-var DistributionApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.DistributionApiFp)(configuration);
+const DistributionApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.DistributionApiFp)(configuration);
     return {
         /**
          * Get a distribution by the given distribution id. This does not handle auth.
@@ -1738,8 +1199,8 @@ var DistributionApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDistribution: function (id, options) {
-            return localVarFp.getDistribution(id, options).then(function (request) { return request(axios, basePath); });
+        getDistribution(id, options) {
+            return localVarFp.getDistribution(id, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1750,11 +1211,7 @@ exports.DistributionApiFactory = DistributionApiFactory;
  * @class DistributionApi
  * @extends {BaseAPI}
  */
-var DistributionApi = /** @class */ (function (_super) {
-    __extends(DistributionApi, _super);
-    function DistributionApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class DistributionApi extends base_1.BaseAPI {
     /**
      * Get a distribution by the given distribution id. This does not handle auth.
      * @summary Get distribution
@@ -1763,19 +1220,16 @@ var DistributionApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof DistributionApi
      */
-    DistributionApi.prototype.getDistribution = function (id, options) {
-        var _this = this;
-        return (0, exports.DistributionApiFp)(this.configuration).getDistribution(id, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return DistributionApi;
-}(base_1.BaseAPI));
+    getDistribution(id, options) {
+        return (0, exports.DistributionApiFp)(this.configuration).getDistribution(id, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.DistributionApi = DistributionApi;
 /**
  * DistributionBatchesApi - axios parameter creator
  * @export
  */
-var DistributionBatchesApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const DistributionBatchesApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Get a distribution batch by ID. This does not handle auth checks.
@@ -1784,31 +1238,27 @@ var DistributionBatchesApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDistributionBatch: function (id, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'id' is not null or undefined
-                    (0, common_1.assertParamExists)('getDistributionBatch', 'id', id);
-                    localVarPath = "/distribution_batches/{id}/"
-                        .replace("{".concat("id", "}"), encodeURIComponent(String(id)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getDistributionBatch: async (id, options = {}) => {
+            // verify required parameter 'id' is not null or undefined
+            (0, common_1.assertParamExists)('getDistributionBatch', 'id', id);
+            const localVarPath = `/distribution_batches/{id}/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get distributions for a distribution batch by distribution batch ID. This does not handle auth.
@@ -1817,31 +1267,27 @@ var DistributionBatchesApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDistributionsForDistributionBatch: function (id, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'id' is not null or undefined
-                    (0, common_1.assertParamExists)('getDistributionsForDistributionBatch', 'id', id);
-                    localVarPath = "/distribution_batches/{id}/distributions"
-                        .replace("{".concat("id", "}"), encodeURIComponent(String(id)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getDistributionsForDistributionBatch: async (id, options = {}) => {
+            // verify required parameter 'id' is not null or undefined
+            (0, common_1.assertParamExists)('getDistributionsForDistributionBatch', 'id', id);
+            const localVarPath = `/distribution_batches/{id}/distributions`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -1850,8 +1296,8 @@ exports.DistributionBatchesApiAxiosParamCreator = DistributionBatchesApiAxiosPar
  * DistributionBatchesApi - functional programming interface
  * @export
  */
-var DistributionBatchesApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.DistributionBatchesApiAxiosParamCreator)(configuration);
+const DistributionBatchesApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.DistributionBatchesApiAxiosParamCreator)(configuration);
     return {
         /**
          * Get a distribution batch by ID. This does not handle auth checks.
@@ -1860,21 +1306,11 @@ var DistributionBatchesApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDistributionBatch: function (id, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getDistributionBatch(id, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['DistributionBatchesApi.getDistributionBatch']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getDistributionBatch(id, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDistributionBatch(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['DistributionBatchesApi.getDistributionBatch']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get distributions for a distribution batch by distribution batch ID. This does not handle auth.
@@ -1883,21 +1319,11 @@ var DistributionBatchesApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDistributionsForDistributionBatch: function (id, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getDistributionsForDistributionBatch(id, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['DistributionBatchesApi.getDistributionsForDistributionBatch']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getDistributionsForDistributionBatch(id, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDistributionsForDistributionBatch(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['DistributionBatchesApi.getDistributionsForDistributionBatch']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -1906,8 +1332,8 @@ exports.DistributionBatchesApiFp = DistributionBatchesApiFp;
  * DistributionBatchesApi - factory interface
  * @export
  */
-var DistributionBatchesApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.DistributionBatchesApiFp)(configuration);
+const DistributionBatchesApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.DistributionBatchesApiFp)(configuration);
     return {
         /**
          * Get a distribution batch by ID. This does not handle auth checks.
@@ -1916,8 +1342,8 @@ var DistributionBatchesApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDistributionBatch: function (id, options) {
-            return localVarFp.getDistributionBatch(id, options).then(function (request) { return request(axios, basePath); });
+        getDistributionBatch(id, options) {
+            return localVarFp.getDistributionBatch(id, options).then((request) => request(axios, basePath));
         },
         /**
          * Get distributions for a distribution batch by distribution batch ID. This does not handle auth.
@@ -1926,8 +1352,8 @@ var DistributionBatchesApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDistributionsForDistributionBatch: function (id, options) {
-            return localVarFp.getDistributionsForDistributionBatch(id, options).then(function (request) { return request(axios, basePath); });
+        getDistributionsForDistributionBatch(id, options) {
+            return localVarFp.getDistributionsForDistributionBatch(id, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1938,11 +1364,7 @@ exports.DistributionBatchesApiFactory = DistributionBatchesApiFactory;
  * @class DistributionBatchesApi
  * @extends {BaseAPI}
  */
-var DistributionBatchesApi = /** @class */ (function (_super) {
-    __extends(DistributionBatchesApi, _super);
-    function DistributionBatchesApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class DistributionBatchesApi extends base_1.BaseAPI {
     /**
      * Get a distribution batch by ID. This does not handle auth checks.
      * @summary Get distribution batch no authorization checks
@@ -1951,10 +1373,9 @@ var DistributionBatchesApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof DistributionBatchesApi
      */
-    DistributionBatchesApi.prototype.getDistributionBatch = function (id, options) {
-        var _this = this;
-        return (0, exports.DistributionBatchesApiFp)(this.configuration).getDistributionBatch(id, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getDistributionBatch(id, options) {
+        return (0, exports.DistributionBatchesApiFp)(this.configuration).getDistributionBatch(id, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get distributions for a distribution batch by distribution batch ID. This does not handle auth.
      * @summary Get distributions for a distribution batch not authorization checks
@@ -1963,19 +1384,16 @@ var DistributionBatchesApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof DistributionBatchesApi
      */
-    DistributionBatchesApi.prototype.getDistributionsForDistributionBatch = function (id, options) {
-        var _this = this;
-        return (0, exports.DistributionBatchesApiFp)(this.configuration).getDistributionsForDistributionBatch(id, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return DistributionBatchesApi;
-}(base_1.BaseAPI));
+    getDistributionsForDistributionBatch(id, options) {
+        return (0, exports.DistributionBatchesApiFp)(this.configuration).getDistributionsForDistributionBatch(id, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.DistributionBatchesApi = DistributionBatchesApi;
 /**
  * EntitiesApi - axios parameter creator
  * @export
  */
-var EntitiesApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const EntitiesApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Get an un-paginated list of investment entities with their positions.
@@ -1985,34 +1403,30 @@ var EntitiesApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntitiesWithPositions: function (arenaId, entityIds, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('getEntitiesWithPositions', 'arenaId', arenaId);
-                    localVarPath = "/arenas/{arena_id}/entities"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (entityIds) {
-                        localVarQueryParameter['entity_ids'] = entityIds.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getEntitiesWithPositions: async (arenaId, entityIds, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('getEntitiesWithPositions', 'arenaId', arenaId);
+            const localVarPath = `/arenas/{arena_id}/entities`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (entityIds) {
+                localVarQueryParameter['entity_ids'] = entityIds.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get the name of the provided entity_id
@@ -2021,31 +1435,27 @@ var EntitiesApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntity: function (id, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'id' is not null or undefined
-                    (0, common_1.assertParamExists)('getEntity', 'id', id);
-                    localVarPath = "/entities/{id}"
-                        .replace("{".concat("id", "}"), encodeURIComponent(String(id)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getEntity: async (id, options = {}) => {
+            // verify required parameter 'id' is not null or undefined
+            (0, common_1.assertParamExists)('getEntity', 'id', id);
+            const localVarPath = `/entities/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get an un-paginated list of entity ids filtered by query params
@@ -2054,31 +1464,27 @@ var EntitiesApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntityIds: function (isFundAdmin, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    localVarPath = "/entity-ids";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (isFundAdmin !== undefined) {
-                        localVarQueryParameter['is_fund_admin'] = isFundAdmin;
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getEntityIds: async (isFundAdmin, options = {}) => {
+            const localVarPath = `/entity-ids`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (isFundAdmin !== undefined) {
+                localVarQueryParameter['is_fund_admin'] = isFundAdmin;
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get an un-paginated list of positions in an investment entity.
@@ -2089,37 +1495,33 @@ var EntitiesApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntityPositions: function (id, cabPeriodEnds, transactionDates, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'id' is not null or undefined
-                    (0, common_1.assertParamExists)('getEntityPositions', 'id', id);
-                    localVarPath = "/entities/{id}/positions"
-                        .replace("{".concat("id", "}"), encodeURIComponent(String(id)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (cabPeriodEnds) {
-                        localVarQueryParameter['cab_period_ends'] = cabPeriodEnds.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    if (transactionDates) {
-                        localVarQueryParameter['transaction_dates'] = transactionDates.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getEntityPositions: async (id, cabPeriodEnds, transactionDates, options = {}) => {
+            // verify required parameter 'id' is not null or undefined
+            (0, common_1.assertParamExists)('getEntityPositions', 'id', id);
+            const localVarPath = `/entities/{id}/positions`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (cabPeriodEnds) {
+                localVarQueryParameter['cab_period_ends'] = cabPeriodEnds.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            if (transactionDates) {
+                localVarQueryParameter['transaction_dates'] = transactionDates.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -2128,8 +1530,8 @@ exports.EntitiesApiAxiosParamCreator = EntitiesApiAxiosParamCreator;
  * EntitiesApi - functional programming interface
  * @export
  */
-var EntitiesApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.EntitiesApiAxiosParamCreator)(configuration);
+const EntitiesApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.EntitiesApiAxiosParamCreator)(configuration);
     return {
         /**
          * Get an un-paginated list of investment entities with their positions.
@@ -2139,21 +1541,11 @@ var EntitiesApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntitiesWithPositions: function (arenaId, entityIds, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getEntitiesWithPositions(arenaId, entityIds, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['EntitiesApi.getEntitiesWithPositions']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getEntitiesWithPositions(arenaId, entityIds, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getEntitiesWithPositions(arenaId, entityIds, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['EntitiesApi.getEntitiesWithPositions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get the name of the provided entity_id
@@ -2162,21 +1554,11 @@ var EntitiesApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntity: function (id, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getEntity(id, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['EntitiesApi.getEntity']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getEntity(id, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getEntity(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['EntitiesApi.getEntity']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get an un-paginated list of entity ids filtered by query params
@@ -2185,21 +1567,11 @@ var EntitiesApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntityIds: function (isFundAdmin, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getEntityIds(isFundAdmin, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['EntitiesApi.getEntityIds']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getEntityIds(isFundAdmin, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getEntityIds(isFundAdmin, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['EntitiesApi.getEntityIds']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get an un-paginated list of positions in an investment entity.
@@ -2210,21 +1582,11 @@ var EntitiesApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntityPositions: function (id, cabPeriodEnds, transactionDates, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getEntityPositions(id, cabPeriodEnds, transactionDates, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['EntitiesApi.getEntityPositions']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getEntityPositions(id, cabPeriodEnds, transactionDates, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getEntityPositions(id, cabPeriodEnds, transactionDates, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['EntitiesApi.getEntityPositions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -2233,8 +1595,8 @@ exports.EntitiesApiFp = EntitiesApiFp;
  * EntitiesApi - factory interface
  * @export
  */
-var EntitiesApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.EntitiesApiFp)(configuration);
+const EntitiesApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.EntitiesApiFp)(configuration);
     return {
         /**
          * Get an un-paginated list of investment entities with their positions.
@@ -2244,8 +1606,8 @@ var EntitiesApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntitiesWithPositions: function (arenaId, entityIds, options) {
-            return localVarFp.getEntitiesWithPositions(arenaId, entityIds, options).then(function (request) { return request(axios, basePath); });
+        getEntitiesWithPositions(arenaId, entityIds, options) {
+            return localVarFp.getEntitiesWithPositions(arenaId, entityIds, options).then((request) => request(axios, basePath));
         },
         /**
          * Get the name of the provided entity_id
@@ -2254,8 +1616,8 @@ var EntitiesApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntity: function (id, options) {
-            return localVarFp.getEntity(id, options).then(function (request) { return request(axios, basePath); });
+        getEntity(id, options) {
+            return localVarFp.getEntity(id, options).then((request) => request(axios, basePath));
         },
         /**
          * Get an un-paginated list of entity ids filtered by query params
@@ -2264,8 +1626,8 @@ var EntitiesApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntityIds: function (isFundAdmin, options) {
-            return localVarFp.getEntityIds(isFundAdmin, options).then(function (request) { return request(axios, basePath); });
+        getEntityIds(isFundAdmin, options) {
+            return localVarFp.getEntityIds(isFundAdmin, options).then((request) => request(axios, basePath));
         },
         /**
          * Get an un-paginated list of positions in an investment entity.
@@ -2276,8 +1638,8 @@ var EntitiesApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntityPositions: function (id, cabPeriodEnds, transactionDates, options) {
-            return localVarFp.getEntityPositions(id, cabPeriodEnds, transactionDates, options).then(function (request) { return request(axios, basePath); });
+        getEntityPositions(id, cabPeriodEnds, transactionDates, options) {
+            return localVarFp.getEntityPositions(id, cabPeriodEnds, transactionDates, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -2288,11 +1650,7 @@ exports.EntitiesApiFactory = EntitiesApiFactory;
  * @class EntitiesApi
  * @extends {BaseAPI}
  */
-var EntitiesApi = /** @class */ (function (_super) {
-    __extends(EntitiesApi, _super);
-    function EntitiesApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class EntitiesApi extends base_1.BaseAPI {
     /**
      * Get an un-paginated list of investment entities with their positions.
      * @summary Get a list of investment entities with their positions in an arena
@@ -2302,10 +1660,9 @@ var EntitiesApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof EntitiesApi
      */
-    EntitiesApi.prototype.getEntitiesWithPositions = function (arenaId, entityIds, options) {
-        var _this = this;
-        return (0, exports.EntitiesApiFp)(this.configuration).getEntitiesWithPositions(arenaId, entityIds, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getEntitiesWithPositions(arenaId, entityIds, options) {
+        return (0, exports.EntitiesApiFp)(this.configuration).getEntitiesWithPositions(arenaId, entityIds, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get the name of the provided entity_id
      * @summary Get an entity (AccountModel)
@@ -2314,10 +1671,9 @@ var EntitiesApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof EntitiesApi
      */
-    EntitiesApi.prototype.getEntity = function (id, options) {
-        var _this = this;
-        return (0, exports.EntitiesApiFp)(this.configuration).getEntity(id, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getEntity(id, options) {
+        return (0, exports.EntitiesApiFp)(this.configuration).getEntity(id, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get an un-paginated list of entity ids filtered by query params
      * @summary Get entity ids
@@ -2326,10 +1682,9 @@ var EntitiesApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof EntitiesApi
      */
-    EntitiesApi.prototype.getEntityIds = function (isFundAdmin, options) {
-        var _this = this;
-        return (0, exports.EntitiesApiFp)(this.configuration).getEntityIds(isFundAdmin, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getEntityIds(isFundAdmin, options) {
+        return (0, exports.EntitiesApiFp)(this.configuration).getEntityIds(isFundAdmin, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get an un-paginated list of positions in an investment entity.
      * @summary Get a list of positions in an investment entity.
@@ -2340,19 +1695,16 @@ var EntitiesApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof EntitiesApi
      */
-    EntitiesApi.prototype.getEntityPositions = function (id, cabPeriodEnds, transactionDates, options) {
-        var _this = this;
-        return (0, exports.EntitiesApiFp)(this.configuration).getEntityPositions(id, cabPeriodEnds, transactionDates, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return EntitiesApi;
-}(base_1.BaseAPI));
+    getEntityPositions(id, cabPeriodEnds, transactionDates, options) {
+        return (0, exports.EntitiesApiFp)(this.configuration).getEntityPositions(id, cabPeriodEnds, transactionDates, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.EntitiesApi = EntitiesApi;
 /**
  * FeatureFlagsApi - axios parameter creator
  * @export
  */
-var FeatureFlagsApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const FeatureFlagsApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Bulk update the state of arena feature flags.
@@ -2362,41 +1714,31 @@ var FeatureFlagsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkUpdateArenaFeatureFlags: function (arenaId, bulkUpdateFeatureFlags, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0:
-                            // verify required parameter 'arenaId' is not null or undefined
-                            (0, common_1.assertParamExists)('bulkUpdateArenaFeatureFlags', 'arenaId', arenaId);
-                            localVarPath = "/feature-flags/arena-feature-flags/{arena_id}/"
-                                .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)));
-                            localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                            if (configuration) {
-                                baseOptions = configuration.baseOptions;
-                            }
-                            localVarRequestOptions = __assign(__assign({ method: 'POST' }, baseOptions), options);
-                            localVarHeaderParameter = {};
-                            localVarQueryParameter = {};
-                            // authentication csrf-token required
-                            return [4 /*yield*/, (0, common_1.setApiKeyToObject)(localVarHeaderParameter, "X-CSRF-Token", configuration)];
-                        case 1:
-                            // authentication csrf-token required
-                            _a.sent();
-                            localVarHeaderParameter['Content-Type'] = 'application/json';
-                            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                            headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                            localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkUpdateFeatureFlags, localVarRequestOptions, configuration);
-                            return [2 /*return*/, {
-                                    url: (0, common_1.toPathString)(localVarUrlObj),
-                                    options: localVarRequestOptions,
-                                }];
-                    }
-                });
-            });
+        bulkUpdateArenaFeatureFlags: async (arenaId, bulkUpdateFeatureFlags, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('bulkUpdateArenaFeatureFlags', 'arenaId', arenaId);
+            const localVarPath = `/feature-flags/arena-feature-flags/{arena_id}/`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            // authentication csrf-token required
+            await (0, common_1.setApiKeyToObject)(localVarHeaderParameter, "X-CSRF-Token", configuration);
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkUpdateFeatureFlags, localVarRequestOptions, configuration);
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Bulk update the state of developer feature flags.
@@ -2405,38 +1747,28 @@ var FeatureFlagsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkUpdateDeveloperFeatureFlags: function (bulkUpdateFeatureFlags, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0:
-                            localVarPath = "/feature-flags/developer-feature-flags/";
-                            localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                            if (configuration) {
-                                baseOptions = configuration.baseOptions;
-                            }
-                            localVarRequestOptions = __assign(__assign({ method: 'POST' }, baseOptions), options);
-                            localVarHeaderParameter = {};
-                            localVarQueryParameter = {};
-                            // authentication csrf-token required
-                            return [4 /*yield*/, (0, common_1.setApiKeyToObject)(localVarHeaderParameter, "X-CSRF-Token", configuration)];
-                        case 1:
-                            // authentication csrf-token required
-                            _a.sent();
-                            localVarHeaderParameter['Content-Type'] = 'application/json';
-                            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                            headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                            localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkUpdateFeatureFlags, localVarRequestOptions, configuration);
-                            return [2 /*return*/, {
-                                    url: (0, common_1.toPathString)(localVarUrlObj),
-                                    options: localVarRequestOptions,
-                                }];
-                    }
-                });
-            });
+        bulkUpdateDeveloperFeatureFlags: async (bulkUpdateFeatureFlags, options = {}) => {
+            const localVarPath = `/feature-flags/developer-feature-flags/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            // authentication csrf-token required
+            await (0, common_1.setApiKeyToObject)(localVarHeaderParameter, "X-CSRF-Token", configuration);
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(bulkUpdateFeatureFlags, localVarRequestOptions, configuration);
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Retrieves an arena feature flag by feature flag name and arena domain
@@ -2446,34 +1778,30 @@ var FeatureFlagsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaFeatureFlag: function (arenaId, featureFlagName, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('getArenaFeatureFlag', 'arenaId', arenaId);
-                    // verify required parameter 'featureFlagName' is not null or undefined
-                    (0, common_1.assertParamExists)('getArenaFeatureFlag', 'featureFlagName', featureFlagName);
-                    localVarPath = "/feature-flags/arena-feature-flags/{arena_id}/{feature_flag_name}/"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)))
-                        .replace("{".concat("feature_flag_name", "}"), encodeURIComponent(String(featureFlagName)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getArenaFeatureFlag: async (arenaId, featureFlagName, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('getArenaFeatureFlag', 'arenaId', arenaId);
+            // verify required parameter 'featureFlagName' is not null or undefined
+            (0, common_1.assertParamExists)('getArenaFeatureFlag', 'featureFlagName', featureFlagName);
+            const localVarPath = `/feature-flags/arena-feature-flags/{arena_id}/{feature_flag_name}/`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)))
+                .replace(`{${"feature_flag_name"}}`, encodeURIComponent(String(featureFlagName)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Retrieves all arena-level feature flags for an arena.
@@ -2482,31 +1810,27 @@ var FeatureFlagsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaFeatureFlags: function (arenaId, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('getArenaFeatureFlags', 'arenaId', arenaId);
-                    localVarPath = "/feature-flags/arena-feature-flags/{arena_id}/"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getArenaFeatureFlags: async (arenaId, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('getArenaFeatureFlags', 'arenaId', arenaId);
+            const localVarPath = `/feature-flags/arena-feature-flags/{arena_id}/`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Retrieves a developer feature flag by name.
@@ -2515,31 +1839,27 @@ var FeatureFlagsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDeveloperFeatureFlag: function (featureFlagName, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'featureFlagName' is not null or undefined
-                    (0, common_1.assertParamExists)('getDeveloperFeatureFlag', 'featureFlagName', featureFlagName);
-                    localVarPath = "/feature-flags/developer-feature-flags/{feature_flag_name}/"
-                        .replace("{".concat("feature_flag_name", "}"), encodeURIComponent(String(featureFlagName)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getDeveloperFeatureFlag: async (featureFlagName, options = {}) => {
+            // verify required parameter 'featureFlagName' is not null or undefined
+            (0, common_1.assertParamExists)('getDeveloperFeatureFlag', 'featureFlagName', featureFlagName);
+            const localVarPath = `/feature-flags/developer-feature-flags/{feature_flag_name}/`
+                .replace(`{${"feature_flag_name"}}`, encodeURIComponent(String(featureFlagName)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Retrieves all developer feature flags.
@@ -2547,28 +1867,24 @@ var FeatureFlagsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDeveloperFeatureFlags: function (options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    localVarPath = "/feature-flags/developer-feature-flags/";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getDeveloperFeatureFlags: async (options = {}) => {
+            const localVarPath = `/feature-flags/developer-feature-flags/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Update a developer feature flag
@@ -2579,36 +1895,32 @@ var FeatureFlagsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateArenaFeatureFlag: function (arenaId, featureFlagName, updateFeatureFlag, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('updateArenaFeatureFlag', 'arenaId', arenaId);
-                    // verify required parameter 'featureFlagName' is not null or undefined
-                    (0, common_1.assertParamExists)('updateArenaFeatureFlag', 'featureFlagName', featureFlagName);
-                    localVarPath = "/feature-flags/arena-feature-flags/{arena_id}/{feature_flag_name}/"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)))
-                        .replace("{".concat("feature_flag_name", "}"), encodeURIComponent(String(featureFlagName)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'PATCH' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(updateFeatureFlag, localVarRequestOptions, configuration);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        updateArenaFeatureFlag: async (arenaId, featureFlagName, updateFeatureFlag, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('updateArenaFeatureFlag', 'arenaId', arenaId);
+            // verify required parameter 'featureFlagName' is not null or undefined
+            (0, common_1.assertParamExists)('updateArenaFeatureFlag', 'featureFlagName', featureFlagName);
+            const localVarPath = `/feature-flags/arena-feature-flags/{arena_id}/{feature_flag_name}/`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)))
+                .replace(`{${"feature_flag_name"}}`, encodeURIComponent(String(featureFlagName)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(updateFeatureFlag, localVarRequestOptions, configuration);
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Update a developer feature flag
@@ -2618,33 +1930,29 @@ var FeatureFlagsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateDeveloperFeatureFlag: function (featureFlagName, updateFeatureFlag, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'featureFlagName' is not null or undefined
-                    (0, common_1.assertParamExists)('updateDeveloperFeatureFlag', 'featureFlagName', featureFlagName);
-                    localVarPath = "/feature-flags/developer-feature-flags/{feature_flag_name}/"
-                        .replace("{".concat("feature_flag_name", "}"), encodeURIComponent(String(featureFlagName)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'PATCH' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(updateFeatureFlag, localVarRequestOptions, configuration);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        updateDeveloperFeatureFlag: async (featureFlagName, updateFeatureFlag, options = {}) => {
+            // verify required parameter 'featureFlagName' is not null or undefined
+            (0, common_1.assertParamExists)('updateDeveloperFeatureFlag', 'featureFlagName', featureFlagName);
+            const localVarPath = `/feature-flags/developer-feature-flags/{feature_flag_name}/`
+                .replace(`{${"feature_flag_name"}}`, encodeURIComponent(String(featureFlagName)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(updateFeatureFlag, localVarRequestOptions, configuration);
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -2653,8 +1961,8 @@ exports.FeatureFlagsApiAxiosParamCreator = FeatureFlagsApiAxiosParamCreator;
  * FeatureFlagsApi - functional programming interface
  * @export
  */
-var FeatureFlagsApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.FeatureFlagsApiAxiosParamCreator)(configuration);
+const FeatureFlagsApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.FeatureFlagsApiAxiosParamCreator)(configuration);
     return {
         /**
          * Bulk update the state of arena feature flags.
@@ -2664,21 +1972,11 @@ var FeatureFlagsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkUpdateArenaFeatureFlags: function (arenaId, bulkUpdateFeatureFlags, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.bulkUpdateArenaFeatureFlags(arenaId, bulkUpdateFeatureFlags, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['FeatureFlagsApi.bulkUpdateArenaFeatureFlags']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async bulkUpdateArenaFeatureFlags(arenaId, bulkUpdateFeatureFlags, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bulkUpdateArenaFeatureFlags(arenaId, bulkUpdateFeatureFlags, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['FeatureFlagsApi.bulkUpdateArenaFeatureFlags']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Bulk update the state of developer feature flags.
@@ -2687,21 +1985,11 @@ var FeatureFlagsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkUpdateDeveloperFeatureFlags: function (bulkUpdateFeatureFlags, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.bulkUpdateDeveloperFeatureFlags(bulkUpdateFeatureFlags, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['FeatureFlagsApi.bulkUpdateDeveloperFeatureFlags']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async bulkUpdateDeveloperFeatureFlags(bulkUpdateFeatureFlags, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bulkUpdateDeveloperFeatureFlags(bulkUpdateFeatureFlags, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['FeatureFlagsApi.bulkUpdateDeveloperFeatureFlags']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieves an arena feature flag by feature flag name and arena domain
@@ -2711,21 +1999,11 @@ var FeatureFlagsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaFeatureFlag: function (arenaId, featureFlagName, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getArenaFeatureFlag(arenaId, featureFlagName, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['FeatureFlagsApi.getArenaFeatureFlag']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getArenaFeatureFlag(arenaId, featureFlagName, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getArenaFeatureFlag(arenaId, featureFlagName, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['FeatureFlagsApi.getArenaFeatureFlag']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieves all arena-level feature flags for an arena.
@@ -2734,21 +2012,11 @@ var FeatureFlagsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaFeatureFlags: function (arenaId, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getArenaFeatureFlags(arenaId, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['FeatureFlagsApi.getArenaFeatureFlags']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getArenaFeatureFlags(arenaId, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getArenaFeatureFlags(arenaId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['FeatureFlagsApi.getArenaFeatureFlags']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieves a developer feature flag by name.
@@ -2757,21 +2025,11 @@ var FeatureFlagsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDeveloperFeatureFlag: function (featureFlagName, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getDeveloperFeatureFlag(featureFlagName, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['FeatureFlagsApi.getDeveloperFeatureFlag']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getDeveloperFeatureFlag(featureFlagName, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDeveloperFeatureFlag(featureFlagName, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['FeatureFlagsApi.getDeveloperFeatureFlag']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieves all developer feature flags.
@@ -2779,21 +2037,11 @@ var FeatureFlagsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDeveloperFeatureFlags: function (options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getDeveloperFeatureFlags(options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['FeatureFlagsApi.getDeveloperFeatureFlags']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getDeveloperFeatureFlags(options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDeveloperFeatureFlags(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['FeatureFlagsApi.getDeveloperFeatureFlags']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update a developer feature flag
@@ -2804,21 +2052,11 @@ var FeatureFlagsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateArenaFeatureFlag: function (arenaId, featureFlagName, updateFeatureFlag, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.updateArenaFeatureFlag(arenaId, featureFlagName, updateFeatureFlag, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['FeatureFlagsApi.updateArenaFeatureFlag']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async updateArenaFeatureFlag(arenaId, featureFlagName, updateFeatureFlag, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateArenaFeatureFlag(arenaId, featureFlagName, updateFeatureFlag, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['FeatureFlagsApi.updateArenaFeatureFlag']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update a developer feature flag
@@ -2828,21 +2066,11 @@ var FeatureFlagsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateDeveloperFeatureFlag: function (featureFlagName, updateFeatureFlag, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.updateDeveloperFeatureFlag(featureFlagName, updateFeatureFlag, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['FeatureFlagsApi.updateDeveloperFeatureFlag']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async updateDeveloperFeatureFlag(featureFlagName, updateFeatureFlag, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateDeveloperFeatureFlag(featureFlagName, updateFeatureFlag, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['FeatureFlagsApi.updateDeveloperFeatureFlag']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -2851,8 +2079,8 @@ exports.FeatureFlagsApiFp = FeatureFlagsApiFp;
  * FeatureFlagsApi - factory interface
  * @export
  */
-var FeatureFlagsApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.FeatureFlagsApiFp)(configuration);
+const FeatureFlagsApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.FeatureFlagsApiFp)(configuration);
     return {
         /**
          * Bulk update the state of arena feature flags.
@@ -2862,8 +2090,8 @@ var FeatureFlagsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkUpdateArenaFeatureFlags: function (arenaId, bulkUpdateFeatureFlags, options) {
-            return localVarFp.bulkUpdateArenaFeatureFlags(arenaId, bulkUpdateFeatureFlags, options).then(function (request) { return request(axios, basePath); });
+        bulkUpdateArenaFeatureFlags(arenaId, bulkUpdateFeatureFlags, options) {
+            return localVarFp.bulkUpdateArenaFeatureFlags(arenaId, bulkUpdateFeatureFlags, options).then((request) => request(axios, basePath));
         },
         /**
          * Bulk update the state of developer feature flags.
@@ -2872,8 +2100,8 @@ var FeatureFlagsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkUpdateDeveloperFeatureFlags: function (bulkUpdateFeatureFlags, options) {
-            return localVarFp.bulkUpdateDeveloperFeatureFlags(bulkUpdateFeatureFlags, options).then(function (request) { return request(axios, basePath); });
+        bulkUpdateDeveloperFeatureFlags(bulkUpdateFeatureFlags, options) {
+            return localVarFp.bulkUpdateDeveloperFeatureFlags(bulkUpdateFeatureFlags, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieves an arena feature flag by feature flag name and arena domain
@@ -2883,8 +2111,8 @@ var FeatureFlagsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaFeatureFlag: function (arenaId, featureFlagName, options) {
-            return localVarFp.getArenaFeatureFlag(arenaId, featureFlagName, options).then(function (request) { return request(axios, basePath); });
+        getArenaFeatureFlag(arenaId, featureFlagName, options) {
+            return localVarFp.getArenaFeatureFlag(arenaId, featureFlagName, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieves all arena-level feature flags for an arena.
@@ -2893,8 +2121,8 @@ var FeatureFlagsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getArenaFeatureFlags: function (arenaId, options) {
-            return localVarFp.getArenaFeatureFlags(arenaId, options).then(function (request) { return request(axios, basePath); });
+        getArenaFeatureFlags(arenaId, options) {
+            return localVarFp.getArenaFeatureFlags(arenaId, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieves a developer feature flag by name.
@@ -2903,8 +2131,8 @@ var FeatureFlagsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDeveloperFeatureFlag: function (featureFlagName, options) {
-            return localVarFp.getDeveloperFeatureFlag(featureFlagName, options).then(function (request) { return request(axios, basePath); });
+        getDeveloperFeatureFlag(featureFlagName, options) {
+            return localVarFp.getDeveloperFeatureFlag(featureFlagName, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieves all developer feature flags.
@@ -2912,8 +2140,8 @@ var FeatureFlagsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDeveloperFeatureFlags: function (options) {
-            return localVarFp.getDeveloperFeatureFlags(options).then(function (request) { return request(axios, basePath); });
+        getDeveloperFeatureFlags(options) {
+            return localVarFp.getDeveloperFeatureFlags(options).then((request) => request(axios, basePath));
         },
         /**
          * Update a developer feature flag
@@ -2924,8 +2152,8 @@ var FeatureFlagsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateArenaFeatureFlag: function (arenaId, featureFlagName, updateFeatureFlag, options) {
-            return localVarFp.updateArenaFeatureFlag(arenaId, featureFlagName, updateFeatureFlag, options).then(function (request) { return request(axios, basePath); });
+        updateArenaFeatureFlag(arenaId, featureFlagName, updateFeatureFlag, options) {
+            return localVarFp.updateArenaFeatureFlag(arenaId, featureFlagName, updateFeatureFlag, options).then((request) => request(axios, basePath));
         },
         /**
          * Update a developer feature flag
@@ -2935,8 +2163,8 @@ var FeatureFlagsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateDeveloperFeatureFlag: function (featureFlagName, updateFeatureFlag, options) {
-            return localVarFp.updateDeveloperFeatureFlag(featureFlagName, updateFeatureFlag, options).then(function (request) { return request(axios, basePath); });
+        updateDeveloperFeatureFlag(featureFlagName, updateFeatureFlag, options) {
+            return localVarFp.updateDeveloperFeatureFlag(featureFlagName, updateFeatureFlag, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -2947,11 +2175,7 @@ exports.FeatureFlagsApiFactory = FeatureFlagsApiFactory;
  * @class FeatureFlagsApi
  * @extends {BaseAPI}
  */
-var FeatureFlagsApi = /** @class */ (function (_super) {
-    __extends(FeatureFlagsApi, _super);
-    function FeatureFlagsApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class FeatureFlagsApi extends base_1.BaseAPI {
     /**
      * Bulk update the state of arena feature flags.
      * @summary Bulk Update Arena Feature Flags
@@ -2961,10 +2185,9 @@ var FeatureFlagsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof FeatureFlagsApi
      */
-    FeatureFlagsApi.prototype.bulkUpdateArenaFeatureFlags = function (arenaId, bulkUpdateFeatureFlags, options) {
-        var _this = this;
-        return (0, exports.FeatureFlagsApiFp)(this.configuration).bulkUpdateArenaFeatureFlags(arenaId, bulkUpdateFeatureFlags, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    bulkUpdateArenaFeatureFlags(arenaId, bulkUpdateFeatureFlags, options) {
+        return (0, exports.FeatureFlagsApiFp)(this.configuration).bulkUpdateArenaFeatureFlags(arenaId, bulkUpdateFeatureFlags, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Bulk update the state of developer feature flags.
      * @summary Bulk Update Developer Feature Flags
@@ -2973,10 +2196,9 @@ var FeatureFlagsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof FeatureFlagsApi
      */
-    FeatureFlagsApi.prototype.bulkUpdateDeveloperFeatureFlags = function (bulkUpdateFeatureFlags, options) {
-        var _this = this;
-        return (0, exports.FeatureFlagsApiFp)(this.configuration).bulkUpdateDeveloperFeatureFlags(bulkUpdateFeatureFlags, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    bulkUpdateDeveloperFeatureFlags(bulkUpdateFeatureFlags, options) {
+        return (0, exports.FeatureFlagsApiFp)(this.configuration).bulkUpdateDeveloperFeatureFlags(bulkUpdateFeatureFlags, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Retrieves an arena feature flag by feature flag name and arena domain
      * @summary Arena Feature Flag
@@ -2986,10 +2208,9 @@ var FeatureFlagsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof FeatureFlagsApi
      */
-    FeatureFlagsApi.prototype.getArenaFeatureFlag = function (arenaId, featureFlagName, options) {
-        var _this = this;
-        return (0, exports.FeatureFlagsApiFp)(this.configuration).getArenaFeatureFlag(arenaId, featureFlagName, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getArenaFeatureFlag(arenaId, featureFlagName, options) {
+        return (0, exports.FeatureFlagsApiFp)(this.configuration).getArenaFeatureFlag(arenaId, featureFlagName, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Retrieves all arena-level feature flags for an arena.
      * @summary Feature Flags for Arena
@@ -2998,10 +2219,9 @@ var FeatureFlagsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof FeatureFlagsApi
      */
-    FeatureFlagsApi.prototype.getArenaFeatureFlags = function (arenaId, options) {
-        var _this = this;
-        return (0, exports.FeatureFlagsApiFp)(this.configuration).getArenaFeatureFlags(arenaId, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getArenaFeatureFlags(arenaId, options) {
+        return (0, exports.FeatureFlagsApiFp)(this.configuration).getArenaFeatureFlags(arenaId, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Retrieves a developer feature flag by name.
      * @summary Developer Feature Flag
@@ -3010,10 +2230,9 @@ var FeatureFlagsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof FeatureFlagsApi
      */
-    FeatureFlagsApi.prototype.getDeveloperFeatureFlag = function (featureFlagName, options) {
-        var _this = this;
-        return (0, exports.FeatureFlagsApiFp)(this.configuration).getDeveloperFeatureFlag(featureFlagName, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getDeveloperFeatureFlag(featureFlagName, options) {
+        return (0, exports.FeatureFlagsApiFp)(this.configuration).getDeveloperFeatureFlag(featureFlagName, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Retrieves all developer feature flags.
      * @summary Developer Feature Flags
@@ -3021,10 +2240,9 @@ var FeatureFlagsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof FeatureFlagsApi
      */
-    FeatureFlagsApi.prototype.getDeveloperFeatureFlags = function (options) {
-        var _this = this;
-        return (0, exports.FeatureFlagsApiFp)(this.configuration).getDeveloperFeatureFlags(options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getDeveloperFeatureFlags(options) {
+        return (0, exports.FeatureFlagsApiFp)(this.configuration).getDeveloperFeatureFlags(options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Update a developer feature flag
      * @summary Update Arena Feature Flag
@@ -3035,10 +2253,9 @@ var FeatureFlagsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof FeatureFlagsApi
      */
-    FeatureFlagsApi.prototype.updateArenaFeatureFlag = function (arenaId, featureFlagName, updateFeatureFlag, options) {
-        var _this = this;
-        return (0, exports.FeatureFlagsApiFp)(this.configuration).updateArenaFeatureFlag(arenaId, featureFlagName, updateFeatureFlag, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    updateArenaFeatureFlag(arenaId, featureFlagName, updateFeatureFlag, options) {
+        return (0, exports.FeatureFlagsApiFp)(this.configuration).updateArenaFeatureFlag(arenaId, featureFlagName, updateFeatureFlag, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Update a developer feature flag
      * @summary Update Developer Feature Flag
@@ -3048,19 +2265,16 @@ var FeatureFlagsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof FeatureFlagsApi
      */
-    FeatureFlagsApi.prototype.updateDeveloperFeatureFlag = function (featureFlagName, updateFeatureFlag, options) {
-        var _this = this;
-        return (0, exports.FeatureFlagsApiFp)(this.configuration).updateDeveloperFeatureFlag(featureFlagName, updateFeatureFlag, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return FeatureFlagsApi;
-}(base_1.BaseAPI));
+    updateDeveloperFeatureFlag(featureFlagName, updateFeatureFlag, options) {
+        return (0, exports.FeatureFlagsApiFp)(this.configuration).updateDeveloperFeatureFlag(featureFlagName, updateFeatureFlag, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.FeatureFlagsApi = FeatureFlagsApi;
 /**
  * PaymentPrefsApi - axios parameter creator
  * @export
  */
-var PaymentPrefsApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const PaymentPrefsApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Get an un-paginated list of payment prefs filtered by a required list of payment pref IDs.
@@ -3069,33 +2283,29 @@ var PaymentPrefsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPaymentPrefs: function (ids, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'ids' is not null or undefined
-                    (0, common_1.assertParamExists)('getPaymentPrefs', 'ids', ids);
-                    localVarPath = "/payment_prefs";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (ids) {
-                        localVarQueryParameter['ids'] = ids.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getPaymentPrefs: async (ids, options = {}) => {
+            // verify required parameter 'ids' is not null or undefined
+            (0, common_1.assertParamExists)('getPaymentPrefs', 'ids', ids);
+            const localVarPath = `/payment_prefs`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (ids) {
+                localVarQueryParameter['ids'] = ids.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Update (patch) the fields for a specific payment pref. This only supports verification status at the moment.
@@ -3105,33 +2315,29 @@ var PaymentPrefsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updatePaymentPref: function (id, updatePaymentPrefOptions, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'id' is not null or undefined
-                    (0, common_1.assertParamExists)('updatePaymentPref', 'id', id);
-                    localVarPath = "/payment_prefs/{id}"
-                        .replace("{".concat("id", "}"), encodeURIComponent(String(id)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'PATCH' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    localVarHeaderParameter['Content-Type'] = 'application/json';
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(updatePaymentPrefOptions, localVarRequestOptions, configuration);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        updatePaymentPref: async (id, updatePaymentPrefOptions, options = {}) => {
+            // verify required parameter 'id' is not null or undefined
+            (0, common_1.assertParamExists)('updatePaymentPref', 'id', id);
+            const localVarPath = `/payment_prefs/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            localVarRequestOptions.data = (0, common_1.serializeDataIfNeeded)(updatePaymentPrefOptions, localVarRequestOptions, configuration);
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -3140,8 +2346,8 @@ exports.PaymentPrefsApiAxiosParamCreator = PaymentPrefsApiAxiosParamCreator;
  * PaymentPrefsApi - functional programming interface
  * @export
  */
-var PaymentPrefsApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.PaymentPrefsApiAxiosParamCreator)(configuration);
+const PaymentPrefsApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.PaymentPrefsApiAxiosParamCreator)(configuration);
     return {
         /**
          * Get an un-paginated list of payment prefs filtered by a required list of payment pref IDs.
@@ -3150,21 +2356,11 @@ var PaymentPrefsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPaymentPrefs: function (ids, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getPaymentPrefs(ids, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['PaymentPrefsApi.getPaymentPrefs']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getPaymentPrefs(ids, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPaymentPrefs(ids, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['PaymentPrefsApi.getPaymentPrefs']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update (patch) the fields for a specific payment pref. This only supports verification status at the moment.
@@ -3174,21 +2370,11 @@ var PaymentPrefsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updatePaymentPref: function (id, updatePaymentPrefOptions, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.updatePaymentPref(id, updatePaymentPrefOptions, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['PaymentPrefsApi.updatePaymentPref']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async updatePaymentPref(id, updatePaymentPrefOptions, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updatePaymentPref(id, updatePaymentPrefOptions, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['PaymentPrefsApi.updatePaymentPref']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -3197,8 +2383,8 @@ exports.PaymentPrefsApiFp = PaymentPrefsApiFp;
  * PaymentPrefsApi - factory interface
  * @export
  */
-var PaymentPrefsApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.PaymentPrefsApiFp)(configuration);
+const PaymentPrefsApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.PaymentPrefsApiFp)(configuration);
     return {
         /**
          * Get an un-paginated list of payment prefs filtered by a required list of payment pref IDs.
@@ -3207,8 +2393,8 @@ var PaymentPrefsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPaymentPrefs: function (ids, options) {
-            return localVarFp.getPaymentPrefs(ids, options).then(function (request) { return request(axios, basePath); });
+        getPaymentPrefs(ids, options) {
+            return localVarFp.getPaymentPrefs(ids, options).then((request) => request(axios, basePath));
         },
         /**
          * Update (patch) the fields for a specific payment pref. This only supports verification status at the moment.
@@ -3218,8 +2404,8 @@ var PaymentPrefsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updatePaymentPref: function (id, updatePaymentPrefOptions, options) {
-            return localVarFp.updatePaymentPref(id, updatePaymentPrefOptions, options).then(function (request) { return request(axios, basePath); });
+        updatePaymentPref(id, updatePaymentPrefOptions, options) {
+            return localVarFp.updatePaymentPref(id, updatePaymentPrefOptions, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -3230,11 +2416,7 @@ exports.PaymentPrefsApiFactory = PaymentPrefsApiFactory;
  * @class PaymentPrefsApi
  * @extends {BaseAPI}
  */
-var PaymentPrefsApi = /** @class */ (function (_super) {
-    __extends(PaymentPrefsApi, _super);
-    function PaymentPrefsApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class PaymentPrefsApi extends base_1.BaseAPI {
     /**
      * Get an un-paginated list of payment prefs filtered by a required list of payment pref IDs.
      * @summary Get a list of payment prefs
@@ -3243,10 +2425,9 @@ var PaymentPrefsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof PaymentPrefsApi
      */
-    PaymentPrefsApi.prototype.getPaymentPrefs = function (ids, options) {
-        var _this = this;
-        return (0, exports.PaymentPrefsApiFp)(this.configuration).getPaymentPrefs(ids, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getPaymentPrefs(ids, options) {
+        return (0, exports.PaymentPrefsApiFp)(this.configuration).getPaymentPrefs(ids, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Update (patch) the fields for a specific payment pref. This only supports verification status at the moment.
      * @summary Update payment pref
@@ -3256,19 +2437,16 @@ var PaymentPrefsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof PaymentPrefsApi
      */
-    PaymentPrefsApi.prototype.updatePaymentPref = function (id, updatePaymentPrefOptions, options) {
-        var _this = this;
-        return (0, exports.PaymentPrefsApiFp)(this.configuration).updatePaymentPref(id, updatePaymentPrefOptions, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return PaymentPrefsApi;
-}(base_1.BaseAPI));
+    updatePaymentPref(id, updatePaymentPrefOptions, options) {
+        return (0, exports.PaymentPrefsApiFp)(this.configuration).updatePaymentPref(id, updatePaymentPrefOptions, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.PaymentPrefsApi = PaymentPrefsApi;
 /**
  * PermissionsApi - axios parameter creator
  * @export
  */
-var PermissionsApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const PermissionsApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Returns a list of granular permissions given user has.
@@ -3278,81 +2456,30 @@ var PermissionsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGranularPermissions: function (arenaId, userId, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('getGranularPermissions', 'arenaId', arenaId);
-                    // verify required parameter 'userId' is not null or undefined
-                    (0, common_1.assertParamExists)('getGranularPermissions', 'userId', userId);
-                    localVarPath = "/arenas/{arena_id}/users/{user_id}/granular_permissions"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)))
-                        .replace("{".concat("user_id", "}"), encodeURIComponent(String(userId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
-        },
-        /**
-         * Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-         * @summary Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-         * @param {number} userId Required user_id to filter by.
-         * @param {ObjectAuthorizedClass} objectAuthorizedClass Required object_authorized_class to filter by. Should match an AuthorizedClass enum.
-         * @param {Array<Permission>} permissions List of object level permissions to filter by
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getObjectClassLevelPermissions: function (userId, objectAuthorizedClass, permissions, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'userId' is not null or undefined
-                    (0, common_1.assertParamExists)('getObjectClassLevelPermissions', 'userId', userId);
-                    // verify required parameter 'objectAuthorizedClass' is not null or undefined
-                    (0, common_1.assertParamExists)('getObjectClassLevelPermissions', 'objectAuthorizedClass', objectAuthorizedClass);
-                    // verify required parameter 'permissions' is not null or undefined
-                    (0, common_1.assertParamExists)('getObjectClassLevelPermissions', 'permissions', permissions);
-                    localVarPath = "/object_class_level_permission";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (userId !== undefined) {
-                        localVarQueryParameter['user_id'] = userId;
-                    }
-                    if (objectAuthorizedClass !== undefined) {
-                        localVarQueryParameter['object_authorized_class'] = objectAuthorizedClass;
-                    }
-                    if (permissions) {
-                        localVarQueryParameter['permissions'] = permissions;
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getGranularPermissions: async (arenaId, userId, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('getGranularPermissions', 'arenaId', arenaId);
+            // verify required parameter 'userId' is not null or undefined
+            (0, common_1.assertParamExists)('getGranularPermissions', 'userId', userId);
+            const localVarPath = `/arenas/{arena_id}/users/{user_id}/granular_permissions`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)))
+                .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
@@ -3364,48 +2491,44 @@ var PermissionsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getObjectLevelPermissions: function (userId, objectType, objectIds, permissions, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'userId' is not null or undefined
-                    (0, common_1.assertParamExists)('getObjectLevelPermissions', 'userId', userId);
-                    // verify required parameter 'objectType' is not null or undefined
-                    (0, common_1.assertParamExists)('getObjectLevelPermissions', 'objectType', objectType);
-                    // verify required parameter 'objectIds' is not null or undefined
-                    (0, common_1.assertParamExists)('getObjectLevelPermissions', 'objectIds', objectIds);
-                    // verify required parameter 'permissions' is not null or undefined
-                    (0, common_1.assertParamExists)('getObjectLevelPermissions', 'permissions', permissions);
-                    localVarPath = "/object_level_permission";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (userId !== undefined) {
-                        localVarQueryParameter['user_id'] = userId;
-                    }
-                    if (objectType !== undefined) {
-                        localVarQueryParameter['object_type'] = objectType;
-                    }
-                    if (objectIds) {
-                        localVarQueryParameter['object_ids'] = objectIds.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    if (permissions) {
-                        localVarQueryParameter['permissions'] = permissions;
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getObjectLevelPermissions: async (userId, objectType, objectIds, permissions, options = {}) => {
+            // verify required parameter 'userId' is not null or undefined
+            (0, common_1.assertParamExists)('getObjectLevelPermissions', 'userId', userId);
+            // verify required parameter 'objectType' is not null or undefined
+            (0, common_1.assertParamExists)('getObjectLevelPermissions', 'objectType', objectType);
+            // verify required parameter 'objectIds' is not null or undefined
+            (0, common_1.assertParamExists)('getObjectLevelPermissions', 'objectIds', objectIds);
+            // verify required parameter 'permissions' is not null or undefined
+            (0, common_1.assertParamExists)('getObjectLevelPermissions', 'permissions', permissions);
+            const localVarPath = `/object_level_permission`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (userId !== undefined) {
+                localVarQueryParameter['user_id'] = userId;
+            }
+            if (objectType !== undefined) {
+                localVarQueryParameter['object_type'] = objectType;
+            }
+            if (objectIds) {
+                localVarQueryParameter['object_ids'] = objectIds.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            if (permissions) {
+                localVarQueryParameter['permissions'] = permissions;
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -3414,8 +2537,8 @@ exports.PermissionsApiAxiosParamCreator = PermissionsApiAxiosParamCreator;
  * PermissionsApi - functional programming interface
  * @export
  */
-var PermissionsApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.PermissionsApiAxiosParamCreator)(configuration);
+const PermissionsApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.PermissionsApiAxiosParamCreator)(configuration);
     return {
         /**
          * Returns a list of granular permissions given user has.
@@ -3425,46 +2548,11 @@ var PermissionsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGranularPermissions: function (arenaId, userId, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getGranularPermissions(arenaId, userId, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['PermissionsApi.getGranularPermissions']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
-        },
-        /**
-         * Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-         * @summary Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-         * @param {number} userId Required user_id to filter by.
-         * @param {ObjectAuthorizedClass} objectAuthorizedClass Required object_authorized_class to filter by. Should match an AuthorizedClass enum.
-         * @param {Array<Permission>} permissions List of object level permissions to filter by
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getObjectClassLevelPermissions: function (userId, objectAuthorizedClass, permissions, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getObjectClassLevelPermissions(userId, objectAuthorizedClass, permissions, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['PermissionsApi.getObjectClassLevelPermissions']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getGranularPermissions(arenaId, userId, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGranularPermissions(arenaId, userId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['PermissionsApi.getGranularPermissions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
@@ -3476,21 +2564,11 @@ var PermissionsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getObjectLevelPermissions: function (userId, objectType, objectIds, permissions, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getObjectLevelPermissions(userId, objectType, objectIds, permissions, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['PermissionsApi.getObjectLevelPermissions']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getObjectLevelPermissions(userId, objectType, objectIds, permissions, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getObjectLevelPermissions(userId, objectType, objectIds, permissions, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['PermissionsApi.getObjectLevelPermissions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -3499,8 +2577,8 @@ exports.PermissionsApiFp = PermissionsApiFp;
  * PermissionsApi - factory interface
  * @export
  */
-var PermissionsApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.PermissionsApiFp)(configuration);
+const PermissionsApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.PermissionsApiFp)(configuration);
     return {
         /**
          * Returns a list of granular permissions given user has.
@@ -3510,20 +2588,8 @@ var PermissionsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGranularPermissions: function (arenaId, userId, options) {
-            return localVarFp.getGranularPermissions(arenaId, userId, options).then(function (request) { return request(axios, basePath); });
-        },
-        /**
-         * Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-         * @summary Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-         * @param {number} userId Required user_id to filter by.
-         * @param {ObjectAuthorizedClass} objectAuthorizedClass Required object_authorized_class to filter by. Should match an AuthorizedClass enum.
-         * @param {Array<Permission>} permissions List of object level permissions to filter by
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getObjectClassLevelPermissions: function (userId, objectAuthorizedClass, permissions, options) {
-            return localVarFp.getObjectClassLevelPermissions(userId, objectAuthorizedClass, permissions, options).then(function (request) { return request(axios, basePath); });
+        getGranularPermissions(arenaId, userId, options) {
+            return localVarFp.getGranularPermissions(arenaId, userId, options).then((request) => request(axios, basePath));
         },
         /**
          * Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
@@ -3535,8 +2601,8 @@ var PermissionsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getObjectLevelPermissions: function (userId, objectType, objectIds, permissions, options) {
-            return localVarFp.getObjectLevelPermissions(userId, objectType, objectIds, permissions, options).then(function (request) { return request(axios, basePath); });
+        getObjectLevelPermissions(userId, objectType, objectIds, permissions, options) {
+            return localVarFp.getObjectLevelPermissions(userId, objectType, objectIds, permissions, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -3547,11 +2613,7 @@ exports.PermissionsApiFactory = PermissionsApiFactory;
  * @class PermissionsApi
  * @extends {BaseAPI}
  */
-var PermissionsApi = /** @class */ (function (_super) {
-    __extends(PermissionsApi, _super);
-    function PermissionsApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class PermissionsApi extends base_1.BaseAPI {
     /**
      * Returns a list of granular permissions given user has.
      * @summary Returns a list of granular permissions given user has.
@@ -3561,24 +2623,9 @@ var PermissionsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof PermissionsApi
      */
-    PermissionsApi.prototype.getGranularPermissions = function (arenaId, userId, options) {
-        var _this = this;
-        return (0, exports.PermissionsApiFp)(this.configuration).getGranularPermissions(arenaId, userId, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    /**
-     * Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-     * @summary Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-     * @param {number} userId Required user_id to filter by.
-     * @param {ObjectAuthorizedClass} objectAuthorizedClass Required object_authorized_class to filter by. Should match an AuthorizedClass enum.
-     * @param {Array<Permission>} permissions List of object level permissions to filter by
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof PermissionsApi
-     */
-    PermissionsApi.prototype.getObjectClassLevelPermissions = function (userId, objectAuthorizedClass, permissions, options) {
-        var _this = this;
-        return (0, exports.PermissionsApiFp)(this.configuration).getObjectClassLevelPermissions(userId, objectAuthorizedClass, permissions, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getGranularPermissions(arenaId, userId, options) {
+        return (0, exports.PermissionsApiFp)(this.configuration).getGranularPermissions(arenaId, userId, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
      * @summary Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
@@ -3590,19 +2637,16 @@ var PermissionsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof PermissionsApi
      */
-    PermissionsApi.prototype.getObjectLevelPermissions = function (userId, objectType, objectIds, permissions, options) {
-        var _this = this;
-        return (0, exports.PermissionsApiFp)(this.configuration).getObjectLevelPermissions(userId, objectType, objectIds, permissions, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return PermissionsApi;
-}(base_1.BaseAPI));
+    getObjectLevelPermissions(userId, objectType, objectIds, permissions, options) {
+        return (0, exports.PermissionsApiFp)(this.configuration).getObjectLevelPermissions(userId, objectType, objectIds, permissions, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.PermissionsApi = PermissionsApi;
 /**
  * PositionsApi - axios parameter creator
  * @export
  */
-var PositionsApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const PositionsApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Gets position of a specific arena and source
@@ -3612,34 +2656,30 @@ var PositionsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getExternalPosition: function (arenaId, externalPositionId, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('getExternalPosition', 'arenaId', arenaId);
-                    // verify required parameter 'externalPositionId' is not null or undefined
-                    (0, common_1.assertParamExists)('getExternalPosition', 'externalPositionId', externalPositionId);
-                    localVarPath = "/arenas/{arena_id}/external_positions/{external_position_id}"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)))
-                        .replace("{".concat("external_position_id", "}"), encodeURIComponent(String(externalPositionId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getExternalPosition: async (arenaId, externalPositionId, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('getExternalPosition', 'arenaId', arenaId);
+            // verify required parameter 'externalPositionId' is not null or undefined
+            (0, common_1.assertParamExists)('getExternalPosition', 'externalPositionId', externalPositionId);
+            const localVarPath = `/arenas/{arena_id}/external_positions/{external_position_id}`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)))
+                .replace(`{${"external_position_id"}}`, encodeURIComponent(String(externalPositionId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get an un-paginated list of the entity\'s positions in its directly-owned operating companies.
@@ -3651,40 +2691,36 @@ var PositionsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOpcoPositions: function (arenaId, entityId, excludeInactive, asOfDate, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('getOpcoPositions', 'arenaId', arenaId);
-                    // verify required parameter 'entityId' is not null or undefined
-                    (0, common_1.assertParamExists)('getOpcoPositions', 'entityId', entityId);
-                    localVarPath = "/arenas/{arena_id}/entities/{entity_id}/opco_positions"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)))
-                        .replace("{".concat("entity_id", "}"), encodeURIComponent(String(entityId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (excludeInactive !== undefined) {
-                        localVarQueryParameter['exclude_inactive'] = excludeInactive;
-                    }
-                    if (asOfDate !== undefined) {
-                        localVarQueryParameter['as_of_date'] = asOfDate;
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getOpcoPositions: async (arenaId, entityId, excludeInactive, asOfDate, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('getOpcoPositions', 'arenaId', arenaId);
+            // verify required parameter 'entityId' is not null or undefined
+            (0, common_1.assertParamExists)('getOpcoPositions', 'entityId', entityId);
+            const localVarPath = `/arenas/{arena_id}/entities/{entity_id}/opco_positions`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)))
+                .replace(`{${"entity_id"}}`, encodeURIComponent(String(entityId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (excludeInactive !== undefined) {
+                localVarQueryParameter['exclude_inactive'] = excludeInactive;
+            }
+            if (asOfDate !== undefined) {
+                localVarQueryParameter['as_of_date'] = asOfDate;
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Gets positions by ids with account, investor group, and investment entity ids.
@@ -3694,34 +2730,30 @@ var PositionsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPositionsAttributes: function (arenaId, positionIds, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'arenaId' is not null or undefined
-                    (0, common_1.assertParamExists)('getPositionsAttributes', 'arenaId', arenaId);
-                    localVarPath = "/arenas/{arena_id}/positions_attributes"
-                        .replace("{".concat("arena_id", "}"), encodeURIComponent(String(arenaId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (positionIds) {
-                        localVarQueryParameter['position_ids'] = positionIds.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getPositionsAttributes: async (arenaId, positionIds, options = {}) => {
+            // verify required parameter 'arenaId' is not null or undefined
+            (0, common_1.assertParamExists)('getPositionsAttributes', 'arenaId', arenaId);
+            const localVarPath = `/arenas/{arena_id}/positions_attributes`
+                .replace(`{${"arena_id"}}`, encodeURIComponent(String(arenaId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (positionIds) {
+                localVarQueryParameter['position_ids'] = positionIds.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -3730,8 +2762,8 @@ exports.PositionsApiAxiosParamCreator = PositionsApiAxiosParamCreator;
  * PositionsApi - functional programming interface
  * @export
  */
-var PositionsApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.PositionsApiAxiosParamCreator)(configuration);
+const PositionsApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.PositionsApiAxiosParamCreator)(configuration);
     return {
         /**
          * Gets position of a specific arena and source
@@ -3741,21 +2773,11 @@ var PositionsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getExternalPosition: function (arenaId, externalPositionId, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getExternalPosition(arenaId, externalPositionId, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['PositionsApi.getExternalPosition']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getExternalPosition(arenaId, externalPositionId, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getExternalPosition(arenaId, externalPositionId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['PositionsApi.getExternalPosition']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get an un-paginated list of the entity\'s positions in its directly-owned operating companies.
@@ -3767,21 +2789,11 @@ var PositionsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOpcoPositions: function (arenaId, entityId, excludeInactive, asOfDate, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getOpcoPositions(arenaId, entityId, excludeInactive, asOfDate, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['PositionsApi.getOpcoPositions']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getOpcoPositions(arenaId, entityId, excludeInactive, asOfDate, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOpcoPositions(arenaId, entityId, excludeInactive, asOfDate, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['PositionsApi.getOpcoPositions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Gets positions by ids with account, investor group, and investment entity ids.
@@ -3791,21 +2803,11 @@ var PositionsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPositionsAttributes: function (arenaId, positionIds, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getPositionsAttributes(arenaId, positionIds, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['PositionsApi.getPositionsAttributes']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getPositionsAttributes(arenaId, positionIds, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPositionsAttributes(arenaId, positionIds, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['PositionsApi.getPositionsAttributes']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -3814,8 +2816,8 @@ exports.PositionsApiFp = PositionsApiFp;
  * PositionsApi - factory interface
  * @export
  */
-var PositionsApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.PositionsApiFp)(configuration);
+const PositionsApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.PositionsApiFp)(configuration);
     return {
         /**
          * Gets position of a specific arena and source
@@ -3825,8 +2827,8 @@ var PositionsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getExternalPosition: function (arenaId, externalPositionId, options) {
-            return localVarFp.getExternalPosition(arenaId, externalPositionId, options).then(function (request) { return request(axios, basePath); });
+        getExternalPosition(arenaId, externalPositionId, options) {
+            return localVarFp.getExternalPosition(arenaId, externalPositionId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get an un-paginated list of the entity\'s positions in its directly-owned operating companies.
@@ -3838,8 +2840,8 @@ var PositionsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOpcoPositions: function (arenaId, entityId, excludeInactive, asOfDate, options) {
-            return localVarFp.getOpcoPositions(arenaId, entityId, excludeInactive, asOfDate, options).then(function (request) { return request(axios, basePath); });
+        getOpcoPositions(arenaId, entityId, excludeInactive, asOfDate, options) {
+            return localVarFp.getOpcoPositions(arenaId, entityId, excludeInactive, asOfDate, options).then((request) => request(axios, basePath));
         },
         /**
          * Gets positions by ids with account, investor group, and investment entity ids.
@@ -3849,8 +2851,8 @@ var PositionsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPositionsAttributes: function (arenaId, positionIds, options) {
-            return localVarFp.getPositionsAttributes(arenaId, positionIds, options).then(function (request) { return request(axios, basePath); });
+        getPositionsAttributes(arenaId, positionIds, options) {
+            return localVarFp.getPositionsAttributes(arenaId, positionIds, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -3861,11 +2863,7 @@ exports.PositionsApiFactory = PositionsApiFactory;
  * @class PositionsApi
  * @extends {BaseAPI}
  */
-var PositionsApi = /** @class */ (function (_super) {
-    __extends(PositionsApi, _super);
-    function PositionsApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class PositionsApi extends base_1.BaseAPI {
     /**
      * Gets position of a specific arena and source
      * @summary Gets position of a specific arena and source
@@ -3875,10 +2873,9 @@ var PositionsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof PositionsApi
      */
-    PositionsApi.prototype.getExternalPosition = function (arenaId, externalPositionId, options) {
-        var _this = this;
-        return (0, exports.PositionsApiFp)(this.configuration).getExternalPosition(arenaId, externalPositionId, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getExternalPosition(arenaId, externalPositionId, options) {
+        return (0, exports.PositionsApiFp)(this.configuration).getExternalPosition(arenaId, externalPositionId, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get an un-paginated list of the entity\'s positions in its directly-owned operating companies.
      * @summary Get a list of the entity\'s positions in its directly-owned operating companies.
@@ -3890,10 +2887,9 @@ var PositionsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof PositionsApi
      */
-    PositionsApi.prototype.getOpcoPositions = function (arenaId, entityId, excludeInactive, asOfDate, options) {
-        var _this = this;
-        return (0, exports.PositionsApiFp)(this.configuration).getOpcoPositions(arenaId, entityId, excludeInactive, asOfDate, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getOpcoPositions(arenaId, entityId, excludeInactive, asOfDate, options) {
+        return (0, exports.PositionsApiFp)(this.configuration).getOpcoPositions(arenaId, entityId, excludeInactive, asOfDate, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Gets positions by ids with account, investor group, and investment entity ids.
      * @summary Gets positions by ids with account, investor group, and investment entity ids.
@@ -3903,19 +2899,16 @@ var PositionsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof PositionsApi
      */
-    PositionsApi.prototype.getPositionsAttributes = function (arenaId, positionIds, options) {
-        var _this = this;
-        return (0, exports.PositionsApiFp)(this.configuration).getPositionsAttributes(arenaId, positionIds, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return PositionsApi;
-}(base_1.BaseAPI));
+    getPositionsAttributes(arenaId, positionIds, options) {
+        return (0, exports.PositionsApiFp)(this.configuration).getPositionsAttributes(arenaId, positionIds, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.PositionsApi = PositionsApi;
 /**
  * TransactionsApi - axios parameter creator
  * @export
  */
-var TransactionsApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const TransactionsApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Returns the transaction rollup status for a specified batch ID.
@@ -3924,31 +2917,27 @@ var TransactionsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionRollupStatus: function (syncId, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'syncId' is not null or undefined
-                    (0, common_1.assertParamExists)('getTransactionRollupStatus', 'syncId', syncId);
-                    localVarPath = "/transaction-rollups/{sync_id}"
-                        .replace("{".concat("sync_id", "}"), encodeURIComponent(String(syncId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getTransactionRollupStatus: async (syncId, options = {}) => {
+            // verify required parameter 'syncId' is not null or undefined
+            (0, common_1.assertParamExists)('getTransactionRollupStatus', 'syncId', syncId);
+            const localVarPath = `/transaction-rollups/{sync_id}`
+                .replace(`{${"sync_id"}}`, encodeURIComponent(String(syncId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Returns a list of transaction rollup statuses based on the provided batch IDs.
@@ -3957,33 +2946,29 @@ var TransactionsApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionRollupStatuses: function (syncIds, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'syncIds' is not null or undefined
-                    (0, common_1.assertParamExists)('getTransactionRollupStatuses', 'syncIds', syncIds);
-                    localVarPath = "/transaction-rollups";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (syncIds) {
-                        localVarQueryParameter['sync_ids'] = syncIds;
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getTransactionRollupStatuses: async (syncIds, options = {}) => {
+            // verify required parameter 'syncIds' is not null or undefined
+            (0, common_1.assertParamExists)('getTransactionRollupStatuses', 'syncIds', syncIds);
+            const localVarPath = `/transaction-rollups`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (syncIds) {
+                localVarQueryParameter['sync_ids'] = syncIds;
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -3992,8 +2977,8 @@ exports.TransactionsApiAxiosParamCreator = TransactionsApiAxiosParamCreator;
  * TransactionsApi - functional programming interface
  * @export
  */
-var TransactionsApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.TransactionsApiAxiosParamCreator)(configuration);
+const TransactionsApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.TransactionsApiAxiosParamCreator)(configuration);
     return {
         /**
          * Returns the transaction rollup status for a specified batch ID.
@@ -4002,21 +2987,11 @@ var TransactionsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionRollupStatus: function (syncId, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getTransactionRollupStatus(syncId, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['TransactionsApi.getTransactionRollupStatus']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getTransactionRollupStatus(syncId, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getTransactionRollupStatus(syncId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['TransactionsApi.getTransactionRollupStatus']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of transaction rollup statuses based on the provided batch IDs.
@@ -4025,21 +3000,11 @@ var TransactionsApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionRollupStatuses: function (syncIds, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getTransactionRollupStatuses(syncIds, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['TransactionsApi.getTransactionRollupStatuses']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getTransactionRollupStatuses(syncIds, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getTransactionRollupStatuses(syncIds, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['TransactionsApi.getTransactionRollupStatuses']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -4048,8 +3013,8 @@ exports.TransactionsApiFp = TransactionsApiFp;
  * TransactionsApi - factory interface
  * @export
  */
-var TransactionsApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.TransactionsApiFp)(configuration);
+const TransactionsApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.TransactionsApiFp)(configuration);
     return {
         /**
          * Returns the transaction rollup status for a specified batch ID.
@@ -4058,8 +3023,8 @@ var TransactionsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionRollupStatus: function (syncId, options) {
-            return localVarFp.getTransactionRollupStatus(syncId, options).then(function (request) { return request(axios, basePath); });
+        getTransactionRollupStatus(syncId, options) {
+            return localVarFp.getTransactionRollupStatus(syncId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of transaction rollup statuses based on the provided batch IDs.
@@ -4068,8 +3033,8 @@ var TransactionsApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionRollupStatuses: function (syncIds, options) {
-            return localVarFp.getTransactionRollupStatuses(syncIds, options).then(function (request) { return request(axios, basePath); });
+        getTransactionRollupStatuses(syncIds, options) {
+            return localVarFp.getTransactionRollupStatuses(syncIds, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -4080,11 +3045,7 @@ exports.TransactionsApiFactory = TransactionsApiFactory;
  * @class TransactionsApi
  * @extends {BaseAPI}
  */
-var TransactionsApi = /** @class */ (function (_super) {
-    __extends(TransactionsApi, _super);
-    function TransactionsApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class TransactionsApi extends base_1.BaseAPI {
     /**
      * Returns the transaction rollup status for a specified batch ID.
      * @summary Retrieve a single transaction rollup status by batch ID
@@ -4093,10 +3054,9 @@ var TransactionsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    TransactionsApi.prototype.getTransactionRollupStatus = function (syncId, options) {
-        var _this = this;
-        return (0, exports.TransactionsApiFp)(this.configuration).getTransactionRollupStatus(syncId, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getTransactionRollupStatus(syncId, options) {
+        return (0, exports.TransactionsApiFp)(this.configuration).getTransactionRollupStatus(syncId, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Returns a list of transaction rollup statuses based on the provided batch IDs.
      * @summary Retrieves the status of transaction rollups by batch IDs
@@ -4105,19 +3065,16 @@ var TransactionsApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    TransactionsApi.prototype.getTransactionRollupStatuses = function (syncIds, options) {
-        var _this = this;
-        return (0, exports.TransactionsApiFp)(this.configuration).getTransactionRollupStatuses(syncIds, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return TransactionsApi;
-}(base_1.BaseAPI));
+    getTransactionRollupStatuses(syncIds, options) {
+        return (0, exports.TransactionsApiFp)(this.configuration).getTransactionRollupStatuses(syncIds, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.TransactionsApi = TransactionsApi;
 /**
  * UsersApi - axios parameter creator
  * @export
  */
-var UsersApiAxiosParamCreator = function (configuration) {
-    var _this = this;
+const UsersApiAxiosParamCreator = function (configuration) {
     return {
         /**
          * Returns account IDs that the user has edit access to.
@@ -4127,34 +3084,30 @@ var UsersApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccountsEditAccess: function (userId, accountIds, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'userId' is not null or undefined
-                    (0, common_1.assertParamExists)('getAccountsEditAccess', 'userId', userId);
-                    localVarPath = "/users/{user_id}/account-contact/edit-access"
-                        .replace("{".concat("user_id", "}"), encodeURIComponent(String(userId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (accountIds) {
-                        localVarQueryParameter['account_ids'] = accountIds.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getAccountsEditAccess: async (userId, accountIds, options = {}) => {
+            // verify required parameter 'userId' is not null or undefined
+            (0, common_1.assertParamExists)('getAccountsEditAccess', 'userId', userId);
+            const localVarPath = `/users/{user_id}/account-contact/edit-access`
+                .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (accountIds) {
+                localVarQueryParameter['account_ids'] = accountIds.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get roles for each areana
@@ -4163,31 +3116,27 @@ var UsersApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserArenaRoles: function (userId, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'userId' is not null or undefined
-                    (0, common_1.assertParamExists)('getUserArenaRoles', 'userId', userId);
-                    localVarPath = "/users/{user_id}/arena_roles"
-                        .replace("{".concat("user_id", "}"), encodeURIComponent(String(userId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getUserArenaRoles: async (userId, options = {}) => {
+            // verify required parameter 'userId' is not null or undefined
+            (0, common_1.assertParamExists)('getUserArenaRoles', 'userId', userId);
+            const localVarPath = `/users/{user_id}/arena_roles`
+                .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get a distribution batch by ID. This does handle auth checks (object and role based permissions)
@@ -4197,34 +3146,30 @@ var UsersApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserDistributionBatch: function (userId, distributionBatchId, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'userId' is not null or undefined
-                    (0, common_1.assertParamExists)('getUserDistributionBatch', 'userId', userId);
-                    // verify required parameter 'distributionBatchId' is not null or undefined
-                    (0, common_1.assertParamExists)('getUserDistributionBatch', 'distributionBatchId', distributionBatchId);
-                    localVarPath = "/users/{user_id}/distribution_batch/{distribution_batch_id}"
-                        .replace("{".concat("user_id", "}"), encodeURIComponent(String(userId)))
-                        .replace("{".concat("distribution_batch_id", "}"), encodeURIComponent(String(distributionBatchId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getUserDistributionBatch: async (userId, distributionBatchId, options = {}) => {
+            // verify required parameter 'userId' is not null or undefined
+            (0, common_1.assertParamExists)('getUserDistributionBatch', 'userId', userId);
+            // verify required parameter 'distributionBatchId' is not null or undefined
+            (0, common_1.assertParamExists)('getUserDistributionBatch', 'distributionBatchId', distributionBatchId);
+            const localVarPath = `/users/{user_id}/distribution_batch/{distribution_batch_id}`
+                .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)))
+                .replace(`{${"distribution_batch_id"}}`, encodeURIComponent(String(distributionBatchId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get an un-paginated list of distributions that a user_id is authorized to view taking into account both role-based and object-level permissioning.
@@ -4234,34 +3179,30 @@ var UsersApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserDistributionBatchDistributions: function (userId, distributionBatchId, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    // verify required parameter 'userId' is not null or undefined
-                    (0, common_1.assertParamExists)('getUserDistributionBatchDistributions', 'userId', userId);
-                    // verify required parameter 'distributionBatchId' is not null or undefined
-                    (0, common_1.assertParamExists)('getUserDistributionBatchDistributions', 'distributionBatchId', distributionBatchId);
-                    localVarPath = "/users/{user_id}/distribution_batch/{distribution_batch_id}/distributions"
-                        .replace("{".concat("user_id", "}"), encodeURIComponent(String(userId)))
-                        .replace("{".concat("distribution_batch_id", "}"), encodeURIComponent(String(distributionBatchId)));
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getUserDistributionBatchDistributions: async (userId, distributionBatchId, options = {}) => {
+            // verify required parameter 'userId' is not null or undefined
+            (0, common_1.assertParamExists)('getUserDistributionBatchDistributions', 'userId', userId);
+            // verify required parameter 'distributionBatchId' is not null or undefined
+            (0, common_1.assertParamExists)('getUserDistributionBatchDistributions', 'distributionBatchId', distributionBatchId);
+            const localVarPath = `/users/{user_id}/distribution_batch/{distribution_batch_id}/distributions`
+                .replace(`{${"user_id"}}`, encodeURIComponent(String(userId)))
+                .replace(`{${"distribution_batch_id"}}`, encodeURIComponent(String(distributionBatchId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
         /**
          * Get an un-paginated list of users filtered by a required list of either DB or global user IDs.
@@ -4271,34 +3212,30 @@ var UsersApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUsers: function (globalIds, ids, options) {
-            if (options === void 0) { options = {}; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var localVarPath, localVarUrlObj, baseOptions, localVarRequestOptions, localVarHeaderParameter, localVarQueryParameter, headersFromBaseOptions;
-                return __generator(this, function (_a) {
-                    localVarPath = "/users";
-                    localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-                    if (configuration) {
-                        baseOptions = configuration.baseOptions;
-                    }
-                    localVarRequestOptions = __assign(__assign({ method: 'GET' }, baseOptions), options);
-                    localVarHeaderParameter = {};
-                    localVarQueryParameter = {};
-                    if (globalIds) {
-                        localVarQueryParameter['global_ids'] = globalIds.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    if (ids) {
-                        localVarQueryParameter['ids'] = ids.join(base_1.COLLECTION_FORMATS.csv);
-                    }
-                    (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
-                    headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-                    localVarRequestOptions.headers = __assign(__assign(__assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-                    return [2 /*return*/, {
-                            url: (0, common_1.toPathString)(localVarUrlObj),
-                            options: localVarRequestOptions,
-                        }];
-                });
-            });
+        getUsers: async (globalIds, ids, options = {}) => {
+            const localVarPath = `/users`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (globalIds) {
+                localVarQueryParameter['global_ids'] = globalIds.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            if (ids) {
+                localVarQueryParameter['ids'] = ids.join(base_1.COLLECTION_FORMATS.csv);
+            }
+            (0, common_1.setSearchParams)(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
+            return {
+                url: (0, common_1.toPathString)(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
         },
     };
 };
@@ -4307,8 +3244,8 @@ exports.UsersApiAxiosParamCreator = UsersApiAxiosParamCreator;
  * UsersApi - functional programming interface
  * @export
  */
-var UsersApiFp = function (configuration) {
-    var localVarAxiosParamCreator = (0, exports.UsersApiAxiosParamCreator)(configuration);
+const UsersApiFp = function (configuration) {
+    const localVarAxiosParamCreator = (0, exports.UsersApiAxiosParamCreator)(configuration);
     return {
         /**
          * Returns account IDs that the user has edit access to.
@@ -4318,21 +3255,11 @@ var UsersApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccountsEditAccess: function (userId, accountIds, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getAccountsEditAccess(userId, accountIds, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['UsersApi.getAccountsEditAccess']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getAccountsEditAccess(userId, accountIds, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAccountsEditAccess(userId, accountIds, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['UsersApi.getAccountsEditAccess']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get roles for each areana
@@ -4341,21 +3268,11 @@ var UsersApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserArenaRoles: function (userId, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getUserArenaRoles(userId, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['UsersApi.getUserArenaRoles']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getUserArenaRoles(userId, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getUserArenaRoles(userId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['UsersApi.getUserArenaRoles']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get a distribution batch by ID. This does handle auth checks (object and role based permissions)
@@ -4365,21 +3282,11 @@ var UsersApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserDistributionBatch: function (userId, distributionBatchId, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getUserDistributionBatch(userId, distributionBatchId, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['UsersApi.getUserDistributionBatch']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getUserDistributionBatch(userId, distributionBatchId, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getUserDistributionBatch(userId, distributionBatchId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['UsersApi.getUserDistributionBatch']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get an un-paginated list of distributions that a user_id is authorized to view taking into account both role-based and object-level permissioning.
@@ -4389,21 +3296,11 @@ var UsersApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserDistributionBatchDistributions: function (userId, distributionBatchId, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getUserDistributionBatchDistributions(userId, distributionBatchId, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['UsersApi.getUserDistributionBatchDistributions']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getUserDistributionBatchDistributions(userId, distributionBatchId, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getUserDistributionBatchDistributions(userId, distributionBatchId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['UsersApi.getUserDistributionBatchDistributions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get an un-paginated list of users filtered by a required list of either DB or global user IDs.
@@ -4413,21 +3310,11 @@ var UsersApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUsers: function (globalIds, ids, options) {
-            var _a, _b, _c;
-            return __awaiter(this, void 0, void 0, function () {
-                var localVarAxiosArgs, index, operationBasePath;
-                return __generator(this, function (_d) {
-                    switch (_d.label) {
-                        case 0: return [4 /*yield*/, localVarAxiosParamCreator.getUsers(globalIds, ids, options)];
-                        case 1:
-                            localVarAxiosArgs = _d.sent();
-                            index = (_a = configuration === null || configuration === void 0 ? void 0 : configuration.serverIndex) !== null && _a !== void 0 ? _a : 0;
-                            operationBasePath = (_c = (_b = base_1.operationServerMap['UsersApi.getUsers']) === null || _b === void 0 ? void 0 : _b[index]) === null || _c === void 0 ? void 0 : _c.url;
-                            return [2 /*return*/, function (axios, basePath) { return (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, operationBasePath || basePath); }];
-                    }
-                });
-            });
+        async getUsers(globalIds, ids, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getUsers(globalIds, ids, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = base_1.operationServerMap['UsersApi.getUsers']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => (0, common_1.createRequestFunction)(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     };
 };
@@ -4436,8 +3323,8 @@ exports.UsersApiFp = UsersApiFp;
  * UsersApi - factory interface
  * @export
  */
-var UsersApiFactory = function (configuration, basePath, axios) {
-    var localVarFp = (0, exports.UsersApiFp)(configuration);
+const UsersApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = (0, exports.UsersApiFp)(configuration);
     return {
         /**
          * Returns account IDs that the user has edit access to.
@@ -4447,8 +3334,8 @@ var UsersApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccountsEditAccess: function (userId, accountIds, options) {
-            return localVarFp.getAccountsEditAccess(userId, accountIds, options).then(function (request) { return request(axios, basePath); });
+        getAccountsEditAccess(userId, accountIds, options) {
+            return localVarFp.getAccountsEditAccess(userId, accountIds, options).then((request) => request(axios, basePath));
         },
         /**
          * Get roles for each areana
@@ -4457,8 +3344,8 @@ var UsersApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserArenaRoles: function (userId, options) {
-            return localVarFp.getUserArenaRoles(userId, options).then(function (request) { return request(axios, basePath); });
+        getUserArenaRoles(userId, options) {
+            return localVarFp.getUserArenaRoles(userId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get a distribution batch by ID. This does handle auth checks (object and role based permissions)
@@ -4468,8 +3355,8 @@ var UsersApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserDistributionBatch: function (userId, distributionBatchId, options) {
-            return localVarFp.getUserDistributionBatch(userId, distributionBatchId, options).then(function (request) { return request(axios, basePath); });
+        getUserDistributionBatch(userId, distributionBatchId, options) {
+            return localVarFp.getUserDistributionBatch(userId, distributionBatchId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get an un-paginated list of distributions that a user_id is authorized to view taking into account both role-based and object-level permissioning.
@@ -4479,8 +3366,8 @@ var UsersApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserDistributionBatchDistributions: function (userId, distributionBatchId, options) {
-            return localVarFp.getUserDistributionBatchDistributions(userId, distributionBatchId, options).then(function (request) { return request(axios, basePath); });
+        getUserDistributionBatchDistributions(userId, distributionBatchId, options) {
+            return localVarFp.getUserDistributionBatchDistributions(userId, distributionBatchId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get an un-paginated list of users filtered by a required list of either DB or global user IDs.
@@ -4490,8 +3377,8 @@ var UsersApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUsers: function (globalIds, ids, options) {
-            return localVarFp.getUsers(globalIds, ids, options).then(function (request) { return request(axios, basePath); });
+        getUsers(globalIds, ids, options) {
+            return localVarFp.getUsers(globalIds, ids, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -4502,11 +3389,7 @@ exports.UsersApiFactory = UsersApiFactory;
  * @class UsersApi
  * @extends {BaseAPI}
  */
-var UsersApi = /** @class */ (function (_super) {
-    __extends(UsersApi, _super);
-    function UsersApi() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+class UsersApi extends base_1.BaseAPI {
     /**
      * Returns account IDs that the user has edit access to.
      * @summary Get accounts with edit access
@@ -4516,10 +3399,9 @@ var UsersApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    UsersApi.prototype.getAccountsEditAccess = function (userId, accountIds, options) {
-        var _this = this;
-        return (0, exports.UsersApiFp)(this.configuration).getAccountsEditAccess(userId, accountIds, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getAccountsEditAccess(userId, accountIds, options) {
+        return (0, exports.UsersApiFp)(this.configuration).getAccountsEditAccess(userId, accountIds, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get roles for each areana
      * @summary Get roles for each arena
@@ -4528,10 +3410,9 @@ var UsersApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    UsersApi.prototype.getUserArenaRoles = function (userId, options) {
-        var _this = this;
-        return (0, exports.UsersApiFp)(this.configuration).getUserArenaRoles(userId, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getUserArenaRoles(userId, options) {
+        return (0, exports.UsersApiFp)(this.configuration).getUserArenaRoles(userId, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get a distribution batch by ID. This does handle auth checks (object and role based permissions)
      * @summary Get distribution batch with authorization checks
@@ -4541,10 +3422,9 @@ var UsersApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    UsersApi.prototype.getUserDistributionBatch = function (userId, distributionBatchId, options) {
-        var _this = this;
-        return (0, exports.UsersApiFp)(this.configuration).getUserDistributionBatch(userId, distributionBatchId, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getUserDistributionBatch(userId, distributionBatchId, options) {
+        return (0, exports.UsersApiFp)(this.configuration).getUserDistributionBatch(userId, distributionBatchId, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get an un-paginated list of distributions that a user_id is authorized to view taking into account both role-based and object-level permissioning.
      * @summary Get distribution batch distributions for a user_id with authorization checks
@@ -4554,10 +3434,9 @@ var UsersApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    UsersApi.prototype.getUserDistributionBatchDistributions = function (userId, distributionBatchId, options) {
-        var _this = this;
-        return (0, exports.UsersApiFp)(this.configuration).getUserDistributionBatchDistributions(userId, distributionBatchId, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
+    getUserDistributionBatchDistributions(userId, distributionBatchId, options) {
+        return (0, exports.UsersApiFp)(this.configuration).getUserDistributionBatchDistributions(userId, distributionBatchId, options).then((request) => request(this.axios, this.basePath));
+    }
     /**
      * Get an un-paginated list of users filtered by a required list of either DB or global user IDs.
      * @summary Get users
@@ -4567,10 +3446,8 @@ var UsersApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    UsersApi.prototype.getUsers = function (globalIds, ids, options) {
-        var _this = this;
-        return (0, exports.UsersApiFp)(this.configuration).getUsers(globalIds, ids, options).then(function (request) { return request(_this.axios, _this.basePath); });
-    };
-    return UsersApi;
-}(base_1.BaseAPI));
+    getUsers(globalIds, ids, options) {
+        return (0, exports.UsersApiFp)(this.configuration).getUsers(globalIds, ids, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 exports.UsersApi = UsersApi;

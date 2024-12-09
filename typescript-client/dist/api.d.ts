@@ -14,83 +14,6 @@ import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import type { RequestArgs } from './base';
 import { BaseAPI } from './base';
 /**
- * Account contact add
- * @export
- * @interface AccountContactAdd
- */
-export interface AccountContactAdd {
-    /**
-     *
-     * @type {ContactDetails}
-     * @memberof AccountContactAdd
-     */
-    'contact_details': ContactDetails;
-    /**
-     *
-     * @type {AddContactCommunicationPrefs}
-     * @memberof AccountContactAdd
-     */
-    'communication_preferences': AddContactCommunicationPrefs;
-}
-/**
- * account contact add input
- * @export
- * @interface AccountContactAddRequestBody
- */
-export interface AccountContactAddRequestBody {
-    /**
-     *
-     * @type {{ [key: string]: any; }}
-     * @memberof AccountContactAddRequestBody
-     */
-    'metadata'?: {
-        [key: string]: any;
-    };
-    /**
-     *
-     * @type {AccountContactAdd}
-     * @memberof AccountContactAddRequestBody
-     */
-    'request_payload'?: AccountContactAdd;
-}
-/**
- * Account contact add success response
- * @export
- * @interface AccountContactAddSuccessResponse
- */
-export interface AccountContactAddSuccessResponse {
-    /**
-     * Arena ID
-     * @type {number}
-     * @memberof AccountContactAddSuccessResponse
-     */
-    'arena_id'?: number;
-    /**
-     * Account ID
-     * @type {number}
-     * @memberof AccountContactAddSuccessResponse
-     */
-    'account_id'?: number;
-    /**
-     * Contact ID
-     * @type {number}
-     * @memberof AccountContactAddSuccessResponse
-     */
-    'contact_id'?: number;
-    /**
-     * Account contact ID
-     * @type {number}
-     * @memberof AccountContactAddSuccessResponse
-     */
-    'account_contact_id'?: number;
-    /**
-     *
-     * @type {ResponseStatus}
-     * @memberof AccountContactAddSuccessResponse
-     */
-    'status'?: ResponseStatus;
-}
-/**
  * Account contact bulk success response
  * @export
  * @interface AccountContactBulkSuccessResponse
@@ -120,49 +43,6 @@ export interface AccountContactBulkSuccessResponse {
      * @memberof AccountContactBulkSuccessResponse
      */
     'status'?: ResponseStatus;
-}
-/**
- * Account contact add
- * @export
- * @interface AddContactCommunicationPrefs
- */
-export interface AddContactCommunicationPrefs {
-    /**
-     * Arena ID
-     * @type {number}
-     * @memberof AddContactCommunicationPrefs
-     */
-    'arena_id': number;
-    /**
-     * Account ID
-     * @type {number}
-     * @memberof AddContactCommunicationPrefs
-     */
-    'account_id': number;
-    /**
-     * Relationship label for account contact
-     * @type {string}
-     * @memberof AddContactCommunicationPrefs
-     */
-    'label'?: string | null;
-    /**
-     * True if the account contact is To contact, False for CC contact
-     * @type {boolean}
-     * @memberof AddContactCommunicationPrefs
-     */
-    'is_main_contact'?: boolean | null;
-    /**
-     * True if the account contact is an admin contact
-     * @type {boolean}
-     * @memberof AddContactCommunicationPrefs
-     */
-    'is_admin_contact'?: boolean | null;
-    /**
-     * List of distribution IDs
-     * @type {Array<number>}
-     * @memberof AddContactCommunicationPrefs
-     */
-    'distribution_list'?: Array<number> | null;
 }
 /**
  * Address for business
@@ -237,7 +117,6 @@ export declare const AllocationTypeCategoryEnum: {
     readonly CapitalActivity: "Capital Activity";
     readonly DistributionAllocations: "Distribution Allocations";
     readonly NetIncomeAllocations: "Net Income Allocations";
-    readonly NetAssetValue: "Net Asset Value";
 };
 export type AllocationTypeCategoryEnum = typeof AllocationTypeCategoryEnum[keyof typeof AllocationTypeCategoryEnum];
 /**
@@ -277,37 +156,6 @@ export interface Arena {
      */
     'domain': string;
 }
-/**
- * Manage Account Contact for an arena.
- * @export
- * @interface ArenaManageAccountContactSettings
- */
-export interface ArenaManageAccountContactSettings {
-    /**
-     * FK to the the arena these account contact settings belong to.
-     * @type {number}
-     * @memberof ArenaManageAccountContactSettings
-     */
-    'arena_id': number;
-    /**
-     * Whether or not the admin can manage account contacts.
-     * @type {boolean}
-     * @memberof ArenaManageAccountContactSettings
-     */
-    'allow_admin_manage_account_contacts': boolean;
-    /**
-     * Account contact requires manager approval.
-     * @type {string}
-     * @memberof ArenaManageAccountContactSettings
-     */
-    'contact_update_require_mgr_approval': ArenaManageAccountContactSettingsContactUpdateRequireMgrApprovalEnum;
-}
-export declare const ArenaManageAccountContactSettingsContactUpdateRequireMgrApprovalEnum: {
-    readonly AddOnly: "add_only";
-    readonly All: "all";
-    readonly None: "none";
-};
-export type ArenaManageAccountContactSettingsContactUpdateRequireMgrApprovalEnum = typeof ArenaManageAccountContactSettingsContactUpdateRequireMgrApprovalEnum[keyof typeof ArenaManageAccountContactSettingsContactUpdateRequireMgrApprovalEnum];
 /**
  * Allocation Type for an arena.
  * @export
@@ -470,44 +318,6 @@ export declare const BulkAccountContactChangeNotifyRequestTypeEnum: {
     readonly RemoveContact: "REMOVE_CONTACT";
 };
 export type BulkAccountContactChangeNotifyRequestTypeEnum = typeof BulkAccountContactChangeNotifyRequestTypeEnum[keyof typeof BulkAccountContactChangeNotifyRequestTypeEnum];
-/**
- *
- * @export
- * @interface BulkAccountContactChangeNotifyByStatus
- */
-export interface BulkAccountContactChangeNotifyByStatus {
-    /**
-     *
-     * @type {string}
-     * @memberof BulkAccountContactChangeNotifyByStatus
-     */
-    'request_type'?: BulkAccountContactChangeNotifyByStatusRequestTypeEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof BulkAccountContactChangeNotifyByStatus
-     */
-    'status'?: BulkAccountContactChangeNotifyByStatusStatusEnum;
-    /**
-     *
-     * @type {Array<BulkAccountContactChangeNotifyRequestPayloadsInner>}
-     * @memberof BulkAccountContactChangeNotifyByStatus
-     */
-    'request_payloads'?: Array<BulkAccountContactChangeNotifyRequestPayloadsInner>;
-}
-export declare const BulkAccountContactChangeNotifyByStatusRequestTypeEnum: {
-    readonly AddContact: "ADD_CONTACT";
-    readonly UpdateContact: "UPDATE_CONTACT";
-    readonly RemoveContact: "REMOVE_CONTACT";
-};
-export type BulkAccountContactChangeNotifyByStatusRequestTypeEnum = typeof BulkAccountContactChangeNotifyByStatusRequestTypeEnum[keyof typeof BulkAccountContactChangeNotifyByStatusRequestTypeEnum];
-export declare const BulkAccountContactChangeNotifyByStatusStatusEnum: {
-    readonly PendingApproval: "PENDING_APPROVAL";
-    readonly AutoApproved: "AUTO_APPROVED";
-    readonly Approved: "APPROVED";
-    readonly Rejected: "REJECTED";
-};
-export type BulkAccountContactChangeNotifyByStatusStatusEnum = typeof BulkAccountContactChangeNotifyByStatusStatusEnum[keyof typeof BulkAccountContactChangeNotifyByStatusStatusEnum];
 /**
  *
  * @export
@@ -744,346 +554,6 @@ export type BusinessInfoIndividualProfilesInner = IndividualProfile;
  * @export
  */
 export type BusinessInfoInstitutionProfilesInner = InstitutionProfile;
-/**
- * Details of the contact to be added or updated
- * @export
- * @interface ContactDetails
- */
-export interface ContactDetails {
-    /**
-     * ID of the contact
-     * @type {number}
-     * @memberof ContactDetails
-     */
-    'contact_id'?: number | null;
-    /**
-     * ID of the arena
-     * @type {number}
-     * @memberof ContactDetails
-     */
-    'arena_id'?: number;
-    /**
-     * Indicates if the contact is being updated
-     * @type {boolean}
-     * @memberof ContactDetails
-     */
-    'is_update'?: boolean;
-    /**
-     *
-     * @type {ContactDetailsAttributes}
-     * @memberof ContactDetails
-     */
-    'attributes'?: ContactDetailsAttributes;
-    /**
-     * List of access group IDs
-     * @type {Array<number>}
-     * @memberof ContactDetails
-     */
-    'access_group_ids'?: Array<number> | null;
-    /**
-     * Indicates if the contact should be invited to the portal
-     * @type {boolean}
-     * @memberof ContactDetails
-     */
-    'invite_to_portal'?: boolean;
-}
-/**
- * Attributes of the contact
- * @export
- * @interface ContactDetailsAttributes
- */
-export interface ContactDetailsAttributes {
-    /**
-     * First name of the contact
-     * @type {string}
-     * @memberof ContactDetailsAttributes
-     */
-    'first_name'?: string;
-    /**
-     * Full name of the contact
-     * @type {string}
-     * @memberof ContactDetailsAttributes
-     */
-    'full_name'?: string;
-    /**
-     * Last name of the contact
-     * @type {string}
-     * @memberof ContactDetailsAttributes
-     */
-    'last_name'?: string;
-    /**
-     * Middle name of the contact
-     * @type {string}
-     * @memberof ContactDetailsAttributes
-     */
-    'middle_name'?: string;
-    /**
-     * Salutation name of the contact
-     * @type {string}
-     * @memberof ContactDetailsAttributes
-     */
-    'salutation_name'?: string;
-    /**
-     *
-     * @type {ContactDetailsAttributesEmail}
-     * @memberof ContactDetailsAttributes
-     */
-    'email'?: ContactDetailsAttributesEmail;
-    /**
-     * List of employments
-     * @type {Array<ContactDetailsAttributesEmploymentsInner>}
-     * @memberof ContactDetailsAttributes
-     */
-    'employments'?: Array<ContactDetailsAttributesEmploymentsInner>;
-    /**
-     * List of phone numbers
-     * @type {Array<ContactDetailsAttributesPhoneFaxInner>}
-     * @memberof ContactDetailsAttributes
-     */
-    'phone_fax'?: Array<ContactDetailsAttributesPhoneFaxInner>;
-    /**
-     * List of addresses
-     * @type {Array<ContactDetailsAttributesAddressInner>}
-     * @memberof ContactDetailsAttributes
-     */
-    'address'?: Array<ContactDetailsAttributesAddressInner>;
-}
-/**
- *
- * @export
- * @interface ContactDetailsAttributesAddressInner
- */
-export interface ContactDetailsAttributesAddressInner {
-    /**
-     *
-     * @type {ContactDetailsAttributesAddressInnerAddress}
-     * @memberof ContactDetailsAttributesAddressInner
-     */
-    'address'?: ContactDetailsAttributesAddressInnerAddress;
-    /**
-     * Type of the address
-     * @type {number}
-     * @memberof ContactDetailsAttributesAddressInner
-     */
-    'address_type'?: number;
-    /**
-     * ID of the address
-     * @type {number}
-     * @memberof ContactDetailsAttributesAddressInner
-     */
-    'id'?: number | null;
-}
-/**
- *
- * @export
- * @interface ContactDetailsAttributesAddressInnerAddress
- */
-export interface ContactDetailsAttributesAddressInnerAddress {
-    /**
-     * City of the address
-     * @type {string}
-     * @memberof ContactDetailsAttributesAddressInnerAddress
-     */
-    'city'?: string;
-    /**
-     *
-     * @type {ContactDetailsAttributesAddressInnerAddressCountry}
-     * @memberof ContactDetailsAttributesAddressInnerAddress
-     */
-    'country'?: ContactDetailsAttributesAddressInnerAddressCountry;
-    /**
-     * Postal code of the address
-     * @type {string}
-     * @memberof ContactDetailsAttributesAddressInnerAddress
-     */
-    'postal_code'?: string;
-    /**
-     *
-     * @type {ContactDetailsAttributesAddressInnerAddressState}
-     * @memberof ContactDetailsAttributesAddressInnerAddress
-     */
-    'state'?: ContactDetailsAttributesAddressInnerAddressState;
-    /**
-     * Street address
-     * @type {string}
-     * @memberof ContactDetailsAttributesAddressInnerAddress
-     */
-    'street'?: string;
-    /**
-     * Additional street address
-     * @type {string}
-     * @memberof ContactDetailsAttributesAddressInnerAddress
-     */
-    'street2'?: string;
-    /**
-     * Additional street address
-     * @type {string}
-     * @memberof ContactDetailsAttributesAddressInnerAddress
-     */
-    'street3'?: string | null;
-}
-/**
- *
- * @export
- * @interface ContactDetailsAttributesAddressInnerAddressCountry
- */
-export interface ContactDetailsAttributesAddressInnerAddressCountry {
-    /**
-     * ID of the country
-     * @type {number}
-     * @memberof ContactDetailsAttributesAddressInnerAddressCountry
-     */
-    'object_id'?: number;
-    /**
-     * Name of the country
-     * @type {string}
-     * @memberof ContactDetailsAttributesAddressInnerAddressCountry
-     */
-    'object_name'?: string | null;
-    /**
-     * Type of the country object
-     * @type {string}
-     * @memberof ContactDetailsAttributesAddressInnerAddressCountry
-     */
-    'object_type'?: string | null;
-}
-/**
- *
- * @export
- * @interface ContactDetailsAttributesAddressInnerAddressState
- */
-export interface ContactDetailsAttributesAddressInnerAddressState {
-    /**
-     * ID of the state
-     * @type {number}
-     * @memberof ContactDetailsAttributesAddressInnerAddressState
-     */
-    'object_id'?: number | null;
-    /**
-     * Name of the state
-     * @type {string}
-     * @memberof ContactDetailsAttributesAddressInnerAddressState
-     */
-    'object_name'?: string;
-    /**
-     * Type of the state object
-     * @type {string}
-     * @memberof ContactDetailsAttributesAddressInnerAddressState
-     */
-    'object_type'?: string | null;
-}
-/**
- * Email of the contact
- * @export
- * @interface ContactDetailsAttributesEmail
- */
-export interface ContactDetailsAttributesEmail {
-    /**
-     * ID of the email
-     * @type {number}
-     * @memberof ContactDetailsAttributesEmail
-     */
-    'id'?: number | null;
-    /**
-     * Type of the email
-     * @type {number}
-     * @memberof ContactDetailsAttributesEmail
-     */
-    'email_type'?: number;
-    /**
-     * Email address
-     * @type {string}
-     * @memberof ContactDetailsAttributesEmail
-     */
-    'email_address'?: string;
-}
-/**
- *
- * @export
- * @interface ContactDetailsAttributesEmploymentsInner
- */
-export interface ContactDetailsAttributesEmploymentsInner {
-    /**
-     *
-     * @type {ContactDetailsAttributesEmploymentsInnerEmployer}
-     * @memberof ContactDetailsAttributesEmploymentsInner
-     */
-    'employer'?: ContactDetailsAttributesEmploymentsInnerEmployer;
-    /**
-     * Indicates if the employment is current
-     * @type {boolean}
-     * @memberof ContactDetailsAttributesEmploymentsInner
-     */
-    'is_current'?: boolean;
-    /**
-     * Job title of the contact
-     * @type {string}
-     * @memberof ContactDetailsAttributesEmploymentsInner
-     */
-    'job_title'?: string;
-    /**
-     * Sort order of the employment
-     * @type {number}
-     * @memberof ContactDetailsAttributesEmploymentsInner
-     */
-    'sort_order'?: number;
-}
-/**
- *
- * @export
- * @interface ContactDetailsAttributesEmploymentsInnerEmployer
- */
-export interface ContactDetailsAttributesEmploymentsInnerEmployer {
-    /**
-     * Indicates if the employer should be lazily created
-     * @type {boolean}
-     * @memberof ContactDetailsAttributesEmploymentsInnerEmployer
-     */
-    'lazy_create'?: boolean;
-    /**
-     * ID of the employer
-     * @type {number}
-     * @memberof ContactDetailsAttributesEmploymentsInnerEmployer
-     */
-    'object_id'?: number | null;
-    /**
-     * Name of the employer
-     * @type {string}
-     * @memberof ContactDetailsAttributesEmploymentsInnerEmployer
-     */
-    'object_name'?: string;
-    /**
-     * Type of the employer object
-     * @type {number}
-     * @memberof ContactDetailsAttributesEmploymentsInnerEmployer
-     */
-    'object_type'?: number;
-}
-/**
- *
- * @export
- * @interface ContactDetailsAttributesPhoneFaxInner
- */
-export interface ContactDetailsAttributesPhoneFaxInner {
-    /**
-     * ID of the phone number
-     * @type {number}
-     * @memberof ContactDetailsAttributesPhoneFaxInner
-     */
-    'id'?: number | null;
-    /**
-     * Type of the phone number
-     * @type {number}
-     * @memberof ContactDetailsAttributesPhoneFaxInner
-     */
-    'phone_type'?: number;
-    /**
-     * Phone number
-     * @type {string}
-     * @memberof ContactDetailsAttributesPhoneFaxInner
-     */
-    'phone_number'?: string;
-}
 /**
  * Deprecated create diligence object and underlying KYC/watchlists
  * @export
@@ -1488,12 +958,6 @@ export interface DistributionBatch {
      * @memberof DistributionBatch
      */
     'entity_id': number;
-    /**
-     * Description of the distribution batch.
-     * @type {string}
-     * @memberof DistributionBatch
-     */
-    'description': string;
 }
 /**
  * Documents for business
@@ -1860,20 +1324,6 @@ export interface ModelError {
      */
     'exception'?: string;
 }
-/**
- * String representation of AuthorizedClass enum
- * @export
- * @enum {string}
- */
-export declare const ObjectAuthorizedClass: {
-    readonly Account: "account";
-    readonly Contact: "contact";
-    readonly CustomDataFields: "custom_data_fields";
-    readonly DocumentCategory: "document_category";
-    readonly Entity: "entity";
-    readonly Offering: "offering";
-};
-export type ObjectAuthorizedClass = typeof ObjectAuthorizedClass[keyof typeof ObjectAuthorizedClass];
 /**
  * Returns the permissioning object for the queried user and object type combination.
  * @export
@@ -2647,14 +2097,6 @@ export interface User {
  */
 export declare const AccountsApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
-     * API for account contact to add new or existing contact to account
-     * @summary API for account contact to add new or existing contact to account
-     * @param {AccountContactAddRequestBody} [accountContactAddRequestBody]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    accountContactAdd: (accountContactAddRequestBody?: AccountContactAddRequestBody, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
-    /**
      * API for account contact bulk removal
      * @summary API for account contact bulk removal
      * @param {BulkAccountContactRemoveRequestBody} [bulkAccountContactRemoveRequestBody]
@@ -2679,29 +2121,12 @@ export declare const AccountsApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     accountContactChangeNotify: (userId: number, bulkAccountContactChangeNotify?: BulkAccountContactChangeNotify, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * API for account contact change notification by status
-     * @summary API for account contact change notification by status
-     * @param {number} userId User ID of the resource
-     * @param {BulkAccountContactChangeNotifyByStatus} [bulkAccountContactChangeNotifyByStatus]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    accountContactChangeNotifyByStatus: (userId: number, bulkAccountContactChangeNotifyByStatus?: BulkAccountContactChangeNotifyByStatus, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * AccountsApi - functional programming interface
  * @export
  */
 export declare const AccountsApiFp: (configuration?: Configuration) => {
-    /**
-     * API for account contact to add new or existing contact to account
-     * @summary API for account contact to add new or existing contact to account
-     * @param {AccountContactAddRequestBody} [accountContactAddRequestBody]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    accountContactAdd(accountContactAddRequestBody?: AccountContactAddRequestBody, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountContactAddSuccessResponse>>;
     /**
      * API for account contact bulk removal
      * @summary API for account contact bulk removal
@@ -2727,29 +2152,12 @@ export declare const AccountsApiFp: (configuration?: Configuration) => {
      * @throws {RequiredError}
      */
     accountContactChangeNotify(userId: number, bulkAccountContactChangeNotify?: BulkAccountContactChangeNotify, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
-    /**
-     * API for account contact change notification by status
-     * @summary API for account contact change notification by status
-     * @param {number} userId User ID of the resource
-     * @param {BulkAccountContactChangeNotifyByStatus} [bulkAccountContactChangeNotifyByStatus]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    accountContactChangeNotifyByStatus(userId: number, bulkAccountContactChangeNotifyByStatus?: BulkAccountContactChangeNotifyByStatus, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>>;
 };
 /**
  * AccountsApi - factory interface
  * @export
  */
 export declare const AccountsApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
-    /**
-     * API for account contact to add new or existing contact to account
-     * @summary API for account contact to add new or existing contact to account
-     * @param {AccountContactAddRequestBody} [accountContactAddRequestBody]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    accountContactAdd(accountContactAddRequestBody?: AccountContactAddRequestBody, options?: RawAxiosRequestConfig): AxiosPromise<AccountContactAddSuccessResponse>;
     /**
      * API for account contact bulk removal
      * @summary API for account contact bulk removal
@@ -2775,15 +2183,6 @@ export declare const AccountsApiFactory: (configuration?: Configuration, basePat
      * @throws {RequiredError}
      */
     accountContactChangeNotify(userId: number, bulkAccountContactChangeNotify?: BulkAccountContactChangeNotify, options?: RawAxiosRequestConfig): AxiosPromise<void>;
-    /**
-     * API for account contact change notification by status
-     * @summary API for account contact change notification by status
-     * @param {number} userId User ID of the resource
-     * @param {BulkAccountContactChangeNotifyByStatus} [bulkAccountContactChangeNotifyByStatus]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    accountContactChangeNotifyByStatus(userId: number, bulkAccountContactChangeNotifyByStatus?: BulkAccountContactChangeNotifyByStatus, options?: RawAxiosRequestConfig): AxiosPromise<void>;
 };
 /**
  * AccountsApi - object-oriented interface
@@ -2792,15 +2191,6 @@ export declare const AccountsApiFactory: (configuration?: Configuration, basePat
  * @extends {BaseAPI}
  */
 export declare class AccountsApi extends BaseAPI {
-    /**
-     * API for account contact to add new or existing contact to account
-     * @summary API for account contact to add new or existing contact to account
-     * @param {AccountContactAddRequestBody} [accountContactAddRequestBody]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AccountsApi
-     */
-    accountContactAdd(accountContactAddRequestBody?: AccountContactAddRequestBody, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<AccountContactAddSuccessResponse, any>>;
     /**
      * API for account contact bulk removal
      * @summary API for account contact bulk removal
@@ -2829,16 +2219,6 @@ export declare class AccountsApi extends BaseAPI {
      * @memberof AccountsApi
      */
     accountContactChangeNotify(userId: number, bulkAccountContactChangeNotify?: BulkAccountContactChangeNotify, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
-    /**
-     * API for account contact change notification by status
-     * @summary API for account contact change notification by status
-     * @param {number} userId User ID of the resource
-     * @param {BulkAccountContactChangeNotifyByStatus} [bulkAccountContactChangeNotifyByStatus]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AccountsApi
-     */
-    accountContactChangeNotifyByStatus(userId: number, bulkAccountContactChangeNotifyByStatus?: BulkAccountContactChangeNotifyByStatus, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<void, any>>;
 }
 /**
  * ArenasApi - axios parameter creator
@@ -2885,14 +2265,6 @@ export declare const ArenasApiAxiosParamCreator: (configuration?: Configuration)
      * @throws {RequiredError}
      */
     getArenas: (ids?: Array<number>, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
-    /**
-     * Get manage account contact settings for a given arenas
-     * @summary Get manage account contact settings for a given arenas
-     * @param {Array<number>} arenaIds List of arena_ids
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getArenasManageAccountContactSettings: (arenaIds: Array<number>, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * ArenasApi - functional programming interface
@@ -2939,14 +2311,6 @@ export declare const ArenasApiFp: (configuration?: Configuration) => {
      * @throws {RequiredError}
      */
     getArenas(ids?: Array<number>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Arena>>>;
-    /**
-     * Get manage account contact settings for a given arenas
-     * @summary Get manage account contact settings for a given arenas
-     * @param {Array<number>} arenaIds List of arena_ids
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getArenasManageAccountContactSettings(arenaIds: Array<number>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ArenaManageAccountContactSettings>>>;
 };
 /**
  * ArenasApi - factory interface
@@ -2993,14 +2357,6 @@ export declare const ArenasApiFactory: (configuration?: Configuration, basePath?
      * @throws {RequiredError}
      */
     getArenas(ids?: Array<number>, options?: RawAxiosRequestConfig): AxiosPromise<Array<Arena>>;
-    /**
-     * Get manage account contact settings for a given arenas
-     * @summary Get manage account contact settings for a given arenas
-     * @param {Array<number>} arenaIds List of arena_ids
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getArenasManageAccountContactSettings(arenaIds: Array<number>, options?: RawAxiosRequestConfig): AxiosPromise<Array<ArenaManageAccountContactSettings>>;
 };
 /**
  * ArenasApi - object-oriented interface
@@ -3054,15 +2410,6 @@ export declare class ArenasApi extends BaseAPI {
      * @memberof ArenasApi
      */
     getArenas(ids?: Array<number>, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<Arena[], any>>;
-    /**
-     * Get manage account contact settings for a given arenas
-     * @summary Get manage account contact settings for a given arenas
-     * @param {Array<number>} arenaIds List of arena_ids
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ArenasApi
-     */
-    getArenasManageAccountContactSettings(arenaIds: Array<number>, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<ArenaManageAccountContactSettings[], any>>;
 }
 /**
  * BankAccountApi - axios parameter creator
@@ -3973,16 +3320,6 @@ export declare const PermissionsApiAxiosParamCreator: (configuration?: Configura
      */
     getGranularPermissions: (arenaId: number, userId: number, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
     /**
-     * Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-     * @summary Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-     * @param {number} userId Required user_id to filter by.
-     * @param {ObjectAuthorizedClass} objectAuthorizedClass Required object_authorized_class to filter by. Should match an AuthorizedClass enum.
-     * @param {Array<Permission>} permissions List of object level permissions to filter by
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getObjectClassLevelPermissions: (userId: number, objectAuthorizedClass: ObjectAuthorizedClass, permissions: Array<Permission>, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
-    /**
      * Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
      * @summary Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
      * @param {number} userId Required user_id to filter by.
@@ -4009,16 +3346,6 @@ export declare const PermissionsApiFp: (configuration?: Configuration) => {
      */
     getGranularPermissions(arenaId: number, userId: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GranularPermission>>>;
     /**
-     * Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-     * @summary Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-     * @param {number} userId Required user_id to filter by.
-     * @param {ObjectAuthorizedClass} objectAuthorizedClass Required object_authorized_class to filter by. Should match an AuthorizedClass enum.
-     * @param {Array<Permission>} permissions List of object level permissions to filter by
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getObjectClassLevelPermissions(userId: number, objectAuthorizedClass: ObjectAuthorizedClass, permissions: Array<Permission>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ObjectLevelPermission>>;
-    /**
      * Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
      * @summary Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
      * @param {number} userId Required user_id to filter by.
@@ -4044,16 +3371,6 @@ export declare const PermissionsApiFactory: (configuration?: Configuration, base
      * @throws {RequiredError}
      */
     getGranularPermissions(arenaId: number, userId: number, options?: RawAxiosRequestConfig): AxiosPromise<Array<GranularPermission>>;
-    /**
-     * Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-     * @summary Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-     * @param {number} userId Required user_id to filter by.
-     * @param {ObjectAuthorizedClass} objectAuthorizedClass Required object_authorized_class to filter by. Should match an AuthorizedClass enum.
-     * @param {Array<Permission>} permissions List of object level permissions to filter by
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getObjectClassLevelPermissions(userId: number, objectAuthorizedClass: ObjectAuthorizedClass, permissions: Array<Permission>, options?: RawAxiosRequestConfig): AxiosPromise<ObjectLevelPermission>;
     /**
      * Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
      * @summary Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
@@ -4083,17 +3400,6 @@ export declare class PermissionsApi extends BaseAPI {
      * @memberof PermissionsApi
      */
     getGranularPermissions(arenaId: number, userId: number, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<GranularPermission[], any>>;
-    /**
-     * Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-     * @summary Determines if a user has object class level authorization provided as input an objectAuthorizationClass, [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled.
-     * @param {number} userId Required user_id to filter by.
-     * @param {ObjectAuthorizedClass} objectAuthorizedClass Required object_authorized_class to filter by. Should match an AuthorizedClass enum.
-     * @param {Array<Permission>} permissions List of object level permissions to filter by
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof PermissionsApi
-     */
-    getObjectClassLevelPermissions(userId: number, objectAuthorizedClass: ObjectAuthorizedClass, permissions: Array<Permission>, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<ObjectLevelPermission, any>>;
     /**
      * Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
      * @summary Determines if a user has object level authorization provided as input an objectType, [IDs], and [Permissions]. For staff users, permissions checks are only valid in an arena with ArenaFeatureFlags.advanced_permissions enabled. For portal users, only read permissions checks are allowed.
