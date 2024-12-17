@@ -22,12 +22,12 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "axios": "1.7.7",
-    "axios-retry": "4.5.0"
+    "axios": "1.7.7"
   },
   "devDependencies": {
     "@types/node": "^22.9.1",
     "typescript": "^5.6.2",
     "undici-types": "^6.19.8"
-  }
+  },
+  "packageManager": "yarn@4.5.1"
 }
