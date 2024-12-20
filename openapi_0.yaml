@@ -259,22 +259,6 @@ paths:
           $ref: '#/components/responses/ResourceNotFoundError'
         '500':
           $ref: '#/components/responses/ServerError'
-  /arenas/manage_account_contact_settings:
-    get:
-      summary: "Get manage account contact settings for a given arenas"
-      description: "Get manage account contact settings for a given arenas"
-      operationId: getArenasManageAccountContactSettings
-      tags:
-        - Arenas
-      parameters:
-        - $ref: '#/components/parameters/RequiredArenaIdsQueryParam'
-      responses:
-        '200':
-          $ref: '#/components/responses/ArenaManageAccountContactSettingsArray'
-        '404':
-          $ref: '#/components/responses/ResourceNotFoundError'
-        '500':
-          $ref: '#/components/responses/ServerError'
   /object_level_permission:
     get:
       summary: "Determines if a user has object level authorization provided as input an objectType, [IDs], and
@@ -290,28 +274,6 @@ paths:
         - $ref: '#/components/parameters/RequiredUserIdQueryParam'
         - $ref: '#/components/parameters/RequiredObjectTypeQueryParam'
         - $ref: '#/components/parameters/RequiredObjectIdsQueryParam'
-        - $ref: '#/components/parameters/RequiredPermissionsQueryParam'
-      responses:
-        '200':
-          $ref: '#/components/responses/ObjectLevelPermission'
-        '404':
-          $ref: '#/components/responses/ResourceNotFoundError'
-        '500':
-          $ref: '#/components/responses/ServerError'
-  /object_class_level_permission:
-    get:
-      summary: "Determines if a user has object class level authorization provided as input an objectAuthorizationClass,
-      [Permissions]. For staff users, permissions checks are only valid in an arena with
-      ArenaFeatureFlags.advanced_permissions enabled."
-      description: "Determines if a user has object class level authorization provided as input an objectAuthorizationClass,
-      [Permissions]. For staff users, permissions checks are only valid in an arena with
-      ArenaFeatureFlags.advanced_permissions enabled."
-      operationId: getObjectClassLevelPermissions
-      tags:
-        - Permissions
-      parameters:
-        - $ref: '#/components/parameters/RequiredUserIdQueryParam'
-        - $ref: '#/components/parameters/RequiredObjectAuthorizedClassQueryParam'
         - $ref: '#/components/parameters/RequiredPermissionsQueryParam'
       responses:
         '200':
@@ -442,31 +404,6 @@ paths:
           $ref: '#/components/responses/ServerError'
       security: [ ]
 
-  /users/{user_id}/account-contact/view-access:
-    get:
-      tags:
-        - Users
-      summary: Get accounts with view access
-      description: Returns account IDs that the user has view access to.
-      operationId: getAccountsViewAccess
-      parameters:
-        - $ref: '#/components/parameters/UserIdPathParam'
-        - $ref: '#/components/parameters/AccountsQueryParam'
-      responses:
-        '200':
-          description: A list of account IDs with view access
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: integer
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '500':
-          $ref: '#/components/responses/ServerError'
-      security: [ ]
-
   /distribution_batches/{id}/:
     get:
       summary: "Get distribution batch no authorization checks"
@@ -508,29 +445,6 @@ paths:
           $ref: '#/components/responses/ResourceNotFoundError'
         '500':
           $ref: '#/components/responses/ServerError'
-    
-  /distribution_batches/unique_position_ids:
-    post:
-      summary: "Get unique positions ids for distribution batches"
-      description: "Retrieve the unique positions ids for the specified distribution batch IDs. No authorization checks are applied."
-      operationId: getUniquePositionIDsForDistributionBatches
-      tags:
-        - Distribution Batches
-      requestBody:
-        description: "A JSON list of unique position IDs"
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DistributionBatchUniquePositionIdsRequestBody'
-      responses:
-        '200':
-          $ref: '#/components/responses/DistributionBatchUniquePositionIdsResponse'
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '500':
-          $ref: '#/components/responses/ServerError'
-      security: [ ]
 
   /distributions/{id}:
     get:
@@ -659,49 +573,6 @@ paths:
           $ref: '#/components/responses/ServerError'
       security: [ ]
 
-  /entities/{id}/distribution_batch_ids:
-    get:
-      summary: "Get list of distribution batch ids for an entity"
-      description: "Get list of distribution batch ids for an entity."
-      operationId: getDistributionBatchIdsForEntityId
-      tags:
-        - Entities
-      parameters:
-        - $ref: '#/components/parameters/PrimaryKeyIdPathParam'
-        - $ref: '#/components/parameters/StartDateQueryParam'
-        - $ref: '#/components/parameters/EndDateQueryParam'
-        - $ref: '#/components/parameters/IncludeDeletedQueryParam'
-      responses:
-        '200':
-          $ref: '#/components/responses/EntityDistributionBatchIds'
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '500':
-          $ref: '#/components/responses/ServerError'
-      security: [ ]
-      
-  /entities/{id}/position_ids:
-    get:
-      summary: "Get list of position ids in an investment entity."
-      description: "Get position ids in an investment entity for a date range with options of excluding inactive and including deleted positions."
-      operationId: getEntityPositionIds
-      tags:
-        - Entities
-      parameters:
-        - $ref: '#/components/parameters/PrimaryKeyIdPathParam'
-        - $ref: '#/components/parameters/StartDateQueryParam'
-        - $ref: '#/components/parameters/EndDateQueryParam'
-        - $ref: '#/components/parameters/IncludeDeletedQueryParam'
-        - $ref: '#/components/parameters/ExcludeInactiveQueryParam'
-      responses:
-        '200':
-          $ref: '#/components/responses/EntityPositionIdsResponse'
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '500':
-          $ref: '#/components/responses/ServerError'
-      security: [ ]  
-
   /arenas/{arena_id}/entities:
     get:
       summary: "Get a list of investment entities with their positions in an arena"
@@ -762,15 +633,15 @@ paths:
           $ref: '#/components/responses/ServerError'
       security: [ ]
 
-  /positions:
+  /arenas/{arena_id}/positions_attributes:
     get:
       summary: "Gets positions by ids with account, investor group, and investment entity ids."
       description: "Gets positions by ids with account, investor group, and investment entity ids."
-      operationId: getPositions
+      operationId: getPositionsAttributes
       tags:
         - Positions
       parameters:
-        - $ref: '#/components/parameters/RequiredArenaIdQueryParam'
+        - $ref: '#/components/parameters/ArenaIdPathParam'
         - $ref: '#/components/parameters/PositionsQueryParam'
       responses:
         '200':
@@ -863,31 +734,6 @@ paths:
             schema:
               $ref: '#/components/schemas/BulkAccountContactUpdateRequestBody'
 
-  /account-contact/add:
-    patch:
-      tags:
-        - Accounts
-      summary: API for account contact to add new or existing contact to account
-      description: API for account contact to add new or existing contact to account
-      operationId: accountContactAdd
-      responses:
-        '200':
-          $ref: '#/components/responses/AddAccountContactSuccessResponse'
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '500':
-          $ref: '#/components/responses/ServerError'
-      security: [ ]
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AccountContactAddRequestBody'
-
   /users/{user_id}/account-contact/bulk-notify:
     post:
       tags:
@@ -902,28 +748,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/BulkAccountContactChangeNotify'
-      responses:
-        '204':
-          description: Bulk updates were successfully completed.
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '500':
-          $ref: '#/components/responses/ServerError'
-      security: [ ]
-  /users/{user_id}/account-contact/bulk-notify-by-status:
-    post:
-      tags:
-        - Accounts
-      summary: API for account contact change notification by status
-      description: API for account contact change notification by status
-      operationId: accountContactChangeNotifyByStatus
-      parameters:
-        - $ref: '#/components/parameters/UserIdPathParam'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BulkAccountContactChangeNotifyByStatus'
       responses:
         '204':
           description: Bulk updates were successfully completed.
@@ -1036,158 +860,8 @@ paths:
           description: Transaction rollup status not found for the specified ID
         '500':
             $ref: '#/components/responses/ServerError'
-  /users/{user_id}/associate_payment_pref/accounts:
-    patch:
-      summary: "Associate payment pref with positions of account"
-      description: "Searches for all positions within an account and alters their payment prefs 
-                    to the specified payment pref."
-      operationId: associatePaymentPrefWithPositionsOfAccounts
-      tags:
-        - Payment Prefs
-      parameters:
-        - $ref: '#/components/parameters/UserIdPathParam'
-        - $ref: '#/components/parameters/RequiredTargetPaymentPrefQueryParam'
-        - $ref: '#/components/parameters/RequiredAccountIdsListParam'
-        - $ref: '#/components/parameters/OptionalCheckSameMailingAddress'
-        - $ref: '#/components/parameters/OptionalShouldUpdateAccountMailingAddress'
-        - $ref: '#/components/parameters/OptionalBypassCheckForAcceptedPaymentMethods'
-      responses:
-        '200':
-          $ref: '#/components/responses/UpdatePositionsPaymentPrefSuccessResponse'
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/ResourceNotFoundError'
-        '500':
-          $ref: '#/components/responses/ServerError'
-  /users/{user_id}/associate_payment_pref/positions:
-    patch:
-      summary: "Associate payment pref with positions"
-      description: "Changes the payment pref tied to a position to the specified payment pref."
-      operationId: associatePaymentPrefWithPositions
-      tags:
-        - Payment Prefs
-      parameters:
-        - $ref: '#/components/parameters/UserIdPathParam'
-        - $ref: '#/components/parameters/RequiredTargetPaymentPrefQueryParam'
-        - $ref: '#/components/parameters/RequiredPositionIdsListQueryParam'
-        - $ref: '#/components/parameters/RequiredArenaIdQueryParam'
-        - $ref: '#/components/parameters/OptionalShouldUpdateAccountMailingAddress'
-      responses:
-        '200':
-          $ref: '#/components/responses/UpdatePositionsPaymentPrefSuccessResponse'
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/ResourceNotFoundError'
-        '500':
-          $ref: '#/components/responses/ServerError'
-  /users/{user_id}/associate_payment_pref/source_payment_pref:
-    patch:
-      summary: "Associate payment pref with positions of source payment pref"
-      description: "Searches for all positions within an account that has a source payment pref
-                     and alters their payment prefs to the specified payment pref."
-      operationId: associatePaymentPrefWithPositionsOfSourcePaymentPref
-      tags:
-        - Payment Prefs
-      parameters:
-        - $ref: '#/components/parameters/UserIdPathParam'
-        - $ref: '#/components/parameters/RequiredTargetPaymentPrefQueryParam'
-        - $ref: '#/components/parameters/RequiredAccountIdQueryParam'
-        - $ref: '#/components/parameters/RequiredSourcePaymentPrefQueryParam'
-        - $ref: '#/components/parameters/OptionalShouldUpdateAccountMailingAddress'
-      responses:
-        '200':
-          $ref: '#/components/responses/UpdatePositionsPaymentPrefSuccessResponse'
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/ResourceNotFoundError'
-        '500':
-          $ref: '#/components/responses/ServerError'
-  /users/{user_id}/associate_payment_pref/no_payment_pref:
-    patch:
-      summary: "Associate payment pref with positions with no payment pref"
-      description: "Changes the payment pref tied to a position to the specified payment pref. Position must be under
-      the specified account and have no payment pref already assigned to it"
-      operationId: associatePaymentPrefWithPositionsWithoutPaymentPref
-      tags:
-        - Payment Prefs
-      parameters:
-        - $ref: '#/components/parameters/UserIdPathParam'
-        - $ref: '#/components/parameters/RequiredTargetPaymentPrefQueryParam'
-        - $ref: '#/components/parameters/RequiredAccountIdQueryParam'
-        - $ref: '#/components/parameters/RequiredArenaIdQueryParam'
-        - $ref: '#/components/parameters/OptionalShouldUpdateAccountMailingAddress'
-      responses:
-        '200':
-          $ref: '#/components/responses/UpdatePositionsPaymentPrefSuccessResponse'
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/ResourceNotFoundError'
-        '500':
-          $ref: '#/components/responses/ServerError'
 components:
   schemas:
-    UpdatePositionsPaymentPrefSuccessResponse:
-      type: object
-      title: UpdatePositionsSuccessResponse
-      description: Update Positions Success Response
-      additionalProperties: false
-      properties:
-        position_ids:
-          type: array
-          description: List of position IDs
-          items:
-            type: integer
-          example: [1, 2, 3]
-          nullable: false
-    AccountContactAddSuccessResponse:
-      type: object
-      title: AccountContactAddSuccessResponse
-      description: "Account contact add success response"
-      additionalProperties: false
-      properties:
-        arena_id:
-          type: integer
-          nullable: false
-          description: Arena ID
-          example: 6
-        account_id:
-          type: integer
-          nullable: false
-          description: Account ID
-          example: 7
-        contact_id:
-          type: integer
-          nullable: false
-          description: Contact ID
-          example: 8
-        account_contact_id:
-          type: integer
-          description: Account contact ID
-          nullable: false
-          example: 9
-        status:
-          $ref: '#/components/schemas/ResponseStatus'
-          description: Response status
-          nullable: false
-          example: Success
     AccountContactBulkSuccessResponse:
       type: object
       title: AccountContactBulkSuccessResponse
@@ -1421,22 +1095,6 @@ components:
       example:
         feature_flag_1: true
         feature_flag_2: false
-    AccountContactAddRequestBody:
-      type: object
-      description: account contact add input
-      title: Account contact add array input
-      properties:
-        metadata:
-          type: object
-          description: Metadata for the bulk update
-          nullable: false
-          additionalProperties: true
-          $ref: '#/components/schemas/MetaData'
-        request_payload:
-          type: object
-          description: Metadata for the bulk update
-          nullable: false
-          $ref: '#/components/schemas/AccountContactAdd'
     BulkAccountContactRemoveRequestBody:
       type: object
       description: Bulk account contact removal array input
@@ -1479,33 +1137,17 @@ components:
           nullable: false
         account_id:
           type: integer
-          description: Account ID
+          description: User ID
           example: 7
-          nullable: false
-        contact_id:
-          type: integer
-          description: Contact ID
-          example: 8
           nullable: false
         account_contact_id:
           type: integer
           description: Account contact ID
-          example: 9
+          example: 7
           nullable: false
-        suspend_contact_portal_access:
-          type: boolean
-          description: Suspend contact portal access
-          example: false
-          default: false
-        delete_contact:
-          type: boolean
-          description: Delete contact
-          example: false
-          default: false
       required: [
         "arena_id",
         "account_id",
-        "contact_id",
         "account_contact_id"
       ]
     MetaData:
@@ -1524,265 +1166,6 @@ components:
       required: [
         "requester_user_id",
         "comment"
-      ]
-    ContactDetails:
-      type: object
-      title: Contact Details
-      description: Details of the contact to be added or updated
-      properties:
-        contact_id:
-          type: integer
-          nullable: true
-          description: ID of the contact
-          example: null
-        arena_id:
-          type: integer
-          description: ID of the arena
-          example: 6
-        is_update:
-          type: boolean
-          description: Indicates if the contact is being updated
-          example: true
-        attributes:
-          type: object
-          description: Attributes of the contact
-          properties:
-            first_name:
-              type: string
-              description: First name of the contact
-              example: Test6
-            full_name:
-              type: string
-              description: Full name of the contact
-              example: Test6 Person2 5
-            last_name:
-              type: string
-              description: Last name of the contact
-              example: 6
-            middle_name:
-              type: string
-              description: Middle name of the contact
-              example: Person6
-            salutation_name:
-              type: string
-              description: Salutation name of the contact
-              example: Mr.
-            email:
-              type: object
-              description: Email of the contact
-              properties:
-                id:
-                  type: integer
-                  nullable: true
-                  description: ID of the email
-                  example: null
-                email_type:
-                  type: integer
-                  description: Type of the email
-                  example: 1
-                email_address:
-                  type: string
-                  description: Email address
-                  example: test@test.com
-            employments:
-              type: array
-              description: List of employments
-              items:
-                type: object
-                properties:
-                  employer:
-                    type: object
-                    properties:
-                      lazy_create:
-                        type: boolean
-                        description: Indicates if the employer should be lazily created
-                        example: false
-                      object_id:
-                        type: integer
-                        nullable: true
-                        description: ID of the employer
-                        example: null
-                      object_name:
-                        type: string
-                        description: Name of the employer
-                        example: TestCompany
-                      object_type:
-                        type: integer
-                        description: Type of the employer object
-                        example: 3
-                  is_current:
-                    type: boolean
-                    description: Indicates if the employment is current
-                    example: true
-                  job_title:
-                    type: string
-                    description: Job title of the contact
-                    example: Director
-                  sort_order:
-                    type: integer
-                    description: Sort order of the employment
-                    example: 1
-            phone_fax:
-              type: array
-              description: List of phone numbers
-              items:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    nullable: true
-                    description: ID of the phone number
-                    example: null
-                  phone_type:
-                    type: integer
-                    description: Type of the phone number
-                    example: 2
-                  phone_number:
-                    type: string
-                    description: Phone number
-                    example: +1 (211) 111-1111
-            address:
-              type: array
-              description: List of addresses
-              items:
-                type: object
-                properties:
-                  address:
-                    type: object
-                    properties:
-                      city:
-                        type: string
-                        description: City of the address
-                        example: ee
-                      country:
-                        type: object
-                        properties:
-                          object_id:
-                            type: integer
-                            description: ID of the country
-                            example: 62
-                          object_name:
-                            type: string
-                            nullable: true
-                            description: Name of the country
-                            example: null
-                          object_type:
-                            type: string
-                            nullable: true
-                            description: Type of the country object
-                            example: null
-                      postal_code:
-                        type: string
-                        description: Postal code of the address
-                        example: 34253254234
-                      state:
-                        type: object
-                        properties:
-                          object_id:
-                            type: integer
-                            nullable: true
-                            description: ID of the state
-                            example: null
-                          object_name:
-                            type: string
-                            description: Name of the state
-                            example: dddd
-                          object_type:
-                            type: string
-                            nullable: true
-                            description: Type of the state object
-                            example: null
-                      street:
-                        type: string
-                        description: Street address
-                        example: as
-                      street2:
-                        type: string
-                        description: Additional street address
-                        example: dd
-                      street3:
-                        type: string
-                        nullable: true
-                        description: Additional street address
-                        example: null
-                  address_type:
-                    type: integer
-                    description: Type of the address
-                    example: 1
-                  id:
-                    type: integer
-                    nullable: true
-                    description: ID of the address
-                    example: null
-        access_group_ids:
-          type: array
-          description: List of access group IDs
-          items:
-            type: integer
-          nullable: true
-          example: [ 1, 2 ]
-        invite_to_portal:
-          type: boolean
-          description: Indicates if the contact should be invited to the portal
-          example: false
-          default: false
-    AddContactCommunicationPrefs:
-      type: object
-      title: Account contact add communication prefs
-      description: Account contact add communication pref
-      properties:
-        arena_id:
-          type: integer
-          description: Arena ID
-          example: 6
-        account_id:
-          type: integer
-          description: Account ID
-          example: 7
-        label:
-          type: string
-          description: Relationship label for account contact
-          example: "label"
-          nullable: true
-        is_main_contact:
-          type: boolean
-          description: True if the account contact is To contact, False for CC contact
-          example: true
-          nullable: true
-        is_admin_contact:
-          type: boolean
-          description: True if the account contact is an admin contact
-          example: true
-          nullable: true
-        distribution_list:
-          type: array
-          description: List of distribution IDs
-          items:
-            type: integer
-          example: [ 1, 2, 3 ]
-          nullable: true
-      required: [
-        "arena_id",
-        "account_id",
-      ]
-    AccountContactAdd:
-      type: object
-      title: Account contact add
-      description: Account contact add
-      properties:
-        contact_details:
-          type: object
-          title: Add contact details
-          description: Bulk account contact update
-          $ref: '#/components/schemas/ContactDetails'
-        communication_preferences:
-          type: object
-          title: Add contact communication preferences
-          description: Bulk account contact update
-          $ref: '#/components/schemas/AddContactCommunicationPrefs'
-      required: [
-        "contact_details",
-        "communication_preferences",
       ]
     BulkAccountContactUpdate:
       type: object
@@ -1860,53 +1243,6 @@ components:
               "arena_id",
               "account_id",
               "contact_id",
-              "comment"
-            ]
-    BulkAccountContactChangeNotifyByStatus:
-      type: object
-      properties:
-        request_type:
-          type: string
-          enum:
-            - ADD_CONTACT
-            - UPDATE_CONTACT
-            - REMOVE_CONTACT
-          example: UPDATE_CONTACT
-          nullable: false
-        status:
-          type: string
-          enum:
-            - PENDING_APPROVAL
-            - AUTO_APPROVED
-            - APPROVED
-            - REJECTED
-          example: AUTO_APPROVED
-          nullable: false
-        request_payloads:
-          type: array
-          items:
-            type: object
-            properties:
-              arena_id:
-                type: integer
-                example: 1
-              account_id:
-                type: integer
-                example: 2
-              contact_id:
-                type: integer
-                example: 3
-                nullable: true
-              new_contact_name:
-                type: string
-                example: Contact Name
-                nullable: true
-              comment:
-                type: string
-                example: comment
-            required: [
-              "arena_id",
-              "account_id",
               "comment"
             ]
     CreateDiligence:
@@ -2276,30 +1612,6 @@ components:
         - arena_id
         - required_approval_count
         - require_different_approver
-    ArenaManageAccountContactSettings:
-      type: object
-      description: Manage Account Contact for an arena.
-      properties:
-        arena_id:
-          type: "integer"
-          readOnly: true
-          description: FK to the the arena these account contact settings belong to.
-        allow_admin_manage_account_contacts:
-          type: "boolean"
-          description: Whether or not the admin can manage account contacts.
-          example: true
-        contact_update_require_mgr_approval:
-          type: "string"
-          enum:
-            - add_only
-            - all
-            - none
-          description: Account contact requires manager approval.
-          example: "all"
-      required:
-        - arena_id
-        - allow_admin_manage_account_contacts
-        - contact_update_require_mgr_approval
     ArenaRoles:
       type: object
       description: Roles for an arena.
@@ -2398,16 +1710,11 @@ components:
           type: "integer"
           readOnly: true
           description: Entity ID this distribution batch belongs to.
-        description:
-          type: "string"
-          readOnly: true
-          description: Description of the distribution batch.
       required:
         - id
         - total_amount
         - arena_id
         - entity_id
-        - description
     Distribution:
       type: object
       description: A Distribution that is part of a distribution batch.
@@ -2749,16 +2056,6 @@ components:
         - limited_read
         - publish_transactions
         - limited_edit
-    ObjectAuthorizedClass:
-      description: 'String representation of AuthorizedClass enum'
-      type: string
-      enum:
-        - account
-        - contact
-        - custom_data_fields
-        - document_category
-        - entity
-        - offering
     ObjectType:
       description: 'String representation of ObjectType enum'
       type: string
@@ -3031,7 +2328,6 @@ components:
             - "Capital Activity"
             - "Distribution Allocations"
             - "Net Income Allocations"
-            - "Net Asset Value"
           description: "Category of the allocation type."
         is_recallable:
           type: "boolean"
@@ -3155,68 +2451,8 @@ components:
         - opco_name
         - opco_currency
         - positions
-    DistributionBatchUniquePositionIdsRequestBody:
-      type: object
-      properties:
-        includeDeleted:
-          type: boolean
-          description: "Include deleted positions in the count."
-        ids:
-          description: An array of distribution batch IDs. Each ID must be a positive integer.
-          type: array
-          items:
-            type: integer
-            minimum: 1
-            description: A unique identifier for a distribution batch
-          minItems: 1
-    DistributionBatchUniquePositionIds:
-      type: object
-      description: List of unique position ids for distribution batch IDs
-      properties:
-        unique_position_ids:
-          type: array
-          items:
-            type: integer
-      required:
-        - unique_position_ids
-      additionalProperties: false
-    EntityDistributionBatchIds:
-      type: object
-      description: The distribution batch IDs associated with an entity
-      properties:
-        entity_id: 
-          type: integer
-        distribution_batch_ids:
-          type: array
-          items:
-            type: integer
-      required:
-        - entity_id
-        - distribution_batch_ids
-    EntityPositionIds:
-      type: object
-      description: Positions IDs for a specific entity ID
-      properties:
-        entity_id:
-          type: integer
-          description: The unique identifier of the entity
-        position_ids:
-          type: array
-          items:
-            type: integer
-          description: Position IDs associated with the given entity ID
-      required:
-        - entity_id
-        - position_ids
-      additionalProperties: false
 
   responses:
-    AddAccountContactSuccessResponse:
-      description: Account Contact Add Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/AccountContactAddSuccessResponse'
     AccountContactBulkSuccessResponseArray:
       description: Account Contact Bulk Success Response Array
       content:
@@ -3465,23 +2701,6 @@ components:
                   id: 3
                   name: "other thing"
                   sort_order: 2
-    ArenaManageAccountContactSettingsArray:
-      description: Manage Account Contact Settings for a specific arena
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/ArenaManageAccountContactSettings'
-          examples:
-            ArenaManageAccountContactSettings Array:
-              value:
-                - arena_id: 2
-                  allow_admin_manage_account_contacts: true
-                  contact_update_require_mgr_approval: "add_only"
-                - arena_id: 17
-                  allow_admin_manage_account_contacts: false
-                  contact_update_require_mgr_approval: "all"
     UserArray:
       description: A list of users
       content:
@@ -3516,7 +2735,6 @@ components:
                 amount: 42.00
                 arena_id: 2
                 entity_id: 3
-                description: "Batch description"
     Distribution:
       description: A distribution
       content:
@@ -3557,16 +2775,6 @@ components:
                   payment_pref_id: 102
                   manual_settlement_date: null
                   has_legacy_payment: false
-    UpdatePositionsPaymentPrefSuccessResponse:
-      description: List of position ids
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdatePositionsPaymentPrefSuccessResponse'
-          examples:
-            UpdatePositionsSuccessResponse:
-              value:
-                position_ids: [1, 2, 3]
     PaymentPref:
       description: A payment pref
       content:
@@ -3832,24 +3040,7 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/PositionAttribute'
-    DistributionBatchUniquePositionIdsResponse:
-      description: List of unique positions for distribution batch IDs.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/DistributionBatchUniquePositionIds'
-    EntityDistributionBatchIds:
-      description: The count of distribution batches for an entity
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/EntityDistributionBatchIds'
-    EntityPositionIdsResponse:
-      description: The List of position IDs for an entity
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/EntityPositionIds'
+
   securitySchemes:
     auth-cookie:
       name: a
@@ -3975,15 +3166,6 @@ components:
       required: true
       schema:
         $ref: '#/components/schemas/ObjectType'
-    RequiredObjectAuthorizedClassQueryParam:
-      name: object_authorized_class
-      in: query
-      style: form
-      explode: false
-      description: Required object_authorized_class to filter by. Should match an AuthorizedClass enum.
-      required: true
-      schema:
-        $ref: '#/components/schemas/ObjectAuthorizedClass'
     OptionalObjectTypeQueryParam:
       name: object_type
       in: query
@@ -3999,17 +3181,6 @@ components:
       style: form
       explode: false
       description: List of objects_ids of the corresponding ObjectType
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-    RequiredArenaIdsQueryParam:
-      name: arena_ids
-      in: query
-      style: form
-      explode: false
-      description: List of arena_ids
       required: true
       schema:
         type: array
@@ -4075,24 +3246,6 @@ components:
       description: Whether to exclude inactive objects from the response.
       schema:
         type: boolean
-    StartDateQueryParam:
-      name: start_date
-      in: query
-      style: form
-      explode: false
-      description: A start date of a period. Format should be YYYY-MM-DD.
-      schema:
-        type: string
-        format: date-time
-    EndDateQueryParam:
-      name: end_date
-      in: query
-      style: form
-      explode: false
-      description: An end date of a period. Format should be YYYY-MM-DD.
-      schema:
-        type: string
-        format: date-time
     AsOfDateQueryParam:
       name: as_of_date
       in: query
@@ -4156,91 +3309,6 @@ components:
       required: true
       schema:
         type: string
-    RequiredTargetPaymentPrefQueryParam:
-      name: target_payment_pref_id
-      in: query
-      style: form
-      explode: false
-      description: Target Payment Pref ID.
-      required: true
-      schema:
-          type: integer
-    RequiredSourcePaymentPrefQueryParam:
-      name: source_payment_pref_id
-      in: query
-      style: form
-      explode: false
-      description: Source Payment Pref ID.
-      required: true
-      schema:
-          type: integer
-    RequiredAccountIdsListParam:
-      name: account_ids
-      in: query
-      style: form
-      explode: false
-      description: List of account ids.
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-    RequiredAccountIdQueryParam:
-      name: account_id
-      in: query
-      style: form
-      explode: false
-      description: Account id.
-      required: true
-      schema:
-        type: integer
-    RequiredPositionIdsListQueryParam:
-      name: position_ids
-      in: query
-      style: form
-      explode: false
-      description: List of position ids.
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-    OptionalCheckSameMailingAddress:
-      name: check_same_mailing_address
-      in: query
-      style: form
-      explode: false
-      description: Specifies if check address is the same as mailing address.
-      required: false
-      schema:
-        type: boolean
-    OptionalShouldUpdateAccountMailingAddress:
-      name: should_update_account_mailing_address
-      in: query
-      style: form
-      explode: false
-      description: If the Account mailing address should be updated.
-      required: false
-      schema:
-        type: boolean
-    OptionalBypassCheckForAcceptedPaymentMethods:
-      name: bypass_check_for_accepted_payment_methods
-      in: query
-      style: form
-      explode: false
-      description: If the checks for accepted payment methods should be bypassed.
-      required: false
-      schema:
-        type: boolean
-    IncludeDeletedQueryParam:
-      name: include_deleted
-      in: query
-      style: form
-      explode: false
-      description: "Whether to include deleted objects in the response."
-      schema:
-        type: boolean
-
 tags:
   - name: Feature Flags
     description: Operations to interact with arena-level and global developer feature flags.
